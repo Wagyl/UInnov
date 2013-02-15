@@ -1,0 +1,201 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+1/2 L'existant
+\end_layout
+
+\begin_layout Itemize
+Swing / GTK / QT reposent sur un modèle de 
+\begin_inset Quotes eld
+\end_inset
+
+widgets
+\begin_inset Quotes erd
+\end_inset
+
+ - des boites dans des boites qui forment des boites qu'on peut remettre
+ dans des boites - avec une expressivité 
+\begin_inset Quotes eld
+\end_inset
+
+bas niveau
+\begin_inset Quotes erd
+\end_inset
+
+.
+ On définit 
+\begin_inset Quotes eld
+\end_inset
+
+à la main
+\begin_inset Quotes erd
+\end_inset
+
+ l'emplacement des différents éléments -> c'est naze.
+\end_layout
+
+\begin_layout Itemize
+Une interface créée à l'aide de Swing / GTK / QT offre la possibilité d'adapter
+ son aspect visuel à l'OS hôte (sans avoir à changer le code) -> intéressant.
+\end_layout
+
+\begin_layout Itemize
+Swing / GTK / QT n'offrent pas une 
+\begin_inset Quotes eld
+\end_inset
+
+portabilité
+\begin_inset Quotes erd
+\end_inset
+
+ pour les interfaces créées : il n'est pas aisé de transporter une interface
+ d'une appli à une autre sans avoir à beaucoup toucher au code -> peut-être
+ intéressant ?
+\end_layout
+
+\begin_layout Itemize
+Toujours sur la 
+\begin_inset Quotes eld
+\end_inset
+
+portabilité
+\begin_inset Quotes erd
+\end_inset
+
+ : Swing n'offre pas un langage intermédiaire indépendant des bindings pour
+ différents langages hôtes.
+ GTK offre une description XML des interfaces (à vérifier) -> concept intéressan
+t.
+ Quid de QT ?
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Portabilité / adptativité
+\begin_inset Quotes erd
+\end_inset
+
+ : les interfaces créées via Swing / GTK / QT ne s'adaptent pas automatiquement
+ au support matériel : clavier / souris, écran tactile, quelle taille d'écran
+ ...
+ c'est naze !
+\end_layout
+
+\begin_layout Itemize
+HTML / CSS offre justement cette approche, cependant des problèmes se posent
+ dans le cas HTML / CSS : les différents navigateurs interprêtent de manières
+ assez différentes les styles, est-ce un problème ?
+\end_layout
+
+\begin_layout Itemize
+Bien que n'étant pas fait pour la création d'interfaces graphiques dans
+ des applications autre que web, le couple HTML / CSS a une approche intéressant
+e : séparer le style de la description des éléments.
+\end_layout
+
+\begin_layout Itemize
+Swing / GTK n'offrent à priori aucune analyse statique de 
+\begin_inset Quotes eld
+\end_inset
+
+débilité
+\begin_inset Quotes erd
+\end_inset
+
+ d'une interface : des éléments toujours invisibles / non atteignables etc
+ etc ...
+\end_layout
+
+\begin_layout Itemize
+Swing est une horreur à débugger, quid de GTK / QT ?
+\end_layout
+
+\begin_layout Itemize
+Swing est très verbeux, quid de GTK / QT ?
+\end_layout
+
+\begin_layout Itemize
+Quid des performances de Swing / GTK / QT ?
+\end_layout
+
+\begin_layout Itemize
+La gestion des actions est nulle dans Swing : verbeuse, assez peu intuitive.
+ Quid de GTK / QT ?
+\end_layout
+
+\begin_layout Itemize
+A compléter ...
+ les idées sont à fouttre en vrac, il faudra trier ensuite.
+\end_layout
+
+\end_body
+\end_document
