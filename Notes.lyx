@@ -197,5 +197,21 @@ A compléter ...
  les idées sont à fouttre en vrac, il faudra trier ensuite.
 \end_layout
 
+\begin_layout Part*
+Idées 
+\end_layout
+
+\begin_layout Itemize
+Interface résultante modelable par l'utilisateur.
+\end_layout
+
+\begin_layout Itemize
+Debugging aisé pour le programmeur.
+\end_layout
+
+\begin_layout Itemize
+etc etc ...
+\end_layout
+
 \end_body
 \end_document
