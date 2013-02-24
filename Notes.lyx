@@ -68,7 +68,7 @@
 \begin_body
 
 \begin_layout Part*
-1/2 L'existant
+Notes en vrac
 \end_layout
 
 \begin_layout Itemize
@@ -197,10 +197,6 @@ A compléter ...
  les idées sont à fouttre en vrac, il faudra trier ensuite.
 \end_layout
 
-\begin_layout Part*
-Idées 
-\end_layout
-
 \begin_layout Itemize
 Interface résultante modelable par l'utilisateur.
 \end_layout
@@ -211,6 +207,44 @@ Debugging aisé pour le programmeur.
 
 \begin_layout Itemize
 etc etc ...
+\end_layout
+
+\begin_layout Section
+Qu'est ce qu'une interface utilisateur et comment en programmer
+\end_layout
+
+\begin_layout Subsection
+Définition des concepts liés à la notion d'interface utilisateur
+\end_layout
+
+\begin_layout Itemize
+Qui sont les utilisateurs, il y a plusieurs points de vue : celui du programmeur
+, celui de l'utilisateur de l'interface.
+\end_layout
+
+\begin_layout Itemize
+Pour l'utilisateur : il faut prendre en compte à la fois l'aspect sensoriel
+ (visuel si écran il y a) et l'aspect 
+\begin_inset Quotes eld
+\end_inset
+
+contrôle
+\begin_inset Quotes erd
+\end_inset
+
+ (gestion des périphériques d'entrée).
+\end_layout
+
+\begin_layout Itemize
+Intéraction utilisateur - programme : plusieurs 
+\begin_inset Quotes eld
+\end_inset
+
+niveaux
+\begin_inset Quotes erd
+\end_inset
+
+ de compétences parmi les utilisateurs avec des besoins différents.
 \end_layout
 
 \end_body
