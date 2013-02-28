@@ -217,13 +217,23 @@ Qu'est ce qu'une interface utilisateur et comment en programmer
 Définition des concepts liés à la notion d'interface utilisateur
 \end_layout
 
-\begin_layout Itemize
-Qui sont les utilisateurs, il y a plusieurs points de vue : celui du programmeur
-, celui de l'utilisateur de l'interface.
+\begin_layout Subsubsection*
+Qui sont les utilisateurs ?
 \end_layout
 
 \begin_layout Itemize
-Pour l'utilisateur : il faut prendre en compte à la fois l'aspect sensoriel
+Deux catégories : nous utiliserons suivante afin de distinguer les deux
+ catégories d'utilisateurs : utilisateur application, et programmeur.
+\end_layout
+
+\begin_layout Itemize
+Dans les deux cas, il faut avoir une approche orientée utilisateur, les
+ besoins seront différents, mais l'approche à adopter la même.
+ 
+\end_layout
+
+\begin_layout Itemize
+Utilisateur application : il faut prendre en compte à la fois l'aspect sensoriel
  (visuel si écran il y a) et l'aspect 
 \begin_inset Quotes eld
 \end_inset
@@ -236,7 +246,7 @@ contrôle
 \end_layout
 
 \begin_layout Itemize
-Intéraction utilisateur - programme : plusieurs 
+Intéraction utilisateur application - programme : plusieurs 
 \begin_inset Quotes eld
 \end_inset
 
@@ -247,5 +257,150 @@ niveaux
  de compétences parmi les utilisateurs avec des besoins différents.
 \end_layout
 
+\begin_layout Subsubsection*
+Conception - génie logiciel
+\end_layout
+
+\begin_layout Standard
+Utilisation de la conception centrée utilisateur qui est un modèle itératif.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Analyse :
+\series default
+ analyse des besoins, un panel représentatif d'utilisateurs des deux catégories
+ concernées doit être constitué afin d'établir les dits besoins.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Conception :
+\series default
+ un prototype doit être conçu en fonction des besoins établis à l'étape
+ précédente.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Evaluation :
+\series default
+ sur la base du prototype réalisé, une évaluation est faite.
+ Le procédé étant itératif, cette évaluation servira de base à la modification
+ des besoins de la première étape.
+ 
+\end_layout
+
+\begin_layout Itemize
+Il faut établir des 
+\begin_inset Quotes eld
+\end_inset
+
+topic
+\begin_inset Quotes erd
+\end_inset
+
+ d'évaluation - besoins, les deux sont liés : 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pour l'utilisateur application :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vitesse d'apprentissage - aide nécessaire / intégrée - nombre d'erreurs
+ commises lors d'un test.
+\end_layout
+
+\begin_layout Itemize
+Correction des erreurs.
+\end_layout
+
+\begin_layout Itemize
+Temps de réponse.
+\end_layout
+
+\begin_layout Itemize
+Efficacité - navigation rapide ?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Pour le programmeur :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Programmation intuitive.
+\end_layout
+
+\begin_layout Itemize
+Bonne expressivité - ne pas avoir un code verbeux à produire (capacité d'adaptat
+ion au support etc etc ?).
+\end_layout
+
+\begin_layout Itemize
+Typage fort - sûreté.
+\end_layout
+
+\begin_layout Itemize
+Debugging aisé - analyse de pertinence (détecter le maximum d'absurdités)
+\end_layout
+
+\begin_layout Itemize
+Intégration aux IDE populaires ? Création d'un IDE ?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Les outils : 
+\series default
+des outils du génie logiciel peuvent nous aider à l'intérieur des phases
+ décrites précédement :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Scénarios / diagrammes de cas d'utilisation : à la fois pour établir les
+ besoins et faire l'évaluation au niveau de l'utilisateur application.
+ Peut aussi être utilisé pour le côté programmeur bien que le point suivant
+ me semble être plus approprié.
+\end_layout
+
+\begin_layout Itemize
+Diagrammes relationnels - diagrammes de classes : relations entre les différents
+ objets de l'interface, est utile dans la phase de conception pour 
+\begin_inset Quotes eld
+\end_inset
+
+se mettre à la place
+\begin_inset Quotes erd
+\end_inset
+
+ du programmeur.
+\end_layout
+
+\begin_layout Itemize
+Design pattern : beaucoup d'interfaces utilisateurs utilisent des principes
+ similaires d'intéraction avec l'utilisateur, l'implémentation 
+\begin_inset Quotes eld
+\end_inset
+
+native
+\begin_inset Quotes erd
+\end_inset
+
+ de comportements génériques peut être pratique.
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
