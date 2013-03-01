@@ -1,0 +1,125 @@
+%% LyX 2.0.5.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm,footskip=2cm}
+\usepackage{babel}
+\begin{document}
+
+\part*{Notes en vrac}
+\begin{itemize}
+\item Swing / GTK / QT reposent sur un modèle de ``widgets'' - des boites
+dans des boites qui forment des boites qu'on peut remettre dans des
+boites - avec une expressivité ``bas niveau''. On définit ``à la
+main'' l'emplacement des différents éléments -> c'est naze.
+\item Une interface créée à l'aide de Swing / GTK / QT offre la possibilité
+d'adapter son aspect visuel à l'OS hôte (sans avoir à changer le code)
+-> intéressant.
+\item Swing / GTK / QT n'offrent pas une ``portabilité'' pour les interfaces
+créées : il n'est pas aisé de transporter une interface d'une appli
+à une autre sans avoir à beaucoup toucher au code -> peut-être intéressant
+?
+\item Toujours sur la ``portabilité'' : Swing n'offre pas un langage intermédiaire
+indépendant des bindings pour différents langages hôtes. GTK offre
+une description XML des interfaces (à vérifier) -> concept intéressant.
+Quid de QT ?
+\item ``Portabilité / adptativité'' : les interfaces créées via Swing
+/ GTK / QT ne s'adaptent pas automatiquement au support matériel :
+clavier / souris, écran tactile, quelle taille d'écran ... c'est naze
+!
+\item HTML / CSS offre justement cette approche, cependant des problèmes
+se posent dans le cas HTML / CSS : les différents navigateurs interprêtent
+de manières assez différentes les styles, est-ce un problème ?
+\item Bien que n'étant pas fait pour la création d'interfaces graphiques
+dans des applications autre que web, le couple HTML / CSS a une approche
+intéressante : séparer le style de la description des éléments.
+\item Swing / GTK n'offrent à priori aucune analyse statique de ``débilité''
+d'une interface : des éléments toujours invisibles / non atteignables
+etc etc ...
+\item Swing est une horreur à débugger, quid de GTK / QT ?
+\item Swing est très verbeux, quid de GTK / QT ?
+\item Quid des performances de Swing / GTK / QT ?
+\item La gestion des actions est nulle dans Swing : verbeuse, assez peu
+intuitive. Quid de GTK / QT ?
+\item A compléter ... les idées sont à fouttre en vrac, il faudra trier
+ensuite.
+\item Interface résultante modelable par l'utilisateur.
+\item Debugging aisé pour le programmeur.
+\item etc etc ...
+\end{itemize}
+
+\section{Qu'est ce qu'une interface utilisateur et comment en programmer}
+
+
+\subsection{Définition des concepts liés à la notion d'interface utilisateur}
+
+
+\subsubsection*{Qui sont les utilisateurs ?}
+\begin{itemize}
+\item Deux catégories : nous utiliserons suivante afin de distinguer les
+deux catégories d'utilisateurs : utilisateur application, et programmeur.
+\item Dans les deux cas, il faut avoir une approche orientée utilisateur,
+les besoins seront différents, mais l'approche à adopter la même. 
+\item Utilisateur application : il faut prendre en compte à la fois l'aspect
+sensoriel (visuel si écran il y a) et l'aspect ``contrôle'' (gestion
+des périphériques d'entrée).
+\item Intéraction utilisateur application - programme : plusieurs ``niveaux''
+de compétences parmi les utilisateurs avec des besoins différents.
+\end{itemize}
+
+\subsubsection*{Conception - génie logiciel}
+
+Utilisation de la conception centrée utilisateur qui est un modèle
+itératif.
+\begin{itemize}
+\item \textbf{Analyse :} analyse des besoins, un panel représentatif d'utilisateurs
+des deux catégories concernées doit être constitué afin d'établir
+les dits besoins.
+\item \textbf{Conception :} un prototype doit être conçu en fonction des
+besoins établis à l'étape précédente.
+\item \textbf{Evaluation :} sur la base du prototype réalisé, une évaluation
+est faite. Le procédé étant itératif, cette évaluation servira de
+base à la modification des besoins de la première étape. 
+\item Il faut établir des ``topic'' d'évaluation - besoins, les deux sont
+liés : 
+
+\begin{itemize}
+\item Pour l'utilisateur application :
+
+\begin{itemize}
+\item Vitesse d'apprentissage - aide nécessaire / intégrée - nombre d'erreurs
+commises lors d'un test.
+\item Correction des erreurs.
+\item Temps de réponse.
+\item Efficacité - navigation rapide ?
+\end{itemize}
+\item Pour le programmeur :
+
+\begin{itemize}
+\item Programmation intuitive.
+\item Bonne expressivité - ne pas avoir un code verbeux à produire (capacité
+d'adaptation au support etc etc ?).
+\item Typage fort - sûreté.
+\item Debugging aisé - analyse de pertinence (détecter le maximum d'absurdités)
+\item Intégration aux IDE populaires ? Création d'un IDE ?
+\end{itemize}
+\end{itemize}
+\item \textbf{Les outils : }des outils du génie logiciel peuvent nous aider
+à l'intérieur des phases décrites précédement :
+
+\begin{itemize}
+\item Scénarios / diagrammes de cas d'utilisation : à la fois pour établir
+les besoins et faire l'évaluation au niveau de l'utilisateur application.
+Peut aussi être utilisé pour le côté programmeur bien que le point
+suivant me semble être plus approprié.
+\item Diagrammes relationnels - diagrammes de classes : relations entre
+les différents objets de l'interface, est utile dans la phase de conception
+pour ``se mettre à la place'' du programmeur.
+\item Design pattern : beaucoup d'interfaces utilisateurs utilisent des
+principes similaires d'intéraction avec l'utilisateur, l'implémentation
+``native'' de comportements génériques peut être pratique.\end{itemize}
+\end{itemize}
+
+\end{document}
