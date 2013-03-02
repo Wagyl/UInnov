@@ -402,5 +402,115 @@ native
 \end_layout
 
 \end_deeper
+\begin_layout Subsection
+Division du travail
+\end_layout
+
+\begin_layout Standard
+La conception d'une interface graphique par dessus un moteur d'application
+ peut se diviser en quatre parties qui devraient demeurer indépendantes
+ le plus possible.
+\end_layout
+
+\begin_layout Itemize
+Communication entre le moteur et l'interface :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Affichage : ensemble des données du moteur affichées (sous diverse forme)
+ par l'interface ;
+\end_layout
+
+\begin_layout Itemize
+Actions : ensemble des actions de l'utilisateur modifiant l'état du moteur.
+ Tout élément de l'interface permettant d'agir sur le moteur devrait être
+ lié à une 
+\begin_inset Quotes sld
+\end_inset
+
+Action
+\begin_inset Quotes srd
+\end_inset
+
+.
+ Une même Action doit pouvoir être effectuée par différents éléments d'une
+ interface, et par différentes interfaces.
+\end_layout
+
+\begin_layout Standard
+Cette section doit être indépendante de l'interface finale (éléments, aspect,
+ etc) et de la plateforme.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Éléments de l'interface ; dépendant de la plateforme, lié à la partie précédente.
+\end_layout
+
+\begin_layout Itemize
+Personnalisation des éléments : positionnement, taille, aspect...
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Une telle configuration est évidemment dépendante de la partie précédente.
+\end_layout
+
+\begin_layout Standard
+Certains paramètres de cette configuration doivent pouvoir être modifiés
+ par l'utilisateur final.
+\end_layout
+
+\begin_layout Standard
+Ces configurations doivent pouvoir être enregistrées et s'échanger facilement.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Aspect général.
+\end_layout
+
+\begin_layout Section
+Outils à développer
+\end_layout
+
+\begin_layout Subsection
+Bindings
+\end_layout
+
+\begin_layout Standard
+Liaison d'une propriété d'un élément de l'interface graphique à une valeur
+ du moteur de l'application : par exemple, la 
+\begin_inset Quotes sld
+\end_inset
+
+clickabilité
+\begin_inset Quotes srd
+\end_inset
+
+ (oui) d'un bouton à un booléen, le champs d'un label à une chaîne de caractères
+, la valeur d'un curseur à une valeur du moteur logique, le contenu d'un
+ panel à une image...
+\end_layout
+
+\begin_layout Standard
+La liaison doit être effective dans les deux sens : le changement du champs
+ du label par l'utilisateur doit modifier la valeur de la chaîne de caractère,
+ tout changement tiers de la valeur doit être répercuté dans le label de
+ l'interface.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution : la librairie fournit à l'intention du moteur de l'application
+ des classes pour des types simples comprenant un pattern observer à destination
+ des éléments de l'interface.
+ 
+\end_layout
+
 \end_body
 \end_document

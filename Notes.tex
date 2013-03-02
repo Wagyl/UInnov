@@ -119,7 +119,67 @@ les différents objets de l'interface, est utile dans la phase de conception
 pour ``se mettre à la place'' du programmeur.
 \item Design pattern : beaucoup d'interfaces utilisateurs utilisent des
 principes similaires d'intéraction avec l'utilisateur, l'implémentation
-``native'' de comportements génériques peut être pratique.\end{itemize}
+``native'' de comportements génériques peut être pratique.
+\end{itemize}
 \end{itemize}
 
+\subsection{Division du travail}
+
+La conception d'une interface graphique par dessus un moteur d'application
+peut se diviser en quatre parties qui devraient demeurer indépendantes
+le plus possible.
+\begin{itemize}
+\item Communication entre le moteur et l'interface :
+
+\begin{itemize}
+\item Affichage : ensemble des données du moteur affichées (sous diverse
+forme) par l'interface ;
+\item Actions : ensemble des actions de l'utilisateur modifiant l'état du
+moteur. Tout élément de l'interface permettant d'agir sur le moteur
+devrait être lié à une ''Action''. Une même Action doit pouvoir
+être effectuée par différents éléments d'une interface, et par différentes
+interfaces.
+\end{itemize}
+
+Cette section doit être indépendante de l'interface finale (éléments,
+aspect, etc) et de la plateforme.
+
+\item Éléments de l'interface ; dépendant de la plateforme, lié à la partie
+précédente.
+\item Personnalisation des éléments : positionnement, taille, aspect...
+
+
+Une telle configuration est évidemment dépendante de la partie précédente.
+
+
+Certains paramètres de cette configuration doivent pouvoir être modifiés
+par l'utilisateur final.
+
+
+Ces configurations doivent pouvoir être enregistrées et s'échanger
+facilement.
+
+\item Aspect général.
+\end{itemize}
+
+\section{Outils à développer}
+
+
+\subsection{Bindings}
+
+Liaison d'une propriété d'un élément de l'interface graphique à une
+valeur du moteur de l'application : par exemple, la ''clickabilité''
+(oui) d'un bouton à un booléen, le champs d'un label à une chaîne
+de caractères, la valeur d'un curseur à une valeur du moteur logique,
+le contenu d'un panel à une image...
+
+La liaison doit être effective dans les deux sens : le changement
+du champs du label par l'utilisateur doit modifier la valeur de la
+chaîne de caractère, tout changement tiers de la valeur doit être
+répercuté dans le label de l'interface.\\
+
+
+Solution : la librairie fournit à l'intention du moteur de l'application
+des classes pour des types simples comprenant un pattern observer
+à destination des éléments de l'interface. 
 \end{document}
