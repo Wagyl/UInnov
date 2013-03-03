@@ -162,6 +162,13 @@ facilement.
 \item Aspect général.
 \end{itemize}
 
+\section{Analyse de l'existant}
+
+Analyse de Swing / GTK (qui ont évidement des problèmes insurmontables)
+ainsi que du couple HTML CSS et le concept intéressant de la séparation
+du style de la déclaration des objets.
+
+
 \section{Outils à développer}
 
 
@@ -182,4 +189,36 @@ répercuté dans le label de l'interface.\\
 Solution : la librairie fournit à l'intention du moteur de l'application
 des classes pour des types simples comprenant un pattern observer
 à destination des éléments de l'interface. 
+
+
+\subsection{Actions}
+
+Je prépare juste la sous-section des actions car je vais certainement
+en avoir besoin pour le modèle relationnel présenté dessous.
+
+
+\subsection{Les langages intermédiaires}
+
+Pareil que pour les actions. Peut-être sera-t-il plus approprié de
+le mettre après le modèle relationnel ... à voir.
+
+
+\subsection{Le modèle relationnel}
+
+Les librairies d'interfaces graphiques populaires ne fournissent pas
+de moyen haut-niveau de décrire les relations entre les différents
+éléments de l'interface utilisateur. Seule une relation de parenté
+purement liée au placement des objets les uns dans les autres (le
+contenant est automatiquement parent du contenu) est possible, tout
+autre système de mise en relation entre les éléments n'est pas directement
+supporté. 
+
+Il serait cependant intéressant de pouvoir définir plus finement les
+relations entre ces différents éléments, plus précisement, l'idée
+serait de ne pas avoir à décrire l'emplacement d'un élément par rapport
+à un autre dans le ''code principal'' mais juste les relations entre
+ces éléments, un peu à la manière du couple HTML / CSS, une ''feuile
+style'' dépendant du support / des préférences de l'utilisateur application
+/ du système (cf. langages intermédiaires) se charge d'associer une
+relation à un emplacement / visuel / un lien.
 \end{document}
