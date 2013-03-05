@@ -631,11 +631,11 @@ Style de l'interface : notre solution à base de modèle relationnel doit
  de style dont le rôle est de traduire les relations entre les composants
  en une présentation graphique adaptée au support.
  Ceci nécessite d'une part l'élaboration d'un langage intermédiaire servant
- à décrire cette traduction et d'autre part la réalisation d'un interprêteur
+ à décrire cette traduction et d'autre part la réalisation d'un interpréteur
  du dit langage.
  L'utilisation d'une telle architecture permet à la fois d'avoir un comportement
  par défaut propre à chaque support, mais peut aussi permettre au programmeur
- d'établlir une charte graphique pour toutes ses applications, et ce sans
+ d’établir une charte graphique pour toutes ses applications, et ce sans
  avoir à s'en préoccuper à chaque nouveau projet.
 \end_layout
 
