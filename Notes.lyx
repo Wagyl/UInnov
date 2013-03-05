@@ -476,9 +476,133 @@ Analyse de l'existant
 \end_layout
 
 \begin_layout Standard
-Analyse de Swing / GTK (qui ont évidement des problèmes insurmontables)
- ainsi que du couple HTML CSS et le concept intéressant de la séparation
- du style de la déclaration des objets.
+[Texte d'intro sur les différents trucs dont on va parler.]
+\end_layout
+
+\begin_layout Itemize
+Programmer une interface graphique, si on le fait « à la main », c'est jamais
+ agréable, pour différentes raisons :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Apprendre à programmer une interface graphique en utilisant telle ou telle
+ API peut-être plus ou moins compliqué.
+ En particulier, GTK+ est assez laid et loin d'être aussi intuitif que des
+ bibliothèques reposant sur le modèle objet, comme Qt ou Swing.
+\end_layout
+
+\begin_layout Itemize
+Dans tous les cas, la programmation est longue, répétitive et, à de rares
+ exceptions (TkInter ?), extrêmement verbeuse.
+ [Code exemple]
+\end_layout
+
+\begin_layout Itemize
+Ceci est, a priori, du au fait que Swing, GTK+, Qt et les autres bibliothèques
+ reposent entièrement sur un modèle de widgets : des composants imbriqués
+ les uns dans les autres de façon quasi-infinie, qu'on doit tous définir,
+ paramétrer et placer manuellement.
+ On parle d'ailleurs de widget toolkit pour définir les bibliothèques permettant
+ de construire des interfaces graphiques.
+ Gestion des actions.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+On peut utiliser de sympathiques IDE comme QtCreator/QtDesigner et Glade
+ pour nous aider, mais il est quand même nécessaire de savoir coder « en
+ vrai » avant de les utiliser.
+ MacOS propose, avec XCode et différents outils comme Cocoa, une vision
+ intéressante -> à développer.
+\end_layout
+
+\begin_layout Itemize
+Portabilité v1 : Qt est disponible en natif sur la plupart des systèmes
+ d'exploitation existants, et notamment les systèmes embarqués, incluant
+ Android, VxWorks ou encore BlackBerry OS.
+ GTK+ lui n'est disponible que sur les systèmes de bureaux majeurs : Windows,
+ MacOS, Linux/Unix.
+\end_layout
+
+\begin_layout Itemize
+Portabilité v2 : Swing offre une définition de la portabilité différente
+ de celle de Qt et GTK+ : en effet, la bibliothèque n'est utilisable qu'en
+ Java, mais celui-ci étant multi-platerforme, Swing devient fonctionnel
+ sur tout système sur lequel Java est disponible.
+ En revanche il n'est utilisable dans aucun autre langage, là où Qt et GTK+
+ ont tout plein de bindings.
+ Nativement, Qt est une bibliothèque C++, et dispose de bindings Java, Perl,
+ Python, PHP ou encore Ruby.
+ GTK+ est une bibliothèque C, disposant de bindings C++, Java, Perl, Python,
+ PHP, et Ruby mais aussi C# et Javascript.
+ De plus, GTK+ dispose d'un binding Vala, un langage spécifiquement créé
+ pour les développeurs de Gnome, basé sur C# et qui compile vers C !
+\end_layout
+
+\begin_layout Itemize
+Portabilité v3 : Les éditeurs d'interfaces de GTK+ et Qt, Glade et QtDesigner,
+ permettent d'enregister les interfaces créées sous forme de fichier XML.
+ Le concept est intéressant puisqu'il permet de 
+\begin_inset Quotes sld
+\end_inset
+
+porter
+\begin_inset Quotes srd
+\end_inset
+
+ une interface dans différents langages, sans que l'on ait à beaucoup toucher
+ au code.
+ Cela aide donc à séparer le fond et la forme du logiciel.
+ Swing quant à lui n'offre rien de tel, ce qui peut peut-être s'expliquer
+ par l'absence de bindings dans d'autres langages.
+ Il existe par ailleurs des langages de descriptions d'IG basés sur XML
+ (XAML et XUL par exemple) -> à approfondir ?
+\end_layout
+
+\begin_layout Itemize
+Bien que n'étant pas fait pour la création d'interfaces graphiques dans
+ des applications autre que web, le couple HTML / CSS a une approche intéressant
+e : séparer le style de la description des éléments.
+ Le but étant ici de pouvoir afficher un même contenu sous différentes formes,
+ selon le support utilisé : un document HTML peut utiliser différentes feuilles
+ de styles et définir laquelle sera utilisée selon le media sur lequel il
+ sera affiché (grâce à l'attribut media de la balise style), et un document
+ CSS peut lui-même choisir d'afficher un élément différemment selon le support.
+ Le plus souvent, c'est utilisé pour pouvoir imprimer une page web facilement
+ (media screen lorsque la page est affichée par un navigateur, print lorsqu'on
+ veut l'imprimer).
+ Néanmoins on a un problème similaire à celui des interfaces graphiques
+ qui n'ont pas le même rendu sous différents environnements, à savoir que
+ tous les navigateurs n'interprètent pas le CSS de la même manière alors
+ qu'ils le devraient.
+ De plus, le concept de « boites dans des boites » est toujours présent
+ (les balises imbriquées du HTML).
+\end_layout
+
+\begin_layout Itemize
+Les différents outils dédiés à la programmation d'interfaces graphiques,
+ en particulier Swing, nous promettent souvent de s'adapter au 
+\emph on
+look and feel
+\emph default
+ de l'environnement dans lequel l'application est exécutée.
+ Si l'idée est bonne puisqu'elle permettrait aux programmeurs d'obtenir
+ des applications parfaitement intégrées dans les différents OS sans avoir
+ à faire quoique ce soit de particulier, en pratique le résultat est assez
+ aléatoire et rarement esthétique.
+ [Screenshots]
+\end_layout
+
+\begin_layout Itemize
+Si autrefois GTK+ était célèbre pour être plus rapide que Qt (ce qui apparemment
+ était dû au vieux compilateur utilisé par Qt ?), les deux ont aujourd'hui
+ des performances similaires que ce soit au niveau de la mémoire ou du CPU,
+ ce n'est donc plus un critère pour les départager.
+\end_layout
+
+\begin_layout Standard
+Todo : debugging + screenshots + exemples de code.
 \end_layout
 
 \begin_layout Section
