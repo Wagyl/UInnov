@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{luainputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \geometry{verbose}
 \usepackage{babel}
@@ -242,9 +242,115 @@ déjà écrite.
 
 \section{Analyse de l'existant}
 
-Analyse de Swing / GTK (qui ont évidement des problèmes insurmontables)
-ainsi que du couple HTML CSS et le concept intéressant de la séparation
-du style de la déclaration des objets.
+
+\subsubsection*{Difficultés de la programmation d'interfaces graphiques}
+
+Programmer une interface graphique entièrement à la force du poignet
+n'est guère agréable, pour différentes raisons :
+\begin{itemize}
+\item Apprendre à programmer une interface graphique en utilisant l'une
+ou l'autre API existante peut se révéler fastidieux et complexe. En
+particulier, nous remarquerons que GTK+ tend à être plus laid et moins
+intuitif que des bibliothèques reposant sur le modèle objet, comme
+Qt ou Swing.
+\item Dans tous les cas, la programmation est longue, répétitive et, à de
+rares exceptions (TkInter ?), extrêmement verbeuse.
+\item Ceci est, a priori, dû à ce que Swing, GTK+, Qt et les autres bibliothèques
+reposent entièrement sur un modèle de widgets : des composants imbriqués
+les uns dans les autres de façon quasi-infinie, qu'on doit tous définir,
+paramétrer et placer manuellement. On parle d'ailleurs de widget toolkit
+pour définir les bibliothèques permettant de construire des interfaces
+graphiques.
+\end{itemize}
+
+\subsubsection*{Environnements de développement}
+
+Différents environnements de développement intégré (IDE) plus ou moins
+sophistiqués, tels que QtCreator/QtDesigner ou Glade, peuvent faciliter
+la création d'interfaces graphiques, mais il est toujours nécessaire
+de savoir coder et de comprendre l'API utilisé avant de pouvoir vraiment
+en tirer parti. 
+
+MacOS propose, avec XCode et différents outils comme Cocoa, une vision
+intéressante -> à développer.
+
+
+\subsubsection*{Portabilité}
+
+Qt est disponible en natif sur la plupart des systèmes d'exploitation
+existants, et notamment les systèmes embarqués, incluant Android,
+VxWorks ou encore BlackBerry OS. GTK+ lui n'est disponible que sur
+les systèmes de bureaux majeurs : Windows, MacOS, Linux/Unix.\\
+
+
+Swing offre une définition de la portabilité différente de celle de
+Qt et GTK+ : en effet, la bibliothèque n'est utilisable qu'en Java,
+mais celui-ci étant multiplateforme, Swing devient fonctionnel sur
+tout système sur lequel Java est disponible. En revanche il ne peut
+être utilisé qu'en java, alors que Qt et GTK+ disposent de \og bindings \fg{}
+vers de nombreux autres langages. Nativement, Qt est une bibliothèque
+C++, et dispose de bindings Java, Perl, Python, PHP ou encore Ruby.
+GTK+ est une bibliothèque C, disposant de bindings C++, Java, Perl,
+Python, PHP, et Ruby mais aussi C\# et Javascript ; GTK+ dispose même
+d'un binding Vala, un langage spécifiquement créé pour les développeurs
+de Gnome, basé sur C\# et qui compile vers C !\\
+
+
+Les éditeurs d'interfaces de GTK+ et Qt, respectivement Glade et QtDesigner,
+permettent d’enregistrer les interfaces créées sous forme de fichier
+XML. Le concept est intéressant puisqu'il permet de \og porter \fg{}
+une interface dans différents langages, sans avoir à modifier le code.
+Cela aide donc à séparer le fond et la forme du logiciel. Il existe
+par ailleurs des langages de descriptions d'interface graphique basés
+sur XML (XAML et XUL par exemple) -> à approfondir.
+
+
+\subsubsection*{Adaptation des interfaces à leur environnement}
+
+Les différents outils dédiés à la programmation d'interfaces graphiques,
+en particulier Swing, nous promettent souvent de s'adapter au \emph{look
+and feel} de l'environnement dans lequel l'application est exécutée.
+Si l'idée est bonne puisqu'elle permettrait aux programmeurs d'obtenir
+des applications parfaitement intégrées dans les différents OS sans
+avoir à faire quoique ce soit de particulier, le résultat est en pratique
+souvent aléatoire et rarement esthétique. {[}Screenshots{]}
+
+
+\paragraph{L'exemple particulier du HTML / CSS\protect \\
+}
+
+Bien que n'étant pas fait pour la création d'interfaces graphiques
+stricto sensu, le couple \textsc{html css }propose une approche intéressante
+de la conception d'une interface web : séparer le style de la description
+des éléments.
+
+Le but est ici de pouvoir afficher un même contenu sous différentes
+formes, par choix de l'utilisateur sur les sites qui le proposent,
+ou selon le support utilisé : un document \textsc{html} peut utiliser
+différentes feuilles de styles et définir laquelle sera utilisée selon
+le média sur lequel il sera affiché (grâce à l'attribut média de la
+balise style), et un document \texttt{\textsc{css}} peut lui-même
+choisir d'afficher un élément différemment selon le support, par exemple
+pour optimiser le rendu d'une page web à l'impression (\emph{media
+screen} lorsque la page est affichée par un navigateur, \emph{print}
+lorsqu'on veut l'imprimer).\\
+
+
+Néanmoins on a un problème similaire à celui des interfaces graphiques
+qui n'ont pas le même rendu sous différents environnements : tous
+les navigateurs n'interprètent pas le \textsc{css }de la même manière
+alors qu'ils le devraient.
+
+De plus, le concept de \og boites dans des boites \fg{} est toujours
+présent (les balises imbriquées du \textsc{html}).
+
+
+\subsubsection*{Performances}
+
+Si autrefois GTK+ était célèbre pour être plus rapide que Qt (ce qui
+apparemment était dû au vieux compilateur utilisé par Qt ?), les deux
+ont aujourd'hui des performances similaires que ce soit au niveau
+de la mémoire ou du CPU, ce n'est donc plus un critère pour les départager.
 
 
 \section{Outils à développer}

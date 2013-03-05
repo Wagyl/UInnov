@@ -553,10 +553,216 @@ Enfin, la bibliothèque peut permettre au développeur de modifier l'aspect
 Analyse de l'existant
 \end_layout
 
+\begin_layout Subsubsection*
+Difficultés de la programmation d'interfaces graphiques
+\end_layout
+
 \begin_layout Standard
-Analyse de Swing / GTK (qui ont évidement des problèmes insurmontables)
- ainsi que du couple HTML CSS et le concept intéressant de la séparation
- du style de la déclaration des objets.
+Programmer une interface graphique entièrement à la force du poignet n'est
+ guère agréable, pour différentes raisons :
+\end_layout
+
+\begin_layout Itemize
+Apprendre à programmer une interface graphique en utilisant l'une ou l'autre
+ API existante peut se révéler fastidieux et complexe.
+ En particulier, nous remarquerons que GTK+ tend à être plus laid et moins
+ intuitif que des bibliothèques reposant sur le modèle objet, comme Qt ou
+ Swing.
+\end_layout
+
+\begin_layout Itemize
+Dans tous les cas, la programmation est longue, répétitive et, à de rares
+ exceptions (TkInter ?), extrêmement verbeuse.
+\end_layout
+
+\begin_layout Itemize
+Ceci est, a priori, dû à ce que Swing, GTK+, Qt et les autres bibliothèques
+ reposent entièrement sur un modèle de widgets : des composants imbriqués
+ les uns dans les autres de façon quasi-infinie, qu'on doit tous définir,
+ paramétrer et placer manuellement.
+ On parle d'ailleurs de widget toolkit pour définir les bibliothèques permettant
+ de construire des interfaces graphiques.
+\end_layout
+
+\begin_layout Subsubsection*
+Environnements de développement
+\end_layout
+
+\begin_layout Standard
+Différents environnements de développement intégré (IDE) plus ou moins sophistiq
+ués, tels que QtCreator/QtDesigner ou Glade, peuvent faciliter la création
+ d'interfaces graphiques, mais il est toujours nécessaire de savoir coder
+ et de comprendre l'API utilisé avant de pouvoir vraiment en tirer parti.
+ 
+\end_layout
+
+\begin_layout Standard
+MacOS propose, avec XCode et différents outils comme Cocoa, une vision intéressa
+nte -> à développer.
+\end_layout
+
+\begin_layout Subsubsection*
+Portabilité
+\end_layout
+
+\begin_layout Standard
+Qt est disponible en natif sur la plupart des systèmes d'exploitation existants,
+ et notamment les systèmes embarqués, incluant Android, VxWorks ou encore
+ BlackBerry OS.
+ GTK+ lui n'est disponible que sur les systèmes de bureaux majeurs : Windows,
+ MacOS, Linux/Unix.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Swing offre une définition de la portabilité différente de celle de Qt et
+ GTK+ : en effet, la bibliothèque n'est utilisable qu'en Java, mais celui-ci
+ étant multiplateforme, Swing devient fonctionnel sur tout système sur lequel
+ Java est disponible.
+ En revanche il ne peut être utilisé qu'en java, alors que Qt et GTK+ disposent
+ de 
+\begin_inset Quotes fld
+\end_inset
+
+bindings
+\begin_inset Quotes frd
+\end_inset
+
+ vers de nombreux autres langages.
+ Nativement, Qt est une bibliothèque C++, et dispose de bindings Java, Perl,
+ Python, PHP ou encore Ruby.
+ GTK+ est une bibliothèque C, disposant de bindings C++, Java, Perl, Python,
+ PHP, et Ruby mais aussi C# et Javascript ; GTK+ dispose même d'un binding
+ Vala, un langage spécifiquement créé pour les développeurs de Gnome, basé
+ sur C# et qui compile vers C !
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les éditeurs d'interfaces de GTK+ et Qt, respectivement Glade et QtDesigner,
+ permettent d’enregistrer les interfaces créées sous forme de fichier XML.
+ Le concept est intéressant puisqu'il permet de 
+\begin_inset Quotes fld
+\end_inset
+
+porter
+\begin_inset Quotes frd
+\end_inset
+
+ une interface dans différents langages, sans avoir à modifier le code.
+ Cela aide donc à séparer le fond et la forme du logiciel.
+ Il existe par ailleurs des langages de descriptions d'interface graphique
+ basés sur XML (XAML et XUL par exemple) -> à approfondir.
+\end_layout
+
+\begin_layout Subsubsection*
+Adaptation des interfaces à leur environnement
+\end_layout
+
+\begin_layout Standard
+Les différents outils dédiés à la programmation d'interfaces graphiques,
+ en particulier Swing, nous promettent souvent de s'adapter au 
+\emph on
+look and feel
+\emph default
+ de l'environnement dans lequel l'application est exécutée.
+ Si l'idée est bonne puisqu'elle permettrait aux programmeurs d'obtenir
+ des applications parfaitement intégrées dans les différents OS sans avoir
+ à faire quoique ce soit de particulier, le résultat est en pratique souvent
+ aléatoire et rarement esthétique.
+ [Screenshots]
+\end_layout
+
+\begin_layout Paragraph
+L'exemple particulier du HTML / CSS
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bien que n'étant pas fait pour la création d'interfaces graphiques stricto
+ sensu, le couple 
+\shape smallcaps
+html css 
+\shape default
+propose une approche intéressante de la conception d'une interface web :
+ séparer le style de la description des éléments.
+\end_layout
+
+\begin_layout Standard
+Le but est ici de pouvoir afficher un même contenu sous différentes formes,
+ par choix de l'utilisateur sur les sites qui le proposent, ou selon le
+ support utilisé : un document 
+\shape smallcaps
+html
+\shape default
+ peut utiliser différentes feuilles de styles et définir laquelle sera utilisée
+ selon le média sur lequel il sera affiché (grâce à l'attribut média de
+ la balise style), et un document 
+\family typewriter
+\shape smallcaps
+css
+\family default
+\shape default
+ peut lui-même choisir d'afficher un élément différemment selon le support,
+ par exemple pour optimiser le rendu d'une page web à l'impression (
+\emph on
+media screen
+\emph default
+ lorsque la page est affichée par un navigateur, 
+\emph on
+print
+\emph default
+ lorsqu'on veut l'imprimer).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Néanmoins on a un problème similaire à celui des interfaces graphiques qui
+ n'ont pas le même rendu sous différents environnements : tous les navigateurs
+ n'interprètent pas le 
+\shape smallcaps
+css 
+\shape default
+de la même manière alors qu'ils le devraient.
+\end_layout
+
+\begin_layout Standard
+De plus, le concept de 
+\begin_inset Quotes fld
+\end_inset
+
+boites dans des boites
+\begin_inset Quotes frd
+\end_inset
+
+ est toujours présent (les balises imbriquées du 
+\shape smallcaps
+html
+\shape default
+).
+\end_layout
+
+\begin_layout Subsubsection*
+Performances
+\end_layout
+
+\begin_layout Standard
+Si autrefois GTK+ était célèbre pour être plus rapide que Qt (ce qui apparemment
+ était dû au vieux compilateur utilisé par Qt ?), les deux ont aujourd'hui
+ des performances similaires que ce soit au niveau de la mémoire ou du CPU,
+ ce n'est donc plus un critère pour les départager.
 \end_layout
 
 \begin_layout Section
