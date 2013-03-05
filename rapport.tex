@@ -27,8 +27,9 @@
 
 \subsubsection*{Qui sont les utilisateurs ?}
 \begin{itemize}
-\item Deux catégories : nous utiliserons suivante afin de distinguer les
-deux catégories d'utilisateurs : utilisateur application, et programmeur.
+\item Deux catégories : nous utiliserons la terminologie suivante afin de
+distinguer les deux catégories d'utilisateurs : utilisateur application,
+et programmeur.
 \item Dans les deux cas, il faut avoir une approche orientée utilisateur,
 les besoins seront différents, mais l'approche à adopter la même. 
 \item Utilisateur application : il faut prendre en compte à la fois l'aspect
@@ -70,7 +71,7 @@ commises lors d'un test.
 \item Programmation intuitive.
 \item Bonne expressivité - ne pas avoir un code verbeux à produire (capacité
 d'adaptation au support etc etc ?).
-\item Typage fort - sureté.
+\item Typage fort - sûreté.
 \item Debugging aisé - analyse de pertinence (détecter le maximum d'absurdités)
 \item Intégration aux IDE populaires ? Création d'un IDE ?
 \end{itemize}
@@ -168,22 +169,29 @@ en avoir besoin pour le modèle relationnel présenté dessous.
 
 \subsection{Le modèle relationnel}
 
-Les librairies d'interfaces graphiques populaires ne fournissent pas
-de moyen haut-niveau de décrire les relations entre les différents
-éléments de l'interface utilisateur. Seule une relation de parenté
-purement liée au placement des objets les uns dans les autres (le
-contenant est automatiquement parent du contenu) est possible, tout
-autre système de mise en relation entre les éléments n'est pas directement
-supporté. 
+Les différents élément d'une interface utilisateur doivent être mis
+en relation les uns avec les autres afin de former un tout cohérent.
+Le principe le plus basique, qui est celui du modèle à widget evoqué
+dans la partie 2, est de ne considérer qu'une seule relation : la
+relation de parenté entre le contenant et le contenu.
 
 Il serait cependant intéressant de pouvoir définir plus finement les
 relations entre ces différents éléments, plus précisément, l'idée
 serait de ne pas avoir à décrire l'emplacement d'un élément par rapport
-à un autre dans le ''code principal'' mais juste les relations entre
-ces éléments, un peu à la manière du couple HTML / CSS, une ''feuille
-style'' dépendant du support / des préférences de l'utilisateur application
-/ du système (cf. langages intermédiaires) se charge d'associer une
-relation à un emplacement / visuel / un lien.
+à un autre, mais plutôt les relations entre ces éléments, un peu à
+la manière du couple HTML / CSS.
+
+Un premier exemple de relation autre qu'une relation de parenté est
+la relantion \og menu \fg{} qui est, à un niveau basique, présente
+dans Swing : pour certains éléments il est possible de définir un
+menu sans avoir à spécifier que ce dernier est contenu dans l'élément
+demandeur. Il y a une relation de \og menu \fg{} entre ces deux
+éléments et non une relation directe de positionnement.
+
+Ce modèle a pour but de permettre à l'interface produite de s'adapter
+à son environnement d'utilisation. De plus, une analyse statique de
+la cohérence d'une interface pourrait certainement se faire à partir
+d'un tel modèle (rélféxion en cours).
 
 
 \subsection{Langages intermédiaires}
