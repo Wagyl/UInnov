@@ -1,0 +1,456 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Projet de Programmation Comparée : 
+\begin_inset Quotes sld
+\end_inset
+
+Interfaces Utilisateurs
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Qu'est ce qu'une interface utilisateur et comment en programmer
+\end_layout
+
+\begin_layout Subsection
+Définition des concepts liés à la notion d'interface utilisateur
+\end_layout
+
+\begin_layout Subsubsection*
+Qui sont les utilisateurs ?
+\end_layout
+
+\begin_layout Itemize
+Deux catégories : nous utiliserons suivante afin de distinguer les deux
+ catégories d'utilisateurs : utilisateur application, et programmeur.
+\end_layout
+
+\begin_layout Itemize
+Dans les deux cas, il faut avoir une approche orientée utilisateur, les
+ besoins seront différents, mais l'approche à adopter la même.
+ 
+\end_layout
+
+\begin_layout Itemize
+Utilisateur application : il faut prendre en compte à la fois l'aspect sensoriel
+ (visuel si écran il y a) et l'aspect 
+\begin_inset Quotes eld
+\end_inset
+
+contrôle
+\begin_inset Quotes erd
+\end_inset
+
+ (gestion des périphériques d'entrée).
+\end_layout
+
+\begin_layout Itemize
+Intéraction utilisateur application - programme : plusieurs 
+\begin_inset Quotes eld
+\end_inset
+
+niveaux
+\begin_inset Quotes erd
+\end_inset
+
+ de compétences parmi les utilisateurs avec des besoins différents.
+\end_layout
+
+\begin_layout Subsubsection*
+Conception - génie logiciel
+\end_layout
+
+\begin_layout Standard
+Utilisation de la conception centrée utilisateur qui est un modèle itératif.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Analyse :
+\series default
+ analyse des besoins, un panel représentatif d'utilisateurs des deux catégories
+ concernées doit être constitué afin d'établir les dits besoins.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Conception :
+\series default
+ un prototype doit être conçu en fonction des besoins établis à l'étape
+ précédente.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Evaluation :
+\series default
+ sur la base du prototype réalisé, une évaluation est faite.
+ Le procédé étant itératif, cette évaluation servira de base à la modification
+ des besoins de la première étape.
+ 
+\end_layout
+
+\begin_layout Itemize
+Il faut établir des 
+\begin_inset Quotes eld
+\end_inset
+
+topic
+\begin_inset Quotes erd
+\end_inset
+
+ d'évaluation - besoins, les deux sont liés : 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pour l'utilisateur application :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vitesse d'apprentissage - aide nécessaire / intégrée - nombre d'erreurs
+ commises lors d'un test.
+\end_layout
+
+\begin_layout Itemize
+Correction des erreurs.
+\end_layout
+
+\begin_layout Itemize
+Temps de réponse.
+\end_layout
+
+\begin_layout Itemize
+Efficacité - navigation rapide ?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Pour le programmeur :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Programmation intuitive.
+\end_layout
+
+\begin_layout Itemize
+Bonne expressivité - ne pas avoir un code verbeux à produire (capacité d'adaptat
+ion au support etc etc ?).
+\end_layout
+
+\begin_layout Itemize
+Typage fort - sûreté.
+\end_layout
+
+\begin_layout Itemize
+Debugging aisé - analyse de pertinence (détecter le maximum d'absurdités)
+\end_layout
+
+\begin_layout Itemize
+Intégration aux IDE populaires ? Création d'un IDE ?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Les outils : 
+\series default
+des outils du génie logiciel peuvent nous aider à l'intérieur des phases
+ décrites précédement :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Scénarios / diagrammes de cas d'utilisation : à la fois pour établir les
+ besoins et faire l'évaluation au niveau de l'utilisateur application.
+ Peut aussi être utilisé pour le côté programmeur bien que le point suivant
+ me semble être plus approprié.
+\end_layout
+
+\begin_layout Itemize
+Diagrammes relationnels - diagrammes de classes : relations entre les différents
+ objets de l'interface, est utile dans la phase de conception pour 
+\begin_inset Quotes eld
+\end_inset
+
+se mettre à la place
+\begin_inset Quotes erd
+\end_inset
+
+ du programmeur.
+\end_layout
+
+\begin_layout Itemize
+Design pattern : beaucoup d'interfaces utilisateurs utilisent des principes
+ similaires d'intéraction avec l'utilisateur, l'implémentation 
+\begin_inset Quotes eld
+\end_inset
+
+native
+\begin_inset Quotes erd
+\end_inset
+
+ de comportements génériques peut être pratique.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Division du travail
+\end_layout
+
+\begin_layout Standard
+La conception d'une interface graphique par dessus un moteur d'application
+ peut se diviser en quatre parties qui devraient demeurer indépendantes
+ le plus possible.
+\end_layout
+
+\begin_layout Itemize
+Communication entre le moteur et l'interface :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Affichage : ensemble des données du moteur affichées (sous diverse forme)
+ par l'interface ;
+\end_layout
+
+\begin_layout Itemize
+Actions : ensemble des actions de l'utilisateur modifiant l'état du moteur.
+ Tout élément de l'interface permettant d'agir sur le moteur devrait être
+ lié à une 
+\begin_inset Quotes sld
+\end_inset
+
+Action
+\begin_inset Quotes srd
+\end_inset
+
+.
+ Une même Action doit pouvoir être effectuée par différents éléments d'une
+ interface, et par différentes interfaces.
+\end_layout
+
+\begin_layout Standard
+Cette section doit être indépendante de l'interface finale (éléments, aspect,
+ etc) et de la plateforme.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Éléments de l'interface ; dépendant de la plateforme, lié à la partie précédente.
+\end_layout
+
+\begin_layout Itemize
+Personnalisation des éléments : positionnement, taille, aspect...
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Une telle configuration est évidemment dépendante de la partie précédente.
+\end_layout
+
+\begin_layout Standard
+Certains paramètres de cette configuration doivent pouvoir être modifiés
+ par l'utilisateur final.
+\end_layout
+
+\begin_layout Standard
+Ces configurations doivent pouvoir être enregistrées et s'échanger facilement.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Aspect général.
+\end_layout
+
+\begin_layout Section
+Analyse de l'existant
+\end_layout
+
+\begin_layout Standard
+Analyse de Swing / GTK (qui ont évidement des problèmes insurmontables)
+ ainsi que du couple HTML CSS et le concept intéressant de la séparation
+ du style de la déclaration des objets.
+\end_layout
+
+\begin_layout Section
+Outils à développer
+\end_layout
+
+\begin_layout Subsection
+Bindings
+\end_layout
+
+\begin_layout Standard
+Liaison d'une propriété d'un élément de l'interface graphique à une valeur
+ du moteur de l'application : par exemple, la 
+\begin_inset Quotes sld
+\end_inset
+
+clickabilité
+\begin_inset Quotes srd
+\end_inset
+
+ (oui) d'un bouton à un booléen, le champs d'un label à une chaîne de caractères
+, la valeur d'un curseur à une valeur du moteur logique, le contenu d'un
+ panel à une image...
+\end_layout
+
+\begin_layout Standard
+La liaison doit être effective dans les deux sens : le changement du champs
+ du label par l'utilisateur doit modifier la valeur de la chaîne de caractère,
+ tout changement tiers de la valeur doit être répercuté dans le label de
+ l'interface.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution : la librairie fournit à l'intention du moteur de l'application
+ des classes pour des types simples comprenant un pattern observer à destination
+ des éléments de l'interface.
+ 
+\end_layout
+
+\begin_layout Subsection
+Actions
+\end_layout
+
+\begin_layout Standard
+Je prépare juste la sous-section des actions car je vais certainement en
+ avoir besoin pour le modèle relationnel présenté dessous.
+\end_layout
+
+\begin_layout Subsection
+Le modèle relationnel
+\end_layout
+
+\begin_layout Standard
+Les librairies d'interfaces graphiques populaires ne fournissent pas de
+ moyen haut-niveau de décrire les relations entre les différents éléments
+ de l'interface utilisateur.
+ Seule une relation de parenté purement liée au placement des objets les
+ uns dans les autres (le contenant est automatiquement parent du contenu)
+ est possible, tout autre système de mise en relation entre les éléments
+ n'est pas directement supporté.
+ 
+\end_layout
+
+\begin_layout Standard
+Il serait cependant intéressant de pouvoir définir plus finement les relations
+ entre ces différents éléments, plus précisement, l'idée serait de ne pas
+ avoir à décrire l'emplacement d'un élément par rapport à un autre dans
+ le 
+\begin_inset Quotes sld
+\end_inset
+
+code principal
+\begin_inset Quotes srd
+\end_inset
+
+ mais juste les relations entre ces éléments, un peu à la manière du couple
+ HTML / CSS, une 
+\begin_inset Quotes sld
+\end_inset
+
+feuile style
+\begin_inset Quotes srd
+\end_inset
+
+ dépendant du support / des préférences de l'utilisateur application / du
+ système (cf.
+ langages intermédiaires) se charge d'associer une relation à un emplacement
+ / visuel / un lien.
+\end_layout
+
+\begin_layout Subsection
+Langages intermédiaires
+\end_layout
+
+\begin_layout Standard
+Plus approprié ici, à compléter entre autre quand l'idée d'un interpréteur
+ pour le visuel de l'interface aura été tranchée.
+\end_layout
+
+\end_body
+\end_document
