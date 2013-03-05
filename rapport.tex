@@ -26,6 +26,9 @@
 
 
 \subsubsection*{Qui sont les utilisateurs ?}
+
+Avant toute analyse ou réflexion, il est important de définir qui
+sont les utilisateurs du système considéré.
 \begin{itemize}
 \item Deux catégories : nous utiliserons la terminologie suivante afin de
 distinguer les deux catégories d'utilisateurs : utilisateur application,
@@ -41,20 +44,32 @@ de compétences parmi les utilisateurs avec des besoins différents.
 
 \subsubsection*{Conception - génie logiciel}
 
-Utilisation de la conception centrée utilisateur qui est un modèle
-itératif.
+La conception d'une interface utilisateur doit être centrée autour
+des deux catégories d'acteurs définies précédemment, l'utilisation
+du modèle de conception centré utilisateur semble alors tout à fait
+correspondre aux besoins.
+
+Ce dernier est itératif, chaque itération étant composée des trois
+phases suivantes :
 \begin{itemize}
-\item \textbf{Analyse :} analyse des besoins, un panel représentatif d'utilisateurs
-des deux catégories concernées doit être constitué afin d'établir
-les dits besoins.
+\item \textbf{Analyse :} on analyse les besoins des acteurs du système,
+un panel représentatif d'utilisateurs des deux catégories concernées
+doit être constitué afin d'établir les dits besoins.
 \item \textbf{Conception :} un prototype doit être conçu en fonction des
-besoins établis à l'étape précédente.
+besoins établis à l'étape précédente. Chaque prototype servira le
+plus souvent de base à celui à l'étape suivante
 \item \textbf{Évaluation :} sur la base du prototype réalisé, une évaluation
 est faite. Le procédé étant itératif, cette évaluation servira de
-base à la modification des besoins de la première étape. 
-\item Il faut établir des ``topic'' d'évaluation - besoins, les deux sont
-liés : 
-
+base à la modification des besoins de la première étape de l'itération
+suivante. 
+\end{itemize}
+Afin de mener à bien ces trois phases, il est nécessaire d'établir
+des critères d'évaluation qui serviront aussi de base à l'élaboration
+des besoins. L'utilisateur application doit être pris en compte même
+s'il sera la cible du système développé par le programmeur et non
+directement la cible du notre. Ses besoins doivent nous permettre
+de mieux déterminer ce dont ont besoin les programmeurs pour satisfaire
+aux exigences des utilisateurs application.
 \begin{itemize}
 \item Pour l'utilisateur application :
 
@@ -75,21 +90,26 @@ d'adaptation au support etc etc ?).
 \item Debugging aisé - analyse de pertinence (détecter le maximum d'absurdités)
 \item Intégration aux IDE populaires ? Création d'un IDE ?
 \end{itemize}
-\end{itemize}
-\item \textbf{Les outils : }des outils du génie logiciel peuvent nous aider
-à l'intérieur des phases décrites précédemment :
+\item \textbf{Les outils :} tout au long de ce processus de conception,
+des outils du génie logiciel vont nous aider.
 
 \begin{itemize}
-\item Scénarios / diagrammes de cas d'utilisation : à la fois pour établir
-les besoins et faire l'évaluation au niveau de l'utilisateur application.
-Peut aussi être utilisé pour le côté programmeur bien que le point
-suivant me semble être plus approprié.
-\item Diagrammes relationnels - diagrammes de classes : relations entre
-les différents objets de l'interface, est utile dans la phase de conception
-pour ``se mettre à la place'' du programmeur.
-\item Design pattern : beaucoup d'interfaces utilisateurs utilisent des
-principes similaires d’interaction avec l'utilisateur, l'implémentation
-``native'' de comportements génériques peut être pratique.
+\item Scénarios / diagrammes de cas d'utilisation : leur utilisation, combinée
+aux critères mis en place ci-dessus, nous permettra à la fois d'établir
+les besoins et d'effectuer des tests choisis dans le cadre de l'évaluation. 
+\item Diagrammes relationnels - diagrammes de classes : même si elle ne
+doit pas nous aveugler, la programmation orientée objet est adaptée
+au sujet. La réflexion à mener quant à l'organisation du système considéré
+se prête remarquablement bien à l'utilisation de ces outils. De plus,
+ils nous permettent, à un autre niveau, de nous mettre à la place
+du programmeur qui devra concevoir une interface en utilisant notre
+système.
+\item Design pattern : l'implémentation ``native'' de comportements génériques,
+typiquement pour les interactions entre l'utilisateur application
+et l'interface créée, permet à la fois de faciliter l'utilisation
+de notre système par le programmeur mais aussi d'établir un cadre
+sûr pour les les dites interactions. La partie 3.1 de ce rapport est
+un exemple de ce principe.
 \end{itemize}
 \end{itemize}
 
@@ -196,21 +216,45 @@ interface moderne.
 
 \subsection{Bindings}
 
-Liaison d'une propriété d'un élément de l'interface graphique à une
-valeur du moteur de l'application : par exemple, la ''clickabilité''
-(oui) d'un bouton à un booléen, le champs d'un label à une chaîne
-de caractères, la valeur d'un curseur à une valeur du moteur logique,
-le contenu d'un panel à une image...
-
-La liaison doit être effective dans les deux sens : le changement
-du champs du label par l'utilisateur doit modifier la valeur de la
-chaîne de caractère, tout changement tiers de la valeur doit être
-répercuté dans le label de l'interface.\\
+Très souvent, l'intervention de l'utilisateur modifie des valeurs
+internes au moteur de l'application ; parfois néanmoins, l'inverse
+peut être également utile : la modification d'une valeur du moteur
+de l'application modifie l'état d'un élément de l'interface. Il s'agit
+alors de modéliser efficacement la liaison d'une propriété d'un élément
+graphique à une valeur de la logique interne de l'application.\\
 
 
-Solution : la librairie fournit à l'intention du moteur de l'application
-des classes pour des types simples comprenant un pattern observer
-à destination des éléments de l'interface. 
+Voici quelques exemples qui pourraient se révéler utiles au développement
+d'une interface :
+\begin{itemize}
+\item progression d'une opération affichée par une barre de progression
+;
+\item possibilité d'effectuer une action liée à un booléen, impliquant l'apparence
+des éléments graphiques qui lui sont liés (actifs ou non) ;
+\item champs d'un label liée à une chaîne de caractère, position d'un curseur
+liée à une valeur numérique ;
+\item contenu d'un panneau lié à une image dynamiquement déterminée par
+le moteur applicatif.\\
+
+\end{itemize}
+Si l’élément graphique peut être édité par l'utilisateur, la liaison
+doit être effective dans les deux sens : le changement du champs du
+label par l'utilisateur doit modifier la valeur de la chaîne de caractère
+en interne, tout autre changement de la valeur doit être immédiatement
+répercuté dans l'affichage, comme dans le cas de la barre d'url des
+navigateurs internet (qui est évidemment actualisé en cas de redirection,
+ou si l'utilisateur utilise un autre moyen pour parvenir sur un page
+web).\\
+
+
+À cette fin, la librairie graphique peut proposer des représentations
+des types simples \og pertinents \fg{} comprenant un pattern observer
+à destination des éléments de l'interface ; la liaison d'une propriété
+graphique à la valeur deviendrait alors immédiate et transparente
+pour le développeur. 
+
+L'inconvénient est que le moteur de l'application doit alors utiliser
+la librairie graphique pour implémenter de telles valeurs.
 
 
 \subsection{Le modèle relationnel}
