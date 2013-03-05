@@ -532,17 +532,6 @@ Je prépare juste la sous-section des actions car je vais certainement en
 \end_layout
 
 \begin_layout Subsection
-Les langages intermédiaires
-\end_layout
-
-\begin_layout Standard
-Pareil que pour les actions.
- Peut-être sera-t-il plus approprié de le mettre après le modèle relationnel
- ...
- à voir.
-\end_layout
-
-\begin_layout Subsection
 Le modèle relationnel
 \end_layout
 
@@ -582,6 +571,15 @@ feuile style
  système (cf.
  langages intermédiaires) se charge d'associer une relation à un emplacement
  / visuel / un lien.
+\end_layout
+
+\begin_layout Subsection
+Langages intermédiaires
+\end_layout
+
+\begin_layout Standard
+Plus approprié ici, à compléter entre autre quand l'idée d'un interpréteur
+ pour le visuel de l'interface aura été tranchée.
 \end_layout
 
 \end_body
