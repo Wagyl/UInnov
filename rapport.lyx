@@ -5,7 +5,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language french
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -43,18 +43,11 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2cm
-\topmargin 2cm
-\rightmargin 2cm
-\bottommargin 2cm
-\headheight 2cm
-\headsep 2cm
-\footskip 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language swedish
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
