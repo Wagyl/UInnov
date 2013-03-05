@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose}
 \usepackage{babel}
@@ -286,6 +286,30 @@ d'un tel modèle (réflexion en cours).
 
 \subsection{Langages intermédiaires}
 
-Plus approprié ici, à compléter entre autre quand l'idée d'un interpréteur
-pour le visuel de l'interface aura été tranchée.
+Le système a vocation à être porté sur différents langages de programmation;
+l'utilisation de langages intermédiaires, propres au dit système,
+permet entre autre une portabilité intéressante. Deux langages intermédiaires
+sont introduit à cet effet :
+\begin{itemize}
+\item Style de l'interface : notre solution à base de modèle relationnel
+doit être complétée, afin d'obtenir l'adaptativité recherchée, d'une
+déclaration de style dont le rôle est de traduire les relations entre
+les composants en une présentation graphique adaptée au support. Ceci
+nécessite d'une part l'élaboration d'un langage intermédiaire servant
+à décrire cette traduction et d'autre part la réalisation d'un interpréteur
+du dit langage. L'utilisation d'une telle architecture permet à la
+fois d'avoir un comportement par défaut propre à chaque support, mais
+peut aussi permettre au programmeur d’établir une charte graphique
+pour toutes ses applications, et ce sans avoir à s'en préoccuper à
+chaque nouveau projet.
+\item Structure de l'interface : une autre volonté de notre part est de
+permettre la sauvegarde de la structure d'une interface. Avoir une
+description de ladite structure non liée à langage source permet une
+réutilisation intéressante sur différents projets. La difficulté d'une
+telle représentation se situe au niveau des interactions entre le
+moteur de l'application et l'interface utilisateur, cependant le modèle
+d'actions est adapté à cette démarche (cette partie est encore floue,
+nous sommes encore en phase de réflexion quant à la faisabilité et
+la pertinence de la chose).\end{itemize}
+
 \end{document}
