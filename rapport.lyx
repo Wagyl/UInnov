@@ -349,6 +349,131 @@ Outils à développer
 \end_layout
 
 \begin_layout Subsection
+Actions
+\end_layout
+
+\begin_layout Standard
+Une librairie graphique se doit de fournir une représentation des 
+\emph on
+actions
+\emph default
+ que l'utilisateur peut accomplir.
+ Fondamentalement, il s'agit d'une fonction qui a accès au moteur de l'applicati
+on, contrairement à l'interface proprement dite, mais d'autres mécanismes
+ internes s'y greffent.
+\end_layout
+
+\begin_layout Standard
+Ces 
+\emph on
+actions
+\emph default
+ sont indépendantes des éléments graphiques concrets qui l'implémentent,
+ et donc en particulier de la plateforme sur laquelle tourne l'interface
+ utilisateur.
+\end_layout
+
+\begin_layout Standard
+Toute intervention de l'utilisateur final sur le système de l'application
+ doit passer par une 
+\emph on
+action
+\emph default
+ telle que définie par la librairie.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Deux principes nous guident :
+\end_layout
+
+\begin_layout Itemize
+La façon dont l'utilisateur accomplit cette action n'a aucune importance
+ ; l'action n'a pas besoin de savoir qu'elle a été déclenchée par un bouton,
+ une entrée de menu, un raccourci clavier, une commande vocale, ou même
+ comme conséquence automatique d'une autre action.
+\end_layout
+
+\begin_layout Itemize
+Tous les paramètres des éléments graphiques liés à une action doivent être
+ 
+\begin_inset Quotes fld
+\end_inset
+
+transférés
+\begin_inset Quotes frd
+\end_inset
+
+ à l'action si possible, tels que :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+les raccourcis claviers, noms, descriptions, textes d'aide ou icônes associés
+ à une action ;
+\end_layout
+
+\begin_layout Itemize
+la possibilité d'accomplir l'action (qui déterminera si le bouton ou l'entrée
+ de menu sont actifs ou non, par exemple).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ce mécanisme d'action fourni par la librairie graphique doit être doté d'un
+ pattern 
+\begin_inset Quotes fld
+\end_inset
+
+observer
+\begin_inset Quotes frd
+\end_inset
+
+, permettant à d'autres éléments d'être notifié du déclenchement de l'action.
+\end_layout
+
+\begin_layout Standard
+Les actions doivent pouvoir être aisément composées, afin de permettre au
+ développeur de n’implémenter que les interactions minimales avec son système,
+ tout en proposant à l'utilisateur final des fonctionnalités simples autant
+ qu'avancés, résultant éventuellement de combinaisons complexes de ces briques
+ de base.
+\end_layout
+
+\begin_layout Standard
+Enfin, les actions effectuées doivent pouvoir être enregistrées, afin d'en
+ conserver un historique.
+ Idéalement, si chaque action dispose également d'une fonction 
+\begin_inset Quotes fld
+\end_inset
+
+inverse
+\begin_inset Quotes frd
+\end_inset
+
+ permettant d'annuler ses effets, la bibliothèque graphique peut fournir
+ elle-même la fonctionnalité 
+\begin_inset Quotes fld
+\end_inset
+
+undo / redo
+\begin_inset Quotes frd
+\end_inset
+
+, aujourd'hui devenue indispensable à toute interface moderne.
+\end_layout
+
+\begin_layout Subsection
 Bindings
 \end_layout
 
@@ -386,22 +511,13 @@ Solution : la librairie fournit à l'intention du moteur de l'application
 \end_layout
 
 \begin_layout Subsection
-Actions
-\end_layout
-
-\begin_layout Standard
-Je prépare juste la sous-section des actions car je vais certainement en
- avoir besoin pour le modèle relationnel présenté dessous.
-\end_layout
-
-\begin_layout Subsection
 Le modèle relationnel
 \end_layout
 
 \begin_layout Standard
 Les différents élément d'une interface utilisateur doivent être mis en relation
  les uns avec les autres afin de former un tout cohérent.
- Le principe le plus basique, qui est celui du modèle à widget evoqué dans
+ Le principe le plus basique, qui est celui du modèle à widget évoqué dans
  la partie 2, est de ne considérer qu'une seule relation : la relation de
  parenté entre le contenant et le contenu.
 \end_layout
@@ -415,7 +531,7 @@ Il serait cependant intéressant de pouvoir définir plus finement les relations
 \end_layout
 
 \begin_layout Standard
-Un premier exemple de relation autre qu'une relation de parenté est la relantion
+Un premier exemple de relation autre qu'une relation de parenté est la relation
  
 \begin_inset Quotes fld
 \end_inset
@@ -442,7 +558,7 @@ menu
 Ce modèle a pour but de permettre à l'interface produite de s'adapter à
  son environnement d'utilisation.
  De plus, une analyse statique de la cohérence d'une interface pourrait
- certainement se faire à partir d'un tel modèle (rélféxion en cours).
+ certainement se faire à partir d'un tel modèle (réflexion en cours).
 \end_layout
 
 \begin_layout Subsection
