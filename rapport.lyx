@@ -84,6 +84,11 @@ Définition des concepts liés à la notion d'interface utilisateur
 Qui sont les utilisateurs ?
 \end_layout
 
+\begin_layout Standard
+Avant toute analyse ou réflexion, il est important de définir qui sont les
+ utilisateurs du système considéré.
+\end_layout
+
 \begin_layout Itemize
 Deux catégories : nous utiliserons la terminologie suivante afin de distinguer
  les deux catégories d'utilisateurs : utilisateur application, et programmeur.
@@ -125,7 +130,15 @@ Conception - génie logiciel
 \end_layout
 
 \begin_layout Standard
-Utilisation de la conception centrée utilisateur qui est un modèle itératif.
+La conception d'une interface utilisateur doit être centrée autour des deux
+ catégories d'acteurs définies précédemment, l'utilisation du modèle de
+ conception centré utilisateur semble alors tout à fait correspondre aux
+ besoins.
+\end_layout
+
+\begin_layout Standard
+Ce dernier est itératif, chaque itération étant composée des trois phases
+ suivantes :
 \end_layout
 
 \begin_layout Itemize
@@ -133,8 +146,9 @@ Utilisation de la conception centrée utilisateur qui est un modèle itératif.
 \series bold
 Analyse :
 \series default
- analyse des besoins, un panel représentatif d'utilisateurs des deux catégories
- concernées doit être constitué afin d'établir les dits besoins.
+ on analyse les besoins des acteurs du système, un panel représentatif d'utilisa
+teurs des deux catégories concernées doit être constitué afin d'établir
+ les dits besoins.
 \end_layout
 
 \begin_layout Itemize
@@ -144,6 +158,7 @@ Conception :
 \series default
  un prototype doit être conçu en fonction des besoins établis à l'étape
  précédente.
+ Chaque prototype servira le plus souvent de base à celui à l'étape suivante
 \end_layout
 
 \begin_layout Itemize
@@ -153,23 +168,20 @@ Conception :
 \series default
  sur la base du prototype réalisé, une évaluation est faite.
  Le procédé étant itératif, cette évaluation servira de base à la modification
- des besoins de la première étape.
+ des besoins de la première étape de l'itération suivante.
  
 \end_layout
 
-\begin_layout Itemize
-Il faut établir des 
-\begin_inset Quotes eld
-\end_inset
-
-topic
-\begin_inset Quotes erd
-\end_inset
-
- d'évaluation - besoins, les deux sont liés : 
+\begin_layout Standard
+Afin de mener à bien ces trois phases, il est nécessaire d'établir des critères
+ d'évaluation qui serviront aussi de base à l'élaboration des besoins.
+ L'utilisateur application doit être pris en compte même s'il sera la cible
+ du système développé par le programmeur et non directement la cible du
+ notre.
+ Ses besoins doivent nous permettre de mieux déterminer ce dont ont besoin
+ les programmeurs pour satisfaire aux exigences des utilisateurs application.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 Pour l'utilisateur application :
 \end_layout
@@ -220,40 +232,34 @@ Intégration aux IDE populaires ? Création d'un IDE ?
 \end_layout
 
 \end_deeper
-\end_deeper
 \begin_layout Itemize
 
 \series bold
-Les outils : 
+Les outils :
 \series default
-des outils du génie logiciel peuvent nous aider à l'intérieur des phases
- décrites précédemment :
+ tout au long de ce processus de conception, des outils du génie logiciel
+ vont nous aider.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Scénarios / diagrammes de cas d'utilisation : à la fois pour établir les
- besoins et faire l'évaluation au niveau de l'utilisateur application.
- Peut aussi être utilisé pour le côté programmeur bien que le point suivant
- me semble être plus approprié.
+Scénarios / diagrammes de cas d'utilisation : leur utilisation, combinée
+ aux critères mis en place ci-dessus, nous permettra à la fois d'établir
+ les besoins et d'effectuer des tests choisis dans le cadre de l'évaluation.
+ 
 \end_layout
 
 \begin_layout Itemize
-Diagrammes relationnels - diagrammes de classes : relations entre les différents
- objets de l'interface, est utile dans la phase de conception pour 
-\begin_inset Quotes eld
-\end_inset
-
-se mettre à la place
-\begin_inset Quotes erd
-\end_inset
-
- du programmeur.
+Diagrammes relationnels - diagrammes de classes : même si elle ne doit pas
+ nous aveugler, la programmation orientée objet est adaptée au sujet.
+ La réflexion à mener quant à l'organisation du système considéré se prête
+ remarquablement bien à l'utilisation de ces outils.
+ De plus, ils nous permettent, à un autre niveau, de nous mettre à la place
+ du programmeur qui devra concevoir une interface en utilisant notre système.
 \end_layout
 
 \begin_layout Itemize
-Design pattern : beaucoup d'interfaces utilisateurs utilisent des principes
- similaires d’interaction avec l'utilisateur, l'implémentation 
+Design pattern : l'implémentation 
 \begin_inset Quotes eld
 \end_inset
 
@@ -261,7 +267,11 @@ native
 \begin_inset Quotes erd
 \end_inset
 
- de comportements génériques peut être pratique.
+ de comportements génériques, typiquement pour les interactions entre l'utilisat
+eur application et l'interface créée, permet à la fois de faciliter l'utilisatio
+n de notre système par le programmeur mais aussi d'établir un cadre sûr
+ pour les les dites interactions.
+ La partie 3.1 de ce rapport est un exemple de ce principe.
 \end_layout
 
 \end_deeper
