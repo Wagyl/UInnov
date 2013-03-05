@@ -762,11 +762,11 @@ Debugging
 
 \begin_layout Standard
 Le debugging des interfaces graphiques est particulièrement peu aisé, et
- aucun outils n'offre d'analyse statique qui permettrait de détecter 
+ aucun outil n'offre d'analyse statique qui permettrait de détecter 
 \emph on
 a priori
 \emph default
- qu'un élément est invisible ou inatteignable.
+ qu'un élément est invisible ou inaccessible.
  Cette difficulté n'est pas seulement dépendante de la bibliothèque utilisée,
  mais aussi et surtout du nombre d'interactions possibles avec l'interface,
  et de séquencements possibles.

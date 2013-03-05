@@ -328,12 +328,9 @@ Le but est ici de pouvoir afficher un même contenu sous différentes
 formes, par choix de l'utilisateur sur les sites qui le proposent,
 ou selon le support utilisé : un document \textsc{html} peut utiliser
 différentes feuilles de styles et définir laquelle sera utilisée selon
-le média sur lequel il sera affiché (grâce à l'attribut média de la
-balise style), et un document \texttt{\textsc{css}} peut lui-même
-choisir d'afficher un élément différemment selon le support, par exemple
-pour optimiser le rendu d'une page web à l'impression (\emph{media
-screen} lorsque la page est affichée par un navigateur, \emph{print}
-lorsqu'on veut l'imprimer).\\
+le média sur lequel il sera affiché, et un document \texttt{\textsc{css}}
+peut lui-même choisir d'afficher un élément différemment selon le
+support, par exemple pour optimiser le rendu d'une page web à l'impression.\\
 
 
 Néanmoins on a un problème similaire à celui des interfaces graphiques
@@ -351,6 +348,27 @@ Si autrefois GTK+ était célèbre pour être plus rapide que Qt (ce qui
 apparemment était dû au vieux compilateur utilisé par Qt ?), les deux
 ont aujourd'hui des performances similaires que ce soit au niveau
 de la mémoire ou du CPU, ce n'est donc plus un critère pour les départager.
+
+
+\subsubsection*{Debugging}
+
+Le debugging des interfaces graphiques est particulièrement peu aisé,
+et aucun outil n'offre d'analyse statique qui permettrait de détecter
+\emph{a priori} qu'un élément est invisible ou inaccessible. Cette
+difficulté n'est pas seulement dépendante de la bibliothèque utilisée,
+mais aussi et surtout du nombre d'interactions possibles avec l'interface,
+et de séquencements possibles. Un \og petit \fg{} programme comme
+WordPad aurait ainsi 325 opérations possibles via l'interface graphique.
+
+Il existe des outils entièrement dédiés au debugging d'interfaces
+graphiques : Java intègre par exemple dans son API une classe (Robot)
+permettant d'aider à l'automatisation des tests d'interfaces AWT.
+Eclipse dispose d'un plugin SWTBot dédié au test des interfaces SWT
+alors qu'il intègre évidemment déjà un debugger Java... Les IDE évoqués
+ont aussi leurs outils de debugging.
+
+
+\subsubsection*{Conclusion ?}
 
 
 \section{Outils à développer}
