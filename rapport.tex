@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{luainputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \geometry{verbose}
 \usepackage{babel}
@@ -116,41 +116,81 @@ un exemple de ce principe.
 \subsection{Division du travail}
 
 La conception d'une interface graphique par dessus un moteur d'application
-peut se diviser en quatre parties qui devraient demeurer indépendantes
-le plus possible.
+peut se diviser en quatre étapes ; une bibliothèque graphique devrait
+fournir des outils adéquats pour chacune, et minimiser les interdépendances
+entre elles.
+
+
+\paragraph{Communication entre le moteur et l'interface}
+
+Une bibliothèque graphique doit fournir des outils adaptées à la \og communication \fg{}
+entre l'interface et le moteur logique de l'application
 \begin{itemize}
-\item Communication entre le moteur et l'interface :
-
-\begin{itemize}
-\item Affichage : ensemble des données du moteur affichées (sous diverse
-forme) par l'interface ;
-\item Actions : ensemble des actions de l'utilisateur modifiant l'état du
-moteur. Tout élément de l'interface permettant d'agir sur le moteur
-devrait être lié à une ''Action''. Une même Action doit pouvoir
-être effectuée par différents éléments d'une interface, et par différentes
-interfaces.
+\item affichage : ensemble des données du moteur affichées (sous diverses
+formes) par l'interface ;
+\item actions : ensemble des actions de l'utilisateur modifiant l'état des
+données. 
 \end{itemize}
-
-Cette section doit être indépendante de l'interface finale (éléments,
-aspect, etc) et de la plateforme.
-
-\item Éléments de l'interface ; dépendant de la plateforme, lié à la partie
-précédente.
-\item Personnalisation des éléments : positionnement, taille, aspect...
+Cette partie du code pose les bases de ce qu'utilisera l'interface,
+ce à quoi elle est destinée, mais doit demeurer indépendante de son
+implémentation réelle, des éléments graphiques concrets utilisés pour
+la fabriquer, et de la plateforme à laquelle elle est destinée.
 
 
-Une telle configuration est évidemment dépendante de la partie précédente.
+\paragraph{Éléments de l'interface}
+
+Il s'agit ensuite de définir les éléments de l'interface graphique
+qui serviront de support aux données et possibilités définis précédemment
+; ceux-ci devront donc interagir avec le système logique de communication,
+et non directement avec le moteur de l'application.
+
+Ils sont évidemment dépendants de la plateforme à laquelle l'interface
+est destinée : les raccourcis clavier d'un ordinateur seront remplacés
+par des gestes tactiles sur une tablette, par exemple.\\
 
 
-Certains paramètres de cette configuration doivent pouvoir être modifiés
-par l'utilisateur final.
+La bibliothèque se doit de définir un panel aussi vaste que possible
+d'éléments graphique à disposition du développeur.
+
+Notons que ces éléments ne sont pas forcément tous graphiques (lecture
+d'un texte ou commande vocale).
 
 
-Ces configurations doivent pouvoir être enregistrées et s'échanger
-facilement.
+\paragraph{Placement des éléments}
 
-\item Aspect général.
-\end{itemize}
+Les éléments doivent ensuite être assemblés pour former une interface
+cohérente et fonctionnelle. À cette fin, de nombreux outils doivent
+être présents pour le développeur : divers \og layout \fg{} permettant
+diverses dispositions des éléments au sein d'une même fenêtre, gestion
+intelligente des redimensionnements, système d'onglets, éléments permettant
+le zoom et défilement, fenêtres pop-up, panneaux d'options, etc.
+
+Une telle configuration s'effectue évidemment sur un ensemble d'éléments
+de l'interface déjà défini, dont la taille et l'aspect graphique doivent
+également pouvoir être éventuellement personnalisés au cas par cas.\\
+
+
+Par ailleurs, le développeur peut laisser une partie de cette configuration
+de l'interface à disposition de l'utilisateur final : lui permettre
+de choisir les éléments présents d'une barre d'outils, ou le placement
+de celle-ci sur certains bords de la fenêtre, tout en excluant certaines
+autres modifications, le menu restant toujours identique.
+
+Enfin, la forme finale d'une interface doit pouvoir être aisément
+enregistrée, et il doit être possible pour l'utilisateur final de
+passer d'une configuration à une autre s'il en existe plusieurs possibles
+pour une application donnée.
+
+
+\paragraph{Aspect général}
+
+Enfin, la bibliothèque peut permettre au développeur de modifier l'aspect
+général de son interface, en personnalisant l'aspect d'un type d'éléments
+graphiques. Cette dernière partie est optionnel, mais si la possibilité
+existe, elle doit être indépendante des trois premières : modifier
+l'aspect général des boutons ne doit pas impacter le code de l'interface
+déjà écrite.
+
 
 \section{Analyse de l'existant}
 
