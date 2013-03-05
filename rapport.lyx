@@ -309,7 +309,7 @@ Expressivité :
 \begin_layout Itemize
 
 \series bold
-Adaptativité :
+Adaptabilité :
 \series default
  une bonne capacité d'adaptation aux différents support ainsi qu'une portabilité
  sont nécessaires.
@@ -1060,7 +1060,7 @@ Deux langages intermédiaires sont introduit à cet effet :
 Style de l'interface :
 \series default
  notre solution à base de modèle relationnel doit être complétée, afin d'obtenir
- l'adaptativité recherchée, d'une déclaration de style dont le rôle est
+ l'adaptabilité recherchée, d'une déclaration de style dont le rôle est
  de traduire les relations entre les composants en une présentation graphique
  adaptée au support.
  Ceci nécessite d'une part l'élaboration d'un langage intermédiaire servant
