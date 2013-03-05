@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose}
 \usepackage{babel}
@@ -34,7 +34,7 @@ les besoins seront différents, mais l'approche à adopter la même.
 \item Utilisateur application : il faut prendre en compte à la fois l'aspect
 sensoriel (visuel si écran il y a) et l'aspect ``contrôle'' (gestion
 des périphériques d'entrée).
-\item Intéraction utilisateur application - programme : plusieurs ``niveaux''
+\item Interaction utilisateur application - programme : plusieurs ``niveaux''
 de compétences parmi les utilisateurs avec des besoins différents.
 \end{itemize}
 
@@ -48,7 +48,7 @@ des deux catégories concernées doit être constitué afin d'établir
 les dits besoins.
 \item \textbf{Conception :} un prototype doit être conçu en fonction des
 besoins établis à l'étape précédente.
-\item \textbf{Evaluation :} sur la base du prototype réalisé, une évaluation
+\item \textbf{Évaluation :} sur la base du prototype réalisé, une évaluation
 est faite. Le procédé étant itératif, cette évaluation servira de
 base à la modification des besoins de la première étape. 
 \item Il faut établir des ``topic'' d'évaluation - besoins, les deux sont
@@ -70,13 +70,13 @@ commises lors d'un test.
 \item Programmation intuitive.
 \item Bonne expressivité - ne pas avoir un code verbeux à produire (capacité
 d'adaptation au support etc etc ?).
-\item Typage fort - sûreté.
+\item Typage fort - sureté.
 \item Debugging aisé - analyse de pertinence (détecter le maximum d'absurdités)
 \item Intégration aux IDE populaires ? Création d'un IDE ?
 \end{itemize}
 \end{itemize}
 \item \textbf{Les outils : }des outils du génie logiciel peuvent nous aider
-à l'intérieur des phases décrites précédement :
+à l'intérieur des phases décrites précédemment :
 
 \begin{itemize}
 \item Scénarios / diagrammes de cas d'utilisation : à la fois pour établir
@@ -87,7 +87,7 @@ suivant me semble être plus approprié.
 les différents objets de l'interface, est utile dans la phase de conception
 pour ``se mettre à la place'' du programmeur.
 \item Design pattern : beaucoup d'interfaces utilisateurs utilisent des
-principes similaires d'intéraction avec l'utilisateur, l'implémentation
+principes similaires d’interaction avec l'utilisateur, l'implémentation
 ``native'' de comportements génériques peut être pratique.
 \end{itemize}
 \end{itemize}
@@ -177,10 +177,10 @@ autre système de mise en relation entre les éléments n'est pas directement
 supporté. 
 
 Il serait cependant intéressant de pouvoir définir plus finement les
-relations entre ces différents éléments, plus précisement, l'idée
+relations entre ces différents éléments, plus précisément, l'idée
 serait de ne pas avoir à décrire l'emplacement d'un élément par rapport
 à un autre dans le ''code principal'' mais juste les relations entre
-ces éléments, un peu à la manière du couple HTML / CSS, une ''feuile
+ces éléments, un peu à la manière du couple HTML / CSS, une ''feuille
 style'' dépendant du support / des préférences de l'utilisateur application
 / du système (cf. langages intermédiaires) se charge d'associer une
 relation à un emplacement / visuel / un lien.

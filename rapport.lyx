@@ -109,7 +109,7 @@ contrôle
 \end_layout
 
 \begin_layout Itemize
-Intéraction utilisateur application - programme : plusieurs 
+Interaction utilisateur application - programme : plusieurs 
 \begin_inset Quotes eld
 \end_inset
 
@@ -149,7 +149,7 @@ Conception :
 \begin_layout Itemize
 
 \series bold
-Evaluation :
+Évaluation :
 \series default
  sur la base du prototype réalisé, une évaluation est faite.
  Le procédé étant itératif, cette évaluation servira de base à la modification
@@ -208,7 +208,7 @@ ion au support etc etc ?).
 \end_layout
 
 \begin_layout Itemize
-Typage fort - sûreté.
+Typage fort - sureté.
 \end_layout
 
 \begin_layout Itemize
@@ -227,7 +227,7 @@ Intégration aux IDE populaires ? Création d'un IDE ?
 Les outils : 
 \series default
 des outils du génie logiciel peuvent nous aider à l'intérieur des phases
- décrites précédement :
+ décrites précédemment :
 \end_layout
 
 \begin_deeper
@@ -253,7 +253,7 @@ se mettre à la place
 
 \begin_layout Itemize
 Design pattern : beaucoup d'interfaces utilisateurs utilisent des principes
- similaires d'intéraction avec l'utilisateur, l'implémentation 
+ similaires d’interaction avec l'utilisateur, l'implémentation 
 \begin_inset Quotes eld
 \end_inset
 
@@ -411,7 +411,7 @@ Les librairies d'interfaces graphiques populaires ne fournissent pas de
 
 \begin_layout Standard
 Il serait cependant intéressant de pouvoir définir plus finement les relations
- entre ces différents éléments, plus précisement, l'idée serait de ne pas
+ entre ces différents éléments, plus précisément, l'idée serait de ne pas
  avoir à décrire l'emplacement d'un élément par rapport à un autre dans
  le 
 \begin_inset Quotes sld
@@ -426,7 +426,7 @@ code principal
 \begin_inset Quotes sld
 \end_inset
 
-feuile style
+feuille style
 \begin_inset Quotes srd
 \end_inset
 
