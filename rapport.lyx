@@ -87,42 +87,62 @@ Qui sont les utilisateurs ?
 \begin_layout Standard
 Avant toute analyse ou réflexion, il est important de définir qui sont les
  utilisateurs du système considéré.
+ Nous distinguerons deux catégories d'utilisateurs et nous utiliserons la
+ terminologie suivante : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Deux catégories : nous utiliserons la terminologie suivante afin de distinguer
- les deux catégories d'utilisateurs : utilisateur application, et programmeur.
+
+\series bold
+Programmeur :
+\series default
+ il est notre cible directe, c'est lui qui utilisera les outils que nous
+ allons développer afin de construire des interfaces utilisateurs (nous
+ parlerons ici essentiellement d'interfaces graphiques) pour ses applications.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Dans les deux cas, il faut avoir une approche orientée utilisateur, les
- besoins seront différents, mais l'approche à adopter la même.
- 
+
+\series bold
+Utilisateur application : 
+\series default
+il est l'utilisateur des produits développés par le programmeur, il est
+ n'est pas notre cible directe mais il est important de ne pas l'oublier.
 \end_layout
 
-\begin_layout Itemize
-Utilisateur application : il faut prendre en compte à la fois l'aspect sensoriel
- (visuel si écran il y a) et l'aspect 
-\begin_inset Quotes eld
+\begin_layout Standard
+\begin_inset space ~
 \end_inset
 
-contrôle
-\begin_inset Quotes erd
-\end_inset
 
- (gestion des périphériques d'entrée).
 \end_layout
 
-\begin_layout Itemize
-Interaction utilisateur application - programme : plusieurs 
-\begin_inset Quotes eld
-\end_inset
+\begin_layout Standard
+Une approche orientée utilisateur sera adoptée lors de la conception, les
+ besoins étant différents pour les deux catégories d'utilisateurs considérées,
+ nous ferons bien attention de prendre en compte les deux points de vue.
+\end_layout
 
-niveaux
-\begin_inset Quotes erd
-\end_inset
-
- de compétences parmi les utilisateurs avec des besoins différents.
+\begin_layout Standard
+En particulier, celui de l'utilisateur application doit être pris en compte
+ même s'il sera la cible du système développé par le programmeur et non
+ directement celle du notre.
+ Ses besoins doivent nous permettre de mieux déterminer les éléments nécessaires
+ aux programmeurs pour satisfaire à ses exigences envers le produit fini.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -141,6 +161,13 @@ Ce dernier est itératif, chaque itération étant composée des trois phases
  suivantes :
 \end_layout
 
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 
 \series bold
@@ -151,6 +178,13 @@ teurs des deux catégories concernées doit être constitué afin d'établir
  les dits besoins.
 \end_layout
 
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 
 \series bold
@@ -159,6 +193,13 @@ Conception :
  un prototype doit être conçu en fonction des besoins établis à l'étape
  précédente.
  Chaque prototype servira le plus souvent de base à celui à l'étape suivante
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -173,85 +214,181 @@ Conception :
 \end_layout
 
 \begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Afin de mener à bien ces trois phases, il est nécessaire d'établir des critères
  d'évaluation qui serviront aussi de base à l'élaboration des besoins.
- L'utilisateur application doit être pris en compte même s'il sera la cible
- du système développé par le programmeur et non directement la cible du
- notre.
- Ses besoins doivent nous permettre de mieux déterminer ce dont ont besoin
- les programmeurs pour satisfaire aux exigences des utilisateurs application.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Pour l'utilisateur application :
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Vitesse d'apprentissage - aide nécessaire / intégrée - nombre d'erreurs
- commises lors d'un test.
+
+\series bold
+Facilité d'utilisation :
+\series default
+ la vitesse d'apprentissage, l'aide extérieure nécessaire ainsi que le nombre
+ d'erreurs commises lors d'un test sont de bons indicateurs.
+ Il faut de plus prendre en compte les différents niveaux de compétences
+ parmi les utilisateurs.
 \end_layout
 
 \begin_layout Itemize
-Correction des erreurs.
+
+\series bold
+Correction des erreurs 
+\series default
+: la possibilité d'annuler une action est indispensable (cf.
+ partie 3.1)
 \end_layout
 
 \begin_layout Itemize
-Temps de réponse.
+
+\series bold
+Rapidité :
+\series default
+ le temps de réponse de l'interface doit être faible.
+ Il faut définir par des tests quel est le délai admissible avant réponse
+ et quel est le meilleur moyen de faire patienter l'utilisateur application.
 \end_layout
 
 \begin_layout Itemize
-Efficacité - navigation rapide ?
+
+\series bold
+Aspect visuel 
+\series default
+: il doit être agréable et clair.
+ (nous pourrions parler d'aspect sensoriel pour être plus général, mais
+ nous allons nous concentrer sur les interfaces graphiques)
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
+
+\series bold
 Pour le programmeur :
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Programmation intuitive.
+
+\series bold
+Expressivité :
+\series default
+ une bonne expressivité des langages / outils utilisés est nécessaire, un
+ code clair et précis est plus agréable.
+ De plus il est important d'essayer de rendre la programmation via le système
+ intuitive.
 \end_layout
 
-\begin_layout Itemize
-Bonne expressivité - ne pas avoir un code verbeux à produire (capacité d'adaptat
-ion au support etc etc ?).
-\end_layout
-
-\begin_layout Itemize
-Typage fort - sûreté.
-\end_layout
-
-\begin_layout Itemize
-Debugging aisé - analyse de pertinence (détecter le maximum d'absurdités)
-\end_layout
-
-\begin_layout Itemize
-Intégration aux IDE populaires ? Création d'un IDE ?
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \series bold
-Les outils :
+Adaptativité :
 \series default
- tout au long de ce processus de conception, des outils du génie logiciel
- vont nous aider.
+ une bonne capacité d'adaptation aux différents support ainsi qu'une portabilité
+ sont nécessaires.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Scénarios / diagrammes de cas d'utilisation : leur utilisation, combinée
- aux critères mis en place ci-dessus, nous permettra à la fois d'établir
- les besoins et d'effectuer des tests choisis dans le cadre de l'évaluation.
+
+\series bold
+Sûreté :
+\series default
+ un code qui compile doit être un code qui marche.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Debugging :
+\series default
+ des outils de debugging doivent être fournis, une analyse statique de pertinenc
+e serait un plus (détecter le maximum d'absurdités comme des éléments inutiles
+ par exemple).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+IDE :
+\series default
+ une intégration aux IDE populaires est nécessaire, la création d'un IDE
+ spécifique peut être envisagé.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Efficacité :
+\series default
+ les critères en terme de consommation des ressources de la machine doivent
+ être étudiés.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tout au long de ce processus de conception, des outils issus du génie logiciel
+ vont nous aider, en voici trois particulièrement adaptés :
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Scénarios / diagrammes de cas d'utilisation :
+\series default
+ leur utilisation, combinée aux critères mis en place ci-dessus, nous permettra
+ à la fois d'établir les besoins et d'effectuer des tests choisis dans le
+ cadre de l'évaluation.
  
 \end_layout
 
 \begin_layout Itemize
-Diagrammes relationnels - diagrammes de classes : même si elle ne doit pas
- nous aveugler, la programmation orientée objet est adaptée au sujet.
+
+\series bold
+Diagrammes relationnels - diagrammes de classes :
+\series default
+ même si elle ne doit pas nous aveugler, la programmation orientée objet
+ est adaptée au sujet.
  La réflexion à mener quant à l'organisation du système considéré se prête
  remarquablement bien à l'utilisation de ces outils.
  De plus, ils nous permettent, à un autre niveau, de nous mettre à la place
@@ -259,7 +396,11 @@ Diagrammes relationnels - diagrammes de classes : même si elle ne doit pas
 \end_layout
 
 \begin_layout Itemize
-Design pattern : l'implémentation 
+
+\series bold
+Design pattern :
+\series default
+ l'implémentation 
 \begin_inset Quotes eld
 \end_inset
 
@@ -274,7 +415,6 @@ n de notre système par le programmeur mais aussi d'établir un cadre sûr
  La partie 3.1 de ce rapport est un exemple de ce principe.
 \end_layout
 
-\end_deeper
 \begin_layout Subsection
 Division du travail
 \end_layout
@@ -673,6 +813,13 @@ menu
 \end_layout
 
 \begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Ce modèle a pour but de permettre à l'interface produite de s'adapter à
  son environnement d'utilisation.
  De plus, une analyse statique de la cohérence d'une interface pourrait
@@ -687,14 +834,29 @@ Langages intermédiaires
 Le système a vocation à être porté sur différents langages de programmation;
  l'utilisation de langages intermédiaires, propres au dit système, permet
  entre autre une portabilité intéressante.
- Deux langages intermédiaires sont introduit à cet effet :
+ 
+\end_layout
+
+\begin_layout Standard
+Deux langages intermédiaires sont introduit à cet effet :
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Style de l'interface : notre solution à base de modèle relationnel doit
- être complétée, afin d'obtenir l'adaptativité recherchée, d'une déclaration
- de style dont le rôle est de traduire les relations entre les composants
- en une présentation graphique adaptée au support.
+
+\series bold
+Style de l'interface :
+\series default
+ notre solution à base de modèle relationnel doit être complétée, afin d'obtenir
+ l'adaptativité recherchée, d'une déclaration de style dont le rôle est
+ de traduire les relations entre les composants en une présentation graphique
+ adaptée au support.
  Ceci nécessite d'une part l'élaboration d'un langage intermédiaire servant
  à décrire cette traduction et d'autre part la réalisation d'un interpréteur
  du dit langage.
@@ -704,9 +866,20 @@ Style de l'interface : notre solution à base de modèle relationnel doit
  avoir à s'en préoccuper à chaque nouveau projet.
 \end_layout
 
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
-Structure de l'interface : une autre volonté de notre part est de permettre
- la sauvegarde de la structure d'une interface.
+
+\series bold
+Structure de l'interface :
+\series default
+ une autre volonté de notre part est de permettre la sauvegarde de la structure
+ d'une interface.
  Avoir une description de ladite structure non liée à langage source permet
  une réutilisation intéressante sur différents projets.
  La difficulté d'une telle représentation se situe au niveau des interactions
