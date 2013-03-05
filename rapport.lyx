@@ -488,25 +488,12 @@ Bindings
 \end_layout
 
 \begin_layout Standard
-Liaison d'une propriété d'un élément de l'interface graphique à une valeur
- du moteur de l'application : par exemple, la 
-\begin_inset Quotes sld
-\end_inset
-
-clickabilité
-\begin_inset Quotes srd
-\end_inset
-
- (oui) d'un bouton à un booléen, le champs d'un label à une chaîne de caractères
-, la valeur d'un curseur à une valeur du moteur logique, le contenu d'un
- panel à une image...
-\end_layout
-
-\begin_layout Standard
-La liaison doit être effective dans les deux sens : le changement du champs
- du label par l'utilisateur doit modifier la valeur de la chaîne de caractère,
- tout changement tiers de la valeur doit être répercuté dans le label de
- l'interface.
+Très souvent, l'intervention de l'utilisateur modifie des valeurs internes
+ au moteur de l'application ; parfois néanmoins, l'inverse peut être également
+ utile : la modification d'une valeur du moteur de l'application modifie
+ l'état d'un élément de l'interface.
+ Il s'agit alors de modéliser efficacement la liaison d'une propriété d'un
+ élément graphique à une valeur de la logique interne de l'application.
 \begin_inset Newline newline
 \end_inset
 
@@ -514,10 +501,66 @@ La liaison doit être effective dans les deux sens : le changement du champs
 \end_layout
 
 \begin_layout Standard
-Solution : la librairie fournit à l'intention du moteur de l'application
- des classes pour des types simples comprenant un pattern observer à destination
- des éléments de l'interface.
+Voici quelques exemples qui pourraient se révéler utiles au développement
+ d'une interface :
+\end_layout
+
+\begin_layout Itemize
+progression d'une opération affichée par une barre de progression ;
+\end_layout
+
+\begin_layout Itemize
+possibilité d'effectuer une action liée à un booléen, impliquant l'apparence
+ des éléments graphiques qui lui sont liés (actifs ou non) ;
+\end_layout
+
+\begin_layout Itemize
+champs d'un label liée à une chaîne de caractère, position d'un curseur
+ liée à une valeur numérique ;
+\end_layout
+
+\begin_layout Itemize
+contenu d'un panneau lié à une image dynamiquement déterminée par le moteur
+ applicatif.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si l’élément graphique peut être édité par l'utilisateur, la liaison doit
+ être effective dans les deux sens : le changement du champs du label par
+ l'utilisateur doit modifier la valeur de la chaîne de caractère en interne,
+ tout autre changement de la valeur doit être immédiatement répercuté dans
+ l'affichage, comme dans le cas de la barre d'url des navigateurs internet
+ (qui est évidemment actualisé en cas de redirection, ou si l'utilisateur
+ utilise un autre moyen pour parvenir sur un page web).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+À cette fin, la librairie graphique peut proposer des représentations des
+ types simples 
+\begin_inset Quotes fld
+\end_inset
+
+pertinents
+\begin_inset Quotes frd
+\end_inset
+
+ comprenant un pattern observer à destination des éléments de l'interface
+ ; la liaison d'une propriété graphique à la valeur deviendrait alors immédiate
+ et transparente pour le développeur.
  
+\end_layout
+
+\begin_layout Standard
+L'inconvénient est que le moteur de l'application doit alors utiliser la
+ librairie graphique pour implémenter de telles valeurs.
 \end_layout
 
 \begin_layout Subsection

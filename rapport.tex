@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{luainputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \geometry{verbose}
 \usepackage{babel}
@@ -216,21 +216,45 @@ interface moderne.
 
 \subsection{Bindings}
 
-Liaison d'une propriété d'un élément de l'interface graphique à une
-valeur du moteur de l'application : par exemple, la ''clickabilité''
-(oui) d'un bouton à un booléen, le champs d'un label à une chaîne
-de caractères, la valeur d'un curseur à une valeur du moteur logique,
-le contenu d'un panel à une image...
-
-La liaison doit être effective dans les deux sens : le changement
-du champs du label par l'utilisateur doit modifier la valeur de la
-chaîne de caractère, tout changement tiers de la valeur doit être
-répercuté dans le label de l'interface.\\
+Très souvent, l'intervention de l'utilisateur modifie des valeurs
+internes au moteur de l'application ; parfois néanmoins, l'inverse
+peut être également utile : la modification d'une valeur du moteur
+de l'application modifie l'état d'un élément de l'interface. Il s'agit
+alors de modéliser efficacement la liaison d'une propriété d'un élément
+graphique à une valeur de la logique interne de l'application.\\
 
 
-Solution : la librairie fournit à l'intention du moteur de l'application
-des classes pour des types simples comprenant un pattern observer
-à destination des éléments de l'interface. 
+Voici quelques exemples qui pourraient se révéler utiles au développement
+d'une interface :
+\begin{itemize}
+\item progression d'une opération affichée par une barre de progression
+;
+\item possibilité d'effectuer une action liée à un booléen, impliquant l'apparence
+des éléments graphiques qui lui sont liés (actifs ou non) ;
+\item champs d'un label liée à une chaîne de caractère, position d'un curseur
+liée à une valeur numérique ;
+\item contenu d'un panneau lié à une image dynamiquement déterminée par
+le moteur applicatif.\\
+
+\end{itemize}
+Si l’élément graphique peut être édité par l'utilisateur, la liaison
+doit être effective dans les deux sens : le changement du champs du
+label par l'utilisateur doit modifier la valeur de la chaîne de caractère
+en interne, tout autre changement de la valeur doit être immédiatement
+répercuté dans l'affichage, comme dans le cas de la barre d'url des
+navigateurs internet (qui est évidemment actualisé en cas de redirection,
+ou si l'utilisateur utilise un autre moyen pour parvenir sur un page
+web).\\
+
+
+À cette fin, la librairie graphique peut proposer des représentations
+des types simples \og pertinents \fg{} comprenant un pattern observer
+à destination des éléments de l'interface ; la liaison d'une propriété
+graphique à la valeur deviendrait alors immédiate et transparente
+pour le développeur. 
+
+L'inconvénient est que le moteur de l'application doit alors utiliser
+la librairie graphique pour implémenter de telles valeurs.
 
 
 \subsection{Le modèle relationnel}
