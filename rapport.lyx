@@ -644,6 +644,105 @@ Enfin, la bibliothèque peut permettre au développeur de modifier l'aspect
  des boutons ne doit pas impacter le code de l'interface déjà écrite.
 \end_layout
 
+\begin_layout Subsection
+Exemple suivi
+\end_layout
+
+\begin_layout Standard
+Dans cette première itération de notre exemple suivi, nous n'allons pas
+ forcement être exhaustifs, mais nous allons essayer de donner une bonne
+ idée de ce que nous aurons à faire.
+\end_layout
+
+\begin_layout Standard
+Nous allons commencer par étudier les besoins de l'utilisateur application.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Annulation :
+\series default
+ pouvoir annuler une opération effectuée via l'interface graphique sur la
+ liste ou le compteur.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Adaptativité - facilité d'utilisation :
+\series default
+ le passage d'une vue à l'autre doit se faire via un outil adapté au support.
+ Par exemple, un bouton sur chaque panneau avec un raccourci associé pour
+ une paire clavier / souris mais une 
+\begin_inset Quotes fld
+\end_inset
+
+gesture
+\begin_inset Quotes frd
+\end_inset
+
+ sur une tablette ou un smartphone.
+ Il en est de même pour toutes les actions proposées par l'interface, y
+ compris la gestion du menu flottant (apparition au clic droit pour le clavier
+ / souris et utilisation d'une 
+\begin_inset Quotes fld
+\end_inset
+
+touche
+\begin_inset Quotes frd
+\end_inset
+
+ à deux doigts pour une tablette ou un smartphone).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rapidité :
+\series default
+ le changement de vue et l'apparition du menu flottant doivent être rapides,
+ il ne faut surtout pas donner l'impression à l'utilisateur qu'il est en
+ attente passive.
+ Les opérations sur la liste et le compteur peuvent être soumises à des
+ contraintes au niveau de la partie logique de l'application, l'interface
+ doit être capable d'afficher une barre de progression par exemple pour
+ montrer qu'une action est en cours.
+\end_layout
+
+\begin_layout Standard
+Ceux du programmeur en découlent en partie :
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Liste - compteur :
+\series default
+ avoir la possibilité de lier directement une liste ou un compteur à sa
+ représentation graphique sans que le programmeur ait à lui même définir
+ un protocole de mise à jour et l'implémenter serait pratique.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Adaptativité : 
+\series default
+le programmeur ne doit pas avoir à programmer des interfaces différentes
+ juste pour changer un bouton en 
+\begin_inset Quotes fld
+\end_inset
+
+gesture
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Il doit en être de même pour les autres actions comme l'annulation ainsi
+ que l'aspect graphique général.
+\end_layout
+
 \begin_layout Section
 Analyse de l'existant
 \end_layout
@@ -894,6 +993,17 @@ Il existe des outils entièrement dédiés au debugging d'interfaces graphiques
 
 \begin_layout Subsubsection*
 Conclusion ?
+\end_layout
+
+\begin_layout Standard
+Exemple suivi : (si le programmeur veut satisfaire aux besoins d'aptabilité
+ de l'utilisateur application, il va être obligé de définir plusieurs interfaces
+ différentes, pour les actions, faire en sorte que les raccourcis dans le
+ menu, les boutons ou autres gestures soient associés à des actions est
+ possible en swing, mais assez moche et peu pratique, de plus elles ne sont
+ pas assez évoluées pour permettre une annulation par la suite.
+ La mise à jour de la liste de du compteur ne sont pas gérés de façon pratique
+ par SWING, le faire manuellement est finalement la solution employée)
 \end_layout
 
 \begin_layout Section
@@ -1168,6 +1278,10 @@ Ce modèle a pour but de permettre à l'interface produite de s'adapter à
  certainement se faire à partir d'un tel modèle (réflexion en cours).
 \end_layout
 
+\begin_layout Subsubsection
+Exemple suivi
+\end_layout
+
 \begin_layout Subsection
 Langages intermédiaires
 \end_layout
@@ -1229,6 +1343,10 @@ Structure de l'interface :
  le modèle d'actions est adapté à cette démarche (cette partie est encore
  floue, nous sommes encore en phase de réflexion quant à la faisabilité
  et la pertinence de la chose).
+\end_layout
+
+\begin_layout Subsubsection
+Exemple suivi
 \end_layout
 
 \end_body

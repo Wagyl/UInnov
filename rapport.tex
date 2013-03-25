@@ -290,6 +290,44 @@ l'aspect général des boutons ne doit pas impacter le code de l'interface
 déjà écrite.
 
 
+\subsection{Exemple suivi}
+
+Dans cette première itération de notre exemple suivi, nous n'allons
+pas forcement être exhaustifs, mais nous allons essayer de donner
+une bonne idée de ce que nous aurons à faire.
+
+Nous allons commencer par étudier les besoins de l'utilisateur application.
+\begin{itemize}
+\item \textbf{Annulation :} pouvoir annuler une opération effectuée via
+l'interface graphique sur la liste ou le compteur.
+\item \textbf{Adaptativité - facilité d'utilisation :} le passage d'une
+vue à l'autre doit se faire via un outil adapté au support. Par exemple,
+un bouton sur chaque panneau avec un raccourci associé pour une paire
+clavier / souris mais une \og gesture \fg{} sur une tablette ou
+un smartphone. Il en est de même pour toutes les actions proposées
+par l'interface, y compris la gestion du menu flottant (apparition
+au clic droit pour le clavier / souris et utilisation d'une \og touche \fg{}
+à deux doigts pour une tablette ou un smartphone).
+\item \textbf{Rapidité :} le changement de vue et l'apparition du menu flottant
+doivent être rapides, il ne faut surtout pas donner l'impression à
+l'utilisateur qu'il est en attente passive. Les opérations sur la
+liste et le compteur peuvent être soumises à des contraintes au niveau
+de la partie logique de l'application, l'interface doit être capable
+d'afficher une barre de progression par exemple pour montrer qu'une
+action est en cours.
+\end{itemize}
+Ceux du programmeur en découlent en partie :
+\begin{itemize}
+\item \textbf{Liste - compteur :} avoir la possibilité de lier directement
+une liste ou un compteur à sa représentation graphique sans que le
+programmeur ait à lui même définir un protocole de mise à jour et
+l'implémenter serait pratique.
+\item \textbf{Adaptativité : }le programmeur ne doit pas avoir à programmer
+des interfaces différentes juste pour changer un bouton en \og gesture \fg{}.
+Il doit en être de même pour les autres actions comme l'annulation
+ainsi que l'aspect graphique général.
+\end{itemize}
+
 \section{Analyse de l'existant}
 
 Une analyse de l'existant, en conjonction avec notre précédente analyse
@@ -424,6 +462,16 @@ ont aussi leurs outils de debugging.
 
 \subsubsection*{Conclusion ?}
 
+Exemple suivi : (si le programmeur veut satisfaire aux besoins d'aptabilité
+de l'utilisateur application, il va être obligé de définir plusieurs
+interfaces différentes, pour les actions, faire en sorte que les raccourcis
+dans le menu, les boutons ou autres gestures soient associés à des
+actions est possible en swing, mais assez moche et peu pratique, de
+plus elles ne sont pas assez évoluées pour permettre une annulation
+par la suite. La mise à jour de la liste de du compteur ne sont pas
+gérés de façon pratique par SWING, le faire manuellement est finalement
+la solution employée)
+
 
 \section{Outils à développer}
 
@@ -555,6 +603,9 @@ la cohérence d'une interface pourrait certainement se faire à partir
 d'un tel modèle (réflexion en cours).
 
 
+\subsubsection{Exemple suivi}
+
+
 \subsection{Langages intermédiaires}
 
 Le système a vocation à être porté sur différents langages de programmation;
@@ -587,6 +638,8 @@ d'une telle représentation se situe au niveau des interactions entre
 le moteur de l'application et l'interface utilisateur, cependant le
 modèle d'actions est adapté à cette démarche (cette partie est encore
 floue, nous sommes encore en phase de réflexion quant à la faisabilité
-et la pertinence de la chose).\end{itemize}
+et la pertinence de la chose).
+\end{itemize}
 
+\subsubsection{Exemple suivi}
 \end{document}
