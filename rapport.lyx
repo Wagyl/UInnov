@@ -72,16 +72,33 @@ Interfaces Utilisateurs
 
 \end_layout
 
+\begin_layout Standard
+Introduction + nous allons introduire un exemple qui sera suivi tout au
+ long de ce rapport afin de concrêtiser nos remarques et idées.
+\end_layout
+
 \begin_layout Section
 Qu'est ce qu'une interface utilisateur et comment en programmer
 \end_layout
 
+\begin_layout Standard
+Nous allons aborder dans cette partie différents points nous permettant
+ de définir les concepts et mécanismes importants mis en jeu lors de la
+ conception, mais aussi de l'utilisation, d'une interface graphique.
+ Comme nous le verrons, les deux aspects sont fortement liés.
+\end_layout
+
 \begin_layout Subsection
-Définition des concepts liés à la notion d'interface utilisateur
+Définition des concepts liés à la création d'interface utilisateur
+\end_layout
+
+\begin_layout Standard
+La compréhension de la notion d'interface utilisateur passe par une définition
+ des utilisateurs et des outils de conception sollicités.
 \end_layout
 
 \begin_layout Subsubsection*
-Qui sont les utilisateurs ?
+Les utilisateurs
 \end_layout
 
 \begin_layout Standard
@@ -544,13 +561,19 @@ Aspect général
 Enfin, la bibliothèque peut permettre au développeur de modifier l'aspect
  général de son interface, en personnalisant l'aspect d'un type d'éléments
  graphiques.
- Cette dernière partie est optionnel, mais si la possibilité existe, elle
+ Cette dernière partie est optionnelle, mais si la possibilité existe, elle
  doit être indépendante des trois premières : modifier l'aspect général
  des boutons ne doit pas impacter le code de l'interface déjà écrite.
 \end_layout
 
 \begin_layout Section
 Analyse de l'existant
+\end_layout
+
+\begin_layout Standard
+Une analyse de l'existant, en conjonction avec notre précédente analyse
+ des besoins nous permettra de tenter dans la suite d'apporter des solutions
+ aux problèmes actuels.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -797,6 +820,11 @@ Conclusion ?
 
 \begin_layout Section
 Outils à développer
+\end_layout
+
+\begin_layout Standard
+Nous allons exposer dans cette partie nos quatre principales idées d'innovation
+ pour la conception d'interfaces graphiques.
 \end_layout
 
 \begin_layout Subsection
