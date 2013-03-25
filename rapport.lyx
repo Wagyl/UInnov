@@ -73,8 +73,86 @@ Interfaces Utilisateurs
 \end_layout
 
 \begin_layout Standard
-Introduction + nous allons introduire un exemple qui sera suivi tout au
- long de ce rapport afin de concrêtiser nos remarques et idées.
+Introduction - blablabla
+\end_layout
+
+\begin_layout Standard
+Nous allons introduire un exemple suivi, qui sera utilisé tout au long de
+ ce rapport.
+ Le but est d'illustrer nos remarques et idées grâce à un cas d'étude simple.
+ 
+\end_layout
+
+\begin_layout Standard
+Nous allons donc considérer une application gérant une liste et un compteur.
+ Elle est munie d'une interface graphique constituée d'une fenêtre, ainsi
+ que de deux vues, ou paneaux, qui ne sont pas visibles en même temps, mais
+ avec la possibilité de passer de l'une à l'autre.
+ Ces vues seront affichées, lorsque visibles, dans la fenêtre précédement
+ mentionnée.
+ 
+\end_layout
+
+\begin_layout Standard
+L'une des deux vues offrira une représentation et des outils de modification
+ de la liste gérée par l'application alors que l'autre se chargera du compteur.
+ 
+\end_layout
+
+\begin_layout Standard
+Deux menus sont présents, l'un attaché à la fenêtre et l'autre 
+\begin_inset Quotes fld
+\end_inset
+
+flottant
+\begin_inset Quotes frd
+\end_inset
+
+ accessible via une intéraction entre l'utilisateur et l'interface.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Nico/Dropbox/M2/Prog comparée/base-exemple-projet.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Base de l'exemple
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

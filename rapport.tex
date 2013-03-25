@@ -2,9 +2,20 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+\makeatother
+
 \usepackage{babel}
 \makeatletter
 \addto\extrasfrench{%
@@ -18,14 +29,53 @@
 \title{Projet de Programmation Comparée : ''Interfaces Utilisateurs''}
 
 \maketitle
+Introduction - blablabla
+
+Nous allons introduire un exemple suivi, qui sera utilisé tout au
+long de ce rapport. Le but est d'illustrer nos remarques et idées
+grâce à un cas d'étude simple. 
+
+Nous allons donc considérer une application gérant une liste et un
+compteur. Elle est munie d'une interface graphique constituée d'une
+fenêtre, ainsi que de deux vues, ou paneaux, qui ne sont pas visibles
+en même temps, mais avec la possibilité de passer de l'une à l'autre.
+Ces vues seront affichées, lorsque visibles, dans la fenêtre précédement
+mentionnée. 
+
+L'une des deux vues offrira une représentation et des outils de modification
+de la liste gérée par l'application alors que l'autre se chargera
+du compteur. 
+
+Deux menus sont présents, l'un attaché à la fenêtre et l'autre \og flottant \fg{}
+accessible via une intéraction entre l'utilisateur et l'interface.
+
+~
+
+\begin{figure}
+\includegraphics[scale=0.5]{\string"C:/Users/Nico/Dropbox/M2/Prog comparée/base-exemple-projet\string".png}
+
+\caption{Base de l'exemple}
+
+
+\end{figure}
+
+
 
 \section{Qu'est ce qu'une interface utilisateur et comment en programmer}
 
+Nous allons aborder dans cette partie différents points nous permettant
+de définir les concepts et mécanismes importants mis en jeu lors de
+la conception, mais aussi de l'utilisation, d'une interface graphique.
+Comme nous le verrons, les deux aspects sont fortement liés.
 
-\subsection{Définition des concepts liés à la notion d'interface utilisateur}
+
+\subsection{Définition des concepts liés à la création d'interface utilisateur}
+
+La compréhension de la notion d'interface utilisateur passe par une
+définition des utilisateurs et des outils de conception sollicités.
 
 
-\subsubsection*{Qui sont les utilisateurs ?}
+\subsubsection*{Les utilisateurs}
 
 Avant toute analyse ou réflexion, il est important de définir qui
 sont les utilisateurs du système considéré. Nous distinguerons deux
@@ -234,13 +284,17 @@ pour une application donnée.
 
 Enfin, la bibliothèque peut permettre au développeur de modifier l'aspect
 général de son interface, en personnalisant l'aspect d'un type d'éléments
-graphiques. Cette dernière partie est optionnel, mais si la possibilité
+graphiques. Cette dernière partie est optionnelle, mais si la possibilité
 existe, elle doit être indépendante des trois premières : modifier
 l'aspect général des boutons ne doit pas impacter le code de l'interface
 déjà écrite.
 
 
 \section{Analyse de l'existant}
+
+Une analyse de l'existant, en conjonction avec notre précédente analyse
+des besoins nous permettra de tenter dans la suite d'apporter des
+solutions aux problèmes actuels.
 
 
 \subsubsection*{Difficultés de la programmation d'interfaces graphiques}
@@ -372,6 +426,9 @@ ont aussi leurs outils de debugging.
 
 
 \section{Outils à développer}
+
+Nous allons exposer dans cette partie nos quatre principales idées
+d'innovation pour la conception d'interfaces graphiques.
 
 
 \subsection{Actions}
