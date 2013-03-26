@@ -1,5 +1,6 @@
 /* Component */
-abstract class Component(name: String) {
+abstract class Component(nameC: String) {
+  val name: String = nameC
   val description: String
 }
 
@@ -63,6 +64,11 @@ abstract class gui {
 
   val igGraph: Digraph[Component, Relation] = new Digraph
   var conflictingRelations: List[RelationDebug] = List()
+  var checkFunctions: List[Function[Unit, Boolean]] = List()
+
+  /* Add a check function to this IG */
+  def addCheckFunction(toAdd: Function[Unit, Boolean]) =
+    checkFunctions = toAdd :: checkFunctions
 
   /* Add component to this IG */
   def addComponent(toAdd: Component) = { igGraph.addNode(toAdd); toAdd }
@@ -75,15 +81,39 @@ abstract class gui {
     else
       conflictingRelations = new RelationDebug(toAdd) :: conflictingRelations
 
-  /* Check validity of the GUI */
-  def checkValidity: Boolean = {
-    if (!conflictingRelations.isEmpty) {
-      errorOutput(conflictingRelations.map(x => x.debugMessage),
-        "Relations in conflict")
+  /* Check validity of the relations GUI */
+  val checkRelationsValidity = new Function[Unit, Boolean] {
+    def apply(v: Unit) = {
+      if (!conflictingRelations.isEmpty) {
+        errorOutput(conflictingRelations.map(x => x.debugMessage),
+          "Relations in conflict")
+        false
+      }
+      true
+    }
+  }
+  addCheckFunction(checkRelationsValidity)
+
+  /* Check for lonely components */
+  val checkLonelyComponents = new Function[Unit, Boolean] {
+    def apply(v: Unit) = {
+      if (!igGraph.lonelyNodes.isEmpty) {
+        errorOutput(igGraph.undirectedLonelyNodes.map(x => x.value.name),
+          "Lonely components")
+        true
+      }
       false
     }
-    true
   }
+  addCheckFunction(checkLonelyComponents)
+
+  /* Check GUI */
+  def checkGui: Unit =
+    /* checkFunctions.foldLeft(true)((x, y) => x && y())
+     l'optimisation du && ne permet pas d'itérer sur la liste entière
+     si un false est trouvé au milieu */
+    for (checkFun <- checkFunctions)
+      checkFun()
 
   /* Error output */
   def errorOutput(arguments: List[String], message: String) = {

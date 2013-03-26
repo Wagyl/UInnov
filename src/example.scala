@@ -12,6 +12,7 @@ object SimpleExample extends App {
   val panelTwo = myGui.addComponent(new Panel("Panel two"))
   val counterPres = myGui.addComponent(new CounterPres("Counter pres"))
   val listPres = myGui.addComponent(new ListPres("List pres"))
+  val lonelyPanel = myGui.addComponent(new Panel("Lonely"))
 
   /* Valid relations */
   myGui.addRelation(new MenuRelation(menu, panelOne))
@@ -25,5 +26,5 @@ object SimpleExample extends App {
   myGui.addRelation(new SimpleInclusion(panelOne, counterPres))
 
   /* Test */
-  myGui.checkValidity
+  myGui.checkGui
 }
