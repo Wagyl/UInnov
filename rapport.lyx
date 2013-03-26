@@ -967,7 +967,9 @@ Apprendre à programmer une interface graphique en utilisant l'une ou l'autre
 
 \begin_layout Itemize
 Dans tous les cas, la programmation est longue, répétitive et, à de rares
- exceptions (TkInter ?), extrêmement verbeuse.
+ exceptions (TkInter ?), extrêmement verbeuse : il faut écrire beaucoup
+ de lignes de code, souvent répétitives, pour obtenir une interface graphique,
+ même minimale.
 \end_layout
 
 \begin_layout Itemize
@@ -993,7 +995,7 @@ ués, tels que QtCreator/QtDesigner ou Glade, peuvent faciliter la création
 
 \begin_layout Standard
 MacOS propose, avec XCode et différents outils comme Cocoa, une vision intéressa
-nte -> à développer.
+nte.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1071,7 +1073,6 @@ look and feel
  des applications parfaitement intégrées dans les différents OS sans avoir
  à faire quoique ce soit de particulier, le résultat est en pratique souvent
  aléatoire et rarement esthétique.
- [Screenshots]
 \end_layout
 
 \begin_layout Paragraph
@@ -1184,10 +1185,6 @@ Il existe des outils entièrement dédiés au debugging d'interfaces graphiques
  Eclipse dispose d'un plugin SWTBot dédié au test des interfaces SWT alors
  qu'il intègre évidemment déjà un debugger Java...
  Les IDE évoqués ont aussi leurs outils de debugging.
-\end_layout
-
-\begin_layout Subsubsection*
-Conclusion ?
 \end_layout
 
 \begin_layout Standard
