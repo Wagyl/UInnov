@@ -1779,6 +1779,15 @@ switch
 
 Nous omettons volontairement la fenêtre qui n'a pas grand intérêt ici, elle
  sert de conteneur à l'ensemble.
+\begin_inset Newline newline
+\end_inset
+
+L'important est que la description soit proche du modèle et ce afin de facilité
+ le passage de la réflexion au concrêt, on remarque de plus que l'adaptation
+ de l'interface au support est déjà importante dans un exemple simple comme
+ celui-ci.
+ La présence ou absence d'une souris est un élément prépondérant dans le
+ choix de l'outil de transition entre les deux vues.
 \end_layout
 
 \end_body
