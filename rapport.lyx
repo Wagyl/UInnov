@@ -129,7 +129,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename base-exemple-projet.png
+	filename images/base-exemple-projet.png
 	scale 50
 	rotateOrigin center
 
@@ -1450,7 +1450,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename modèle-relationnel-projet.png
+	filename images/modele-relationnel-projet.png
 	scale 50
 	rotateOrigin center
 
