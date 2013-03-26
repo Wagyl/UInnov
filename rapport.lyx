@@ -618,6 +618,36 @@ La conception d'une interface graphique par dessus un moteur d'application
  elles.
 \end_layout
 
+\begin_layout Subsubsection*
+L'existant
+\end_layout
+
+\begin_layout Standard
+Ce dont nous ne nous occuperons pas dans ce rapport : une interface graphique
+ n'est qu'un intermédiaire entre une application et ses utilisateurs finaux
+ ; nous considérons donc que la conception de l'interface doit pouvoir se
+ greffer par dessus un programme pré-existant selon le pattern modèle-vue-contrô
+leur qui tend à minimiser les dépendances entre chacune des parties.
+ Une bibliothèque graphique n'a donc pas à se charger du développement de
+ la logique interne de l'application, mais doit permettre d'afficher sous
+ diverses formes des informations multiples provenant du modèle, et de transmett
+re des actions de l'utilisateur au contrôleur.
+\end_layout
+
+\begin_layout Standard
+Nous ferons désormais référence à cette 
+\begin_inset Quotes fld
+\end_inset
+
+application sous-jacente
+\begin_inset Quotes frd
+\end_inset
+
+ comme du moteur ou de la logique interne de l'application.
+ Notons qu'une bibliothèque graphique doit permettre de construire une interface
+ pour des programmes les plus variés possible.
+\end_layout
+
 \begin_layout Paragraph
 Communication entre le moteur et l'interface
 \end_layout
