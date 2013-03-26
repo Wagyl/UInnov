@@ -26,13 +26,43 @@ abstract class Relation(src: Component, trgt: Component) {
     checkValidity(source, target)
 }
 
+/*Relation debug item */
+class RelationDebug(toDebug: Relation) {
+  val value: Relation = toDebug
+  var debugFunctions: List[DebugToolFunction] = List()
+
+  def debugMessage: String = {
+    var optionMessage: String = ""
+
+    for (debugFun <- debugFunctions)
+      if (debugFun.value())
+        optionMessage = optionMessage ++ debugFun.description ++ " "
+
+    value.name ++ "[" ++ optionMessage ++ "]"
+  }
+
+  /* Some debug tools */
+  val symetryProblem = new Function[Unit, Boolean] {
+    def apply(v: Unit): Boolean =
+      value.checkValidity(value.target, value.source) == true
+  }
+
+  debugFunctions = List(new DebugToolFunction("Symetry problem", symetryProblem))
+}
+
+/* Debug tool - function */
+class DebugToolFunction(message: String, fun: Function[Unit, Boolean]) {
+  val value: Function[Unit, Boolean] = fun
+  val description: String = message
+}
+
 /* GUI */
 abstract class gui {
   val name: String
   val description: String
 
   val igGraph: Digraph[Component, Relation] = new Digraph
-  var conflictingRelations: List[Relation] = List()
+  var conflictingRelations: List[RelationDebug] = List()
 
   /* Add component to this IG */
   def addComponent(toAdd: Component) = { igGraph.addNode(toAdd); toAdd }
@@ -43,12 +73,13 @@ abstract class gui {
     if (toAdd.checkValidity(toAdd.source, toAdd.target))
       igGraph.addArc(toAdd.source, toAdd.target, toAdd)
     else
-      conflictingRelations = toAdd :: conflictingRelations
+      conflictingRelations = new RelationDebug(toAdd) :: conflictingRelations
 
   /* Check validity of the GUI */
   def checkValidity: Boolean = {
     if (!conflictingRelations.isEmpty) {
-      errorOutput(conflictingRelations.map(x => x.name), "Relations in conflict")
+      errorOutput(conflictingRelations.map(x => x.debugMessage),
+        "Relations in conflict")
       false
     }
     true
