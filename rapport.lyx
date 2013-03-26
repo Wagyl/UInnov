@@ -61,15 +61,75 @@
 \begin_body
 
 \begin_layout Title
-Projet de Programmation Comparée : 
-\begin_inset Quotes sld
+Projet de Programmation Comparée 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Quotes fld
 \end_inset
 
 Interfaces Utilisateurs
-\begin_inset Quotes srd
+\begin_inset Quotes frd
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Nicolas Chenciner, Melody Méaulle, David Bühler
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/standards.png
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -1384,7 +1444,7 @@ n externe, mais nous allons voir, toujours dans la partie suivante, les
  avantages de la solution choisie.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Exemple suivi
 \end_layout
 
