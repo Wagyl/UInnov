@@ -1569,9 +1569,9 @@ on, mais aussi des relations qui les connectent.
 \begin_layout Standard
 De ce point de vue, la librairie sera aussi riche que possible : de nombreux
  éléments de base seront donc mis à disposition des développeurs, et il
- sera bien évidemment possible de les composer ou de les étendre au besoin
- ; les relations seront également aussi large que possible, afin d'inclure
- autant de possibilité que nous pourrons l'imaginer.
+ sera bien évidemment possible (et encouragé) de les composer ou de les
+ étendre au besoin ; les relations seront également aussi large que possible,
+ afin d'inclure autant de possibilité que nous pourrons l'imaginer.
 \begin_inset Newline newline
 \end_inset
 
@@ -1596,6 +1596,17 @@ Le but est d’obtenir, après interprétation de la déclaration de structure
 
 \end_layout
 
+\begin_layout Standard
+Puisque l'aspect visuel des composants ici définis sera précisé séparément
+ (voir paragraphe suivant), il faut donc que chaque élément et type d'élément
+ soit doté d'un nom unique qui permette de l'identifier ; la librairie s'assurer
+a alors de l'absence de conflit pouvant mener à une confusion entre éléments.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 Aspect visuel
 \end_layout
@@ -1605,7 +1616,7 @@ En revanche, l'aspect de l'interface sera défini séparément, dans un autre
  langage.
  Il s'agit là de lister et préciser des propriétés de chacun des éléments
  graphiques utilisés : placement, taille, aspect, couleurs, effets, espacements,
- etc.
+ police des textes, etc.
  Ce langage doit permettre de fixer l'aspect visuel d'une classe de composant,
  affectant ainsi tout composant de ce type utilisé dans l'application, et
  aussi de modifier plus finement encore les valeurs d'un élément en particulier.
@@ -1630,10 +1641,10 @@ css
  ou de la bibliothèque graphique, de modifier aisément la feuille de style
  d'une application à sa convenance.
  De plus, toutes ces informations étant de fait regroupées dans un fichier
- texte bien structuré, il est également possible de coder un programme graphique
- pour lire et modifier à la volée les propriétés d'une interface à destination
- de l'utilisateur final, laissant à chacun le soin de configurer aussi finement
- que possible son interface.
+ texte bien structuré et au format spécifié, il est également possible de
+ coder un programme graphique pour lire et modifier à la volée les propriétés
+ d'une interface à destination de l'utilisateur final, laissant à chacun
+ le soin de configurer aussi finement que possible son interface.
  
 \end_layout
 
@@ -1641,6 +1652,48 @@ css
 Puisque de nombreuses feuilles de style différentes peuvent donc être définies
  pour une même interface, on laissera la possibilité d'enregistrer plusieurs
  de ces configurations et d'en changer à la volée.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'utilisation de cet outil permet d'adjoindre à une même interface un comporteme
+nt, un agencement et un visuel par défaut propre à chaque support : selon
+ le système d'exploitation, le support physique (tablette ou ordinateur),
+ ou la taille de l'écran, par exemple.
+ Il permet également au programmeur d’établir une charte graphique unique
+ pour toutes ses applications, et ce sans avoir à s'en préoccuper à chaque
+ nouveau projet.
+\end_layout
+
+\begin_layout Standard
+Un choix est à faire à ce niveau, l'utilisation d'un comportement par défaut
+ lié à un support permet à l'application de se 
+\begin_inset Quotes fld
+\end_inset
+
+fondre
+\begin_inset Quotes frd
+\end_inset
+
+ dans l'écosystème du support considéré, alors que l'utilisation d'un style
+ commun à plusieurs projets mais relativement indépendant des chartes graphiques
+ établies pour chaque support permet de créer une identité visuelle pour
+ tout un groupe d'applications.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Enfin, la librairie doit bien évidemment disposer d'une politique intelligente
+ et cohérente de valeurs par défaut pour chacun des composants, permettant
+ d'obtenir une interface fonctionnelle et agréable même en l'absence de
+ redéfinition de ces propriétés, mais la possibilité doit également être
+ offerte de les modifier à volonté.
 \begin_inset Newline newline
 \end_inset
 
@@ -1666,38 +1719,6 @@ des références à des paramètres n'existant pas pour le composant dans lequel
 \begin_layout Itemize
 des valeurs mal typées ou non autorisées (par exemple, dépassant des limites
  fixées pour le paramètre considéré).
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Enfin, la librairie doit bien évidemment disposer d'une politique intelligente
- et cohérente de valeurs par défaut pour chacun des composants, permettant
- d'obtenir une interface fonctionnelle et agréable même en l'absence de
- redéfinition de ces propriétés, mais la possibilité doit également être
- offerte de les modifier à volonté.
-\end_layout
-
-\begin_layout Standard
-L'utilisation de cet outil permet d'avoir un comportement par défaut propre
- à chaque support, mais peut aussi permettre au programmeur d’établir une
- charte graphique pour toutes ses applications, et ce sans avoir à s'en
- préoccuper à chaque nouveau projet.
- Un choix est à faire à ce niveau, l'utilisation d'un comportement par défaut
- lié à un support permet à l'application de se 
-\begin_inset Quotes fld
-\end_inset
-
-fondre
-\begin_inset Quotes frd
-\end_inset
-
- dans l'écosystème du support considéré, alors que l'utilisation d'un style
- commun à plusieurs projets mais relativement indépendant des chartes graphiques
- établies pour chaque support, permet de créer une identité visuelle pour
- tout un groupe d'applications.
 \begin_inset Newline newline
 \end_inset
 

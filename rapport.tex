@@ -17,9 +17,26 @@
 \makeatother
 \begin{document}
 
-\title{Projet de Programmation Comparée : ''Interfaces Utilisateurs''}
+\title{Projet de Programmation Comparée \\
+~\\
+ \og Interfaces Utilisateurs \fg{}\\
+~}
+
+
+\author{Nicolas Chenciner, Melody Méaulle, David Bühler}
 
 \maketitle
+\vphantom{}
+
+\begin{center}
+\includegraphics[scale=0.75]{images/standards}
+\par\end{center}
+
+\newpage{}
+
+
+\section*{Introduction}
+
 Introduction - blablabla
 
 Nous allons introduire un exemple suivi, qui sera utilisé tout au
@@ -580,7 +597,7 @@ la librairie graphique pour implémenter de telles valeurs.
 
 \subsection{Le modèle relationnel}
 
-Les différents élément d'une interface utilisateur doivent être mis
+Les différents éléments d'une interface utilisateur doivent être mis
 en relation les uns avec les autres afin de former un tout cohérent.
 Le principe le plus basique, qui est celui du modèle à widget évoqué
 dans la partie 2, est de ne considérer qu'une seule relation : la
@@ -598,7 +615,6 @@ dans Swing : pour certains éléments il est possible de définir un
 menu sans avoir à spécifier que ce dernier est contenu dans l'élément
 demandeur. Il y a une relation de \og menu \fg{} entre ces deux
 éléments et non une relation directe de positionnement.\\
-\medskip{}
 
 
 Ce modèle a pour but de permettre à l'interface produite de s'adapter
@@ -618,7 +634,7 @@ de description externe, mais nous allons voir, toujours dans la partie
 suivante, les avantages de la solution choisie.
 
 
-\subsubsection{Exemple suivi}
+\subsubsection*{Exemple suivi}
 
 L'utilisation d'un tel modèle pour la création de l'interface graphique
 est transparente pour l'utilisateur application. Par contre pour le
@@ -634,12 +650,9 @@ Le rendu graphique et les raccourcis ou boutons associés à ces éléments
 n'ont pas à être définis explicitement par le programmeur.\\
 \medskip{}
 \begin{figure}[H]
-\begin{centering}
-\includegraphics[scale=0.5]{images/modele-relationnel-projet}\caption{Concept relationnel}
-
-\par\end{centering}
-
+\centering{}\includegraphics[scale=0.5]{images/modele-relationnel-projet}\caption{Concept relationnel}
 \end{figure}
+~\\
 
 
 
@@ -649,60 +662,125 @@ Comme nous venons de le voir, la réalisation de notre système passe
 par l'introduction de langages intermédiaires liés au dit système
 et non à un support logiciel (langage de programmation / OS) ou matériel.
 Ceci permet en outre une adaptativité très intéressante.\\
-Le portage sur les différentes plateformes devient relativement et
-se résume à la création d'interpréteurs propres aux cibles. Ce processus
-est transparent pour le programmeur qui lui travaillera sur les deux
-langages introduits.
-
-\medskip{}
 
 
-Le premier est dédié à la description de la structure de l'interface.
-Nous définissons ici les actions et éléments utilisés mais aussi les
-relations qui les connectent. Des éléments de base doivent être fournis
-par le système, et pouvoir les composer ou en créer des personnalisés
-est indispensable. Dans cette même logique de réutilisation de l'existant,
-une autre volonté de notre part est de permettre la sauvegarde de
-la structure d'une interface. Une description non liée à un support
-logiciel / matériel de la dite structure permet la réalisation de
-ces objectifs.\\
-L'une des difficultés d'une telle représentation se situe au niveau
-des interactions entre le moteur de l'application et l'interface utilisateur,
-en particulier au niveau des bindings. L'interpréteur doit être capable
-de faire le lien entre des variables du langage source et leur pendant
-dans la description de la structure de l'interface. Cependant celà
-nous semble faisable, et n'est pas un obstacle insurmontable à la
-mise en place de cette architecture.\\
+
+\subsubsection*{Structure de l'interface}
+
+La librairie graphique sera disponible dans un langage de haut niveau
+facilitant son utilisation et l'élaboration d'une interface graphique
+possiblement complexe, langage qui sera donc dédié à la description
+de la structure de l'interface. La librairie fournira donc tous les
+outils nécessaires à la définition des actions possibles et à la création
+des composants graphiques de l'application, mais aussi des relations
+qui les connectent.
+
+De ce point de vue, la librairie sera aussi riche que possible : de
+nombreux éléments de base seront donc mis à disposition des développeurs,
+et il sera bien évidemment possible (et encouragé) de les composer
+ou de les étendre au besoin ; les relations seront également aussi
+large que possible, afin d'inclure autant de possibilité que nous
+pourrons l'imaginer.\\
+
+
+Dans cette même logique de réutilisation de l'existant, une autre
+volonté de notre part est de permettre la sauvegarde de la structure
+d'une interface. Une description indépendante du support logiciel
+et matériel de l'interface permet la réalisation de ces objectifs. 
+
 Le but est d’obtenir, après interprétation de la déclaration de structure
 de l'interface, un graphe représentant les relations entre les éléments.
-Il est à noter que les arrêtes de ce graphe doivent être orientées
-et typées.
-
-\medskip{}
+Il est à noter que les arêtes de ce graphe doivent être orientées
+et typées.\\
 
 
-Le second va servir à définir le style de l'interface, il est fortement
-inspiré du CSS utilisé en programmation WEB. Cette feuille de style
-va compléter notre solution à base de modèle relationnel et nous permettre
-d'obtenir l'adaptabilité recherchée. Son rôle est de traduire les
-déclaration de composants et les relations qui les unissent en une
-présentation graphique adaptée au support. Chaque composant va se
-voir attribuer un visuel, le graphe relationnel est lui prépondérant
-dans l'élaboration de l'agencement à l'écran. L'utilisation de cet
-outil permet à la fois d'avoir un comportement par défaut propre à
-chaque support, mais peut aussi permettre au programmeur d’établir
-une charte graphique pour toutes ses applications, et ce sans avoir
-à s'en préoccuper à chaque nouveau projet. Un choix est à faire à
-ce niveau, l'utilisation d'un comportement par défaut lié à un support
-permet à l'application de se \og fondre \fg{} dans l'écosystème
-du support considéré, alors que l'utilisation d'un style commun à
-plusieurs projets mais relativement indépendant des chartes graphiques
-établies pour chaque support, permet de créer une identité visuelle
-pour tout un groupe d'applications.\medskip{}
+Puisque l'aspect visuel des composants ici définis sera précisé séparément
+(voir paragraphe suivant), il faut donc que chaque élément et type
+d'élément soit doté d'un nom unique qui permette de l'identifier ;
+la librairie s'assurera alors de l'absence de conflit pouvant mener
+à une confusion entre éléments.\\
 
 
 
-\subsubsection{Exemple suivi}
+\subsubsection*{Aspect visuel}
+
+En revanche, l'aspect de l'interface sera défini séparément, dans
+un autre langage. Il s'agit là de lister et préciser des propriétés
+de chacun des éléments graphiques utilisés : placement, taille, aspect,
+couleurs, effets, espacements, police des textes, etc. Ce langage
+doit permettre de fixer l'aspect visuel d'une classe de composant,
+affectant ainsi tout composant de ce type utilisé dans l'application,
+et aussi de modifier plus finement encore les valeurs d'un élément
+en particulier.
+
+Cette feuille de style va compléter notre solution à base de modèle
+relationnel et nous permettre d'obtenir l'adaptabilité recherchée.\\
+
+
+À cette fin, un langage de script, inspiré du \textsc{css} utilisé
+en programmation web, doit suffire. Un tel langage permet à chacun,
+même sans connaissance de programmation ou de la bibliothèque graphique,
+de modifier aisément la feuille de style d'une application à sa convenance.
+De plus, toutes ces informations étant de fait regroupées dans un
+fichier texte bien structuré et au format spécifié, il est également
+possible de coder un programme graphique pour lire et modifier à la
+volée les propriétés d'une interface à destination de l'utilisateur
+final, laissant à chacun le soin de configurer aussi finement que
+possible son interface. 
+
+Puisque de nombreuses feuilles de style différentes peuvent donc être
+définies pour une même interface, on laissera la possibilité d'enregistrer
+plusieurs de ces configurations et d'en changer à la volée.\\
+
+
+L'utilisation de cet outil permet d'adjoindre à une même interface
+un comportement, un agencement et un visuel par défaut propre à chaque
+support : selon le système d'exploitation, le support physique (tablette
+ou ordinateur), ou la taille de l'écran, par exemple. Il permet également
+au programmeur d’établir une charte graphique unique pour toutes ses
+applications, et ce sans avoir à s'en préoccuper à chaque nouveau
+projet.
+
+Un choix est à faire à ce niveau, l'utilisation d'un comportement
+par défaut lié à un support permet à l'application de se \og fondre \fg{}
+dans l'écosystème du support considéré, alors que l'utilisation d'un
+style commun à plusieurs projets mais relativement indépendant des
+chartes graphiques établies pour chaque support permet de créer une
+identité visuelle pour tout un groupe d'applications.\\
+
+
+Enfin, la librairie doit bien évidemment disposer d'une politique
+intelligente et cohérente de valeurs par défaut pour chacun des composants,
+permettant d'obtenir une interface fonctionnelle et agréable même
+en l'absence de redéfinition de ces propriétés, mais la possibilité
+doit également être offerte de les modifier à volonté.\\
+
+
+Par ailleurs la librairie graphique doit proposer une analyse statique
+forte de la feuille de style associée à une interface : les erreurs
+qui s'y glissent doivent apparaître dès la compilation, telles que
+:
+\begin{itemize}
+\item des références à des composants graphiques n'existant pas dans l'interface
+considérée ;
+\item des références à des paramètres n'existant pas pour le composant dans
+lequel ils sont redéfinis ;
+\item des valeurs mal typées ou non autorisées (par exemple, dépassant des
+limites fixées pour le paramètre considéré).\\
+
+\end{itemize}
+Notons que la distinction entre ce qui doit être défini par l'application
+elle-même (via la librairie, dans le langage dans lequel elle est
+définie) ou dans ce langage de script est parfois mince. Par exemple,
+dans le cas d'une barre d'outils, c'est au développeur de coder les
+éléments qui peuvent y figurer ; mais la configuration de la barre
+d'outil finale peut être affinée dans le langage de script en y précisant,
+parmi ces éléments, lesquels sont effectivement inclus et dans quel
+ordre.\\
+
+
+
+\subsubsection*{Exemple suivi}
 
 La description de la structure a déjà été évoquée lors de l'application
 à l'exemple du modèle relationnel. Nous avons un menu, deux panneaux,
