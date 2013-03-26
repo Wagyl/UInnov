@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose}
 \usepackage{float}
@@ -37,11 +37,24 @@
 
 \section*{Introduction}
 
-Introduction - blablabla
+La multiplication récente des supports multimédia a mené à une évolution
+et une diversification des modes d'intéraction entre l'homme et la
+machine. La conception d'interfaces utilisateurs, en particulier d'interfaces
+graphiques, n'en est devenue que plus complexe mais surtout différente.
+La multiplicité des supports force les développeurs à adapter leurs
+produits aux différents écosytèmes faisant ainsi naître de nouveaux
+besoins en terme d'outils de création d'interfaces.
 
-Nous allons introduire un exemple suivi, qui sera utilisé tout au
-long de ce rapport. Le but est d'illustrer nos remarques et idées
-grâce à un cas d'étude simple. \\
+Le rapport qui suit est le fruit d'une réflexion que nous avons menée
+sur cette nouvelle approche des interfaces utilisateurs. Nous avons
+concentré notre attention sur les points qui nous paraissaient important,
+laissant ainsi de côté certains aspects techniques comme l'utilisation
+de la concurrence pour profiter de l'accroissement du nombre de processeurs
+dans les machines ou la gestion des affichages via les bibliothèques
+système.
+
+Pour illustrer notre propos, nous allons introduire un exemple simple
+qui sera utilisé tout au long du rapport.\\
 L'application considérée se contente de gérer une liste et un compteur.
 Elle est munie d'une interface graphique constituée d'une fenêtre,
 ainsi que de deux vues, ou panneaux, qui ne sont pas visibles en même
@@ -224,6 +237,25 @@ La conception d'une interface graphique par dessus un moteur d'application
 peut se diviser en quatre étapes ; une bibliothèque graphique devrait
 fournir des outils adéquats pour chacune, et minimiser les interdépendances
 entre elles.
+
+
+\subsubsection*{L'existant}
+
+Ce dont nous ne nous occuperons pas dans ce rapport : une interface
+graphique n'est qu'un intermédiaire entre une application et ses utilisateurs
+finaux ; nous considérons donc que la conception de l'interface doit
+pouvoir se greffer par dessus un programme pré-existant selon le pattern
+modèle-vue-contrôleur qui tend à minimiser les dépendances entre chacune
+des parties. Une bibliothèque graphique n'a donc pas à se charger
+du développement de la logique interne de l'application, mais doit
+permettre d'afficher sous diverses formes des informations multiples
+provenant du modèle, et de transmettre des actions de l'utilisateur
+au contrôleur.
+
+Nous ferons désormais référence à cette \og application sous-jacente \fg{}
+comme du moteur ou de la logique interne de l'application. Notons
+qu'une bibliothèque graphique doit permettre de construire une interface
+pour des programmes les plus variés possible.
 
 
 \paragraph{Communication entre le moteur et l'interface}
@@ -790,5 +822,11 @@ une relation orientée du menu vers le panneau ciblé.\\
 Les deux panneaux sont liés par \og switch \fg{}, qui est une relation
 orientée aussi, mais ici nous l'utilisons dans les deux sens.\\
 Nous omettons volontairement la fenêtre qui n'a pas grand intérêt
-ici, elle sert de conteneur à l'ensemble.
+ici, elle sert de conteneur à l'ensemble.\\
+L'important est que la description soit proche du modèle et ce afin
+de facilité le passage de la réflexion au concrêt, on remarque de
+plus que l'adaptation de l'interface au support est déjà importante
+dans un exemple simple comme celui-ci. La présence ou absence d'une
+souris est un élément prépondérant dans le choix de l'outil de transition
+entre les deux vues.
 \end{document}
