@@ -144,7 +144,7 @@ s mènent à une évolution et une diversification des modes d'interaction
 
 \begin_layout Standard
 Le rapport qui suit est le fruit de notre réflexion sur les réponses à apporter
- à ses besoins.
+ à ces besoins.
  Nous avons concentré notre attention sur les points qui nous paraissaient
  important, laissant ainsi de côté certains aspects techniques comme l'utilisati
 on de la concurrence pour profiter de l'accroissement du nombre de processeurs
@@ -820,7 +820,7 @@ Annulation :
 \begin_layout Itemize
 
 \series bold
-Adaptativité - facilité d'utilisation :
+Adaptabilité - facilité d'utilisation :
 \series default
  le passage d'une vue à l'autre doit se faire via un outil adapté au support.
  Par exemple, un bouton sur chaque panneau avec un raccourci associé pour
@@ -909,7 +909,7 @@ Liste - compteur :
 \begin_layout Itemize
 
 \series bold
-Adaptativité : 
+Adaptabilité : 
 \series default
 le programmeur ne doit pas avoir à programmer plusieurs interfaces juste
  pour changer le bouton de changement de vue en 
@@ -1472,14 +1472,14 @@ Ce modèle a pour but de permettre à l'interface produite de s'adapter à
  son environnement d'utilisation, mais il permet aussi une analyse statique
  de la cohérence d'une interface.
  Dans un premier temps il s'agira de vérifier la possibilité des relations
- déclarées, celà nécessite déjà des outils adaptés.
+ déclarées, cela nécessite déjà des outils adaptés.
  Définir la nature d'une relation entre plusieurs élément revient à donner
  un type à cette relation.
  Il apparait donc souhaitable de se diriger vers un langage de déclaration
  de ces relations muni d'une sémantique adaptée afin de ramener l'analyse
  de cohérence d'une interface graphique à une analyse statique du typage
  de la dite déclaration.
- Nous devons pour celà nous munir de langages que nous qualifierons d'intermédia
+ Nous devons pour cela nous munir de langages que nous qualifierons d'intermédia
 ires qui sont étudiés dans la partie suivante.
  Une autre possibilité eut été d'utiliser des structures de graphes pour
  modéliser les relations entre éléments sans passer par un langage de descriptio
@@ -1592,7 +1592,7 @@ Langages intermédiaires
 Comme nous venons de le voir, la réalisation de notre système passe par
  l'introduction de langages intermédiaires liés au dit système et non à
  un support logiciel (langage de programmation / OS) ou matériel.
- Ceci permet en outre une adaptativité très intéressante.
+ Ceci permet en outre une adaptabilité très intéressante.
 \begin_inset Newline newline
 \end_inset
 
@@ -1830,7 +1830,7 @@ Nous omettons volontairement la fenêtre qui n'a pas grand intérêt ici, elle
 \end_inset
 
 L'important est que la description soit proche du modèle et ce afin de facilité
- le passage de la réflexion au concrêt, on remarque de plus que l'adaptation
+ le passage de la réflexion au concret, on remarque de plus que l'adaptation
  de l'interface au support est déjà importante dans un exemple simple comme
  celui-ci.
  La présence ou absence d'une souris est un élément prépondérant dans le
