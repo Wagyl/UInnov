@@ -97,7 +97,7 @@ Nicolas Chenciner, Melody Méaulle, David Bühler
 \end_layout
 
 \begin_layout Standard
-\begin_inset Phantom Phantom
+\begin_inset Phantom VPhantom
 status open
 
 \begin_layout Plain Layout
@@ -113,7 +113,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/standards.png
-	scale 50
+	scale 75
 	rotateOrigin center
 
 \end_inset
@@ -1418,10 +1418,6 @@ menu
 \end_inset
 
 
-\begin_inset VSpace defskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1528,10 +1524,14 @@ Concept relationnel
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
-\end_layout
 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
 \end_inset
 
 
@@ -1549,13 +1549,6 @@ Comme nous venons de le voir, la réalisation de notre système passe par
 \begin_inset Newline newline
 \end_inset
 
-Le portage sur les différentes plateformes devient relativement simple et
- se résume à la création d'interpréteurs propres aux cibles.
- Ce processus est transparent pour le programmeur qui lui travaillera sur
- les deux langages introduits.
-\begin_inset Newline newline
-\end_inset
-
 
 \end_layout
 
@@ -1564,32 +1557,39 @@ Structure de l'interface
 \end_layout
 
 \begin_layout Standard
-Le premier est dédié à la description de la structure de l'interface.
- Nous définissons ici les actions et éléments utilisés mais aussi les relations
- qui les connectent.
- Des éléments de base doivent être fournis par le système, et pouvoir les
- composer ou en créer des personnalisés est indispensable.
- Dans cette même logique de réutilisation de l'existant, une autre volonté
+La librairie graphique sera disponible dans un langage de haut niveau facilitant
+ son utilisation et l'élaboration d'une interface graphique possiblement
+ complexe, langage qui sera donc dédié à la description de la structure
+ de l'interface.
+ La librairie fournira donc tous les outils nécessaires à la définition
+ des actions possibles et à la création des composants graphiques de l'applicati
+on, mais aussi des relations qui les connectent.
+\end_layout
+
+\begin_layout Standard
+De ce point de vue, la librairie sera aussi riche que possible : de nombreux
+ éléments de base seront donc mis à disposition des développeurs, et il
+ sera bien évidemment possible de les composer ou de les étendre au besoin
+ ; les relations seront également aussi large que possible, afin d'inclure
+ autant de possibilité que nous pourrons l'imaginer.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans cette même logique de réutilisation de l'existant, une autre volonté
  de notre part est de permettre la sauvegarde de la structure d'une interface.
- Une description non liée à un support logiciel / matériel de la dite structure
+ Une description indépendante du support logiciel et matériel de l'interface
  permet la réalisation de ces objectifs.
-\begin_inset Newline newline
-\end_inset
+ 
+\end_layout
 
-L'une des difficultés d'une telle représentation se situe au niveau des
- interactions entre le moteur de l'application et l'interface utilisateur,
- en particulier au niveau des bindings.
- L'interpréteur doit être capable de faire le lien entre des variables du
- langage source et leur pendant dans la description de la structure de l'interfa
-ce.
- Cependant celà nous semble faisable, et n'est pas un obstacle insurmontable
- à la mise en place de cette architecture.
-\begin_inset Newline newline
-\end_inset
-
+\begin_layout Standard
 Le but est d’obtenir, après interprétation de la déclaration de structure
  de l'interface, un graphe représentant les relations entre les éléments.
- Il est à noter que les arrêtes de ce graphe doivent être orientées et typées.
+ Il est à noter que les arêtes de ce graphe doivent être orientées et typées.
 \begin_inset Newline newline
 \end_inset
 
@@ -1631,8 +1631,16 @@ css
  d'une application à sa convenance.
  De plus, toutes ces informations étant de fait regroupées dans un fichier
  texte bien structuré, il est également possible de coder un programme graphique
- pour lire et modifier à la volée les propriétés d'une interface.
+ pour lire et modifier à la volée les propriétés d'une interface à destination
+ de l'utilisateur final, laissant à chacun le soin de configurer aussi finement
+ que possible son interface.
  
+\end_layout
+
+\begin_layout Standard
+Puisque de nombreuses feuilles de style différentes peuvent donc être définies
+ pour une même interface, on laissera la possibilité d'enregistrer plusieurs
+ de ces configurations et d'en changer à la volée.
 \begin_inset Newline newline
 \end_inset
 
@@ -1665,7 +1673,7 @@ des valeurs mal typées ou non autorisées (par exemple, dépassant des limites
 \end_layout
 
 \begin_layout Standard
-Bien évidemment, la librairie doit disposer d'une politique intelligente
+Enfin, la librairie doit bien évidemment disposer d'une politique intelligente
  et cohérente de valeurs par défaut pour chacun des composants, permettant
  d'obtenir une interface fonctionnelle et agréable même en l'absence de
  redéfinition de ces propriétés, mais la possibilité doit également être
@@ -1690,6 +1698,20 @@ fondre
  commun à plusieurs projets mais relativement indépendant des chartes graphiques
  établies pour chaque support, permet de créer une identité visuelle pour
  tout un groupe d'applications.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notons que la distinction entre ce qui doit être défini par l'application
+ elle-même (via la librairie, dans le langage dans lequel elle est définie)
+ ou dans ce langage de script est parfois mince.
+ Par exemple, dans le cas d'une barre d'outils, c'est au développeur de
+ coder les éléments qui peuvent y figurer ; mais la configuration de la
+ barre d'outil finale peut être affinée dans le langage de script en y précisant
+, parmi ces éléments, lesquels sont effectivement inclus et dans quel ordre.
 \begin_inset Newline newline
 \end_inset
 
