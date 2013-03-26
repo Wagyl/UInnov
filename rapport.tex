@@ -2,21 +2,11 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[french]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{luainputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \geometry{verbose}
 \usepackage{float}
 \usepackage{graphicx}
-
-\makeatletter
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-%% A simple dot to overcome graphicx limitations
-\newcommand{\lyxdot}{.}
-
-
-\makeatother
-
 \usepackage{babel}
 \makeatletter
 \addto\extrasfrench{%
@@ -50,7 +40,9 @@ accessible via une interaction entre l'utilisateur et l'interface.\\
 
 
 \begin{figure}[H]
-\includegraphics[scale=0.5]{\string"C:/Users/Nico/Dropbox/M2/Prog comparée/base-exemple-projet\string".png}
+\begin{centering}
+\includegraphics[scale=0.5]{base-exemple-projet}
+\par\end{centering}
 
 \caption{Concept de base}
 \end{figure}
@@ -642,8 +634,10 @@ Le rendu graphique et les raccourcis ou boutons associés à ces éléments
 n'ont pas à être définis explicitement par le programmeur.\\
 \medskip{}
 \begin{figure}[H]
-\includegraphics[scale=0.5]{\string"C:/Users/Nico/Dropbox/M2/Prog comparée/modèle-relationnel-projet\string".png}\caption{Concept relationnel}
+\begin{centering}
+\includegraphics[scale=0.5]{modèle-relationnel-projet}\caption{Concept relationnel}
 
+\par\end{centering}
 
 \end{figure}
 

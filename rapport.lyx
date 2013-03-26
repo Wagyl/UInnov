@@ -127,8 +127,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename C:/Users/Nico/Dropbox/M2/Prog comparée/base-exemple-projet.png
+	filename base-exemple-projet.png
 	scale 50
 	rotateOrigin center
 
@@ -1447,8 +1448,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename C:/Users/Nico/Dropbox/M2/Prog comparée/modèle-relationnel-projet.png
+	filename modèle-relationnel-projet.png
 	scale 50
 	rotateOrigin center
 
