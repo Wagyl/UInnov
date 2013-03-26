@@ -133,27 +133,31 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-La multiplication récente des supports multimédia a mené à une évolution
- et une diversification des modes d'intéraction entre l'homme et la machine.
- La conception d'interfaces utilisateurs, en particulier d'interfaces graphiques
-, n'en est devenue que plus complexe mais surtout différente.
- La multiplicité des supports force les développeurs à adapter leurs produits
- aux différents écosytèmes faisant ainsi naître de nouveaux besoins en terme
- d'outils de création d'interfaces.
+La multiplication récente des supports multimédia, le développement rapide
+ de nombreux secteurs de l'informatique et l'exigence croissante des utilisateur
+s mènent à une évolution et une diversification des modes d'interaction
+ entre l'homme et la machine.
+ La conception d'interfaces utilisateurs n'en devient que plus riche et
+ plus complexe, faisant ainsi naître de nouveaux besoins en terme d'outils
+ de création d'interfaces graphiques.
 \end_layout
 
 \begin_layout Standard
-Le rapport qui suit est le fruit d'une réflexion que nous avons menée sur
- cette nouvelle approche des interfaces utilisateurs.
+Le rapport qui suit est le fruit de notre réflexion sur les réponses à apporter
+ à ses besoins.
  Nous avons concentré notre attention sur les points qui nous paraissaient
  important, laissant ainsi de côté certains aspects techniques comme l'utilisati
 on de la concurrence pour profiter de l'accroissement du nombre de processeurs
  dans les machines ou la gestion des affichages via les bibliothèques système.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Pour illustrer notre propos, nous allons introduire un exemple simple qui
- sera utilisé tout au long du rapport.
+Pour illustrer notre propos, nous introduisons un exemple simple qui sera
+ utilisé tout au long du rapport.
 \begin_inset Newline newline
 \end_inset
 
