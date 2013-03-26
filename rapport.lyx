@@ -1317,8 +1317,8 @@ Le modèle relationnel
 \end_layout
 
 \begin_layout Standard
-Les différents élément d'une interface utilisateur doivent être mis en relation
- les uns avec les autres afin de former un tout cohérent.
+Les différents éléments d'une interface utilisateur doivent être mis en
+ relation les uns avec les autres afin de former un tout cohérent.
  Le principe le plus basique, qui est celui du modèle à widget évoqué dans
  la partie 2, est de ne considérer qu'une seule relation : la relation de
  parenté entre le contenant et le contenu.
@@ -1489,17 +1489,18 @@ Comme nous venons de le voir, la réalisation de notre système passe par
 \begin_inset Newline newline
 \end_inset
 
-Le portage sur les différentes plateformes devient relativement et se résume
- à la création d'interpréteurs propres aux cibles.
+Le portage sur les différentes plateformes devient relativement simple et
+ se résume à la création d'interpréteurs propres aux cibles.
  Ce processus est transparent pour le programmeur qui lui travaillera sur
  les deux langages introduits.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
+\begin_inset Newline newline
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection*
+Structure de l'interface
 \end_layout
 
 \begin_layout Standard
@@ -1529,28 +1530,93 @@ ce.
 Le but est d’obtenir, après interprétation de la déclaration de structure
  de l'interface, un graphe représentant les relations entre les éléments.
  Il est à noter que les arrêtes de ce graphe doivent être orientées et typées.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Aspect visuel
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace defskip
+En revanche, l'aspect de l'interface sera défini séparément, dans un autre
+ langage.
+ Il s'agit là de lister et préciser des propriétés de chacun des éléments
+ graphiques utilisés : placement, taille, aspect, couleurs, effets, espacements,
+ etc.
+ Ce langage doit permettre de fixer l'aspect visuel d'une classe de composant,
+ affectant ainsi tout composant de ce type utilisé dans l'application, et
+ aussi de modifier plus finement encore les valeurs d'un élément en particulier.
+\end_layout
+
+\begin_layout Standard
+Cette feuille de style va compléter notre solution à base de modèle relationnel
+ et nous permettre d'obtenir l'adaptabilité recherchée.
+\begin_inset Newline newline
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Le second va servir à définir le style de l'interface, il est fortement
- inspiré du CSS utilisé en programmation WEB.
- Cette feuille de style va compléter notre solution à base de modèle relationnel
- et nous permettre d'obtenir l'adaptabilité recherchée.
- Son rôle est de traduire les déclaration de composants et les relations
- qui les unissent en une présentation graphique adaptée au support.
- Chaque composant va se voir attribuer un visuel, le graphe relationnel
- est lui prépondérant dans l'élaboration de l'agencement à l'écran.
- L'utilisation de cet outil permet à la fois d'avoir un comportement par
- défaut propre à chaque support, mais peut aussi permettre au programmeur
- d’établir une charte graphique pour toutes ses applications, et ce sans
- avoir à s'en préoccuper à chaque nouveau projet.
+À cette fin, un langage de script, inspiré du 
+\shape smallcaps
+css
+\shape default
+ utilisé en programmation web, doit suffire.
+ Un tel langage permet à chacun, même sans connaissance de programmation
+ ou de la bibliothèque graphique, de modifier aisément la feuille de style
+ d'une application à sa convenance.
+ De plus, toutes ces informations étant de fait regroupées dans un fichier
+ texte bien structuré, il est également possible de coder un programme graphique
+ pour lire et modifier à la volée les propriétés d'une interface.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Par ailleurs la librairie graphique doit proposer une analyse statique forte
+ de la feuille de style associée à une interface : les erreurs qui s'y glissent
+ doivent apparaître dès la compilation, telles que :
+\end_layout
+
+\begin_layout Itemize
+des références à des composants graphiques n'existant pas dans l'interface
+ considérée ;
+\end_layout
+
+\begin_layout Itemize
+des références à des paramètres n'existant pas pour le composant dans lequel
+ ils sont redéfinis ;
+\end_layout
+
+\begin_layout Itemize
+des valeurs mal typées ou non autorisées (par exemple, dépassant des limites
+ fixées pour le paramètre considéré).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bien évidemment, la librairie doit disposer d'une politique intelligente
+ et cohérente de valeurs par défaut pour chacun des composants, permettant
+ d'obtenir une interface fonctionnelle et agréable même en l'absence de
+ redéfinition de ces propriétés, mais la possibilité doit également être
+ offerte de les modifier à volonté.
+\end_layout
+
+\begin_layout Standard
+L'utilisation de cet outil permet d'avoir un comportement par défaut propre
+ à chaque support, mais peut aussi permettre au programmeur d’établir une
+ charte graphique pour toutes ses applications, et ce sans avoir à s'en
+ préoccuper à chaque nouveau projet.
  Un choix est à faire à ce niveau, l'utilisation d'un comportement par défaut
  lié à un support permet à l'application de se 
 \begin_inset Quotes fld
@@ -1564,13 +1630,13 @@ fondre
  commun à plusieurs projets mais relativement indépendant des chartes graphiques
  établies pour chaque support, permet de créer une identité visuelle pour
  tout un groupe d'applications.
-\begin_inset VSpace defskip
+\begin_inset Newline newline
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Exemple suivi
 \end_layout
 
