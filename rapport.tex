@@ -5,6 +5,7 @@
 \usepackage[utf8]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose}
+\usepackage{float}
 \usepackage{graphicx}
 
 \makeatletter
@@ -33,30 +34,25 @@ Introduction - blablabla
 
 Nous allons introduire un exemple suivi, qui sera utilisé tout au
 long de ce rapport. Le but est d'illustrer nos remarques et idées
-grâce à un cas d'étude simple. 
-
-Nous allons donc considérer une application gérant une liste et un
-compteur. Elle est munie d'une interface graphique constituée d'une
-fenêtre, ainsi que de deux vues, ou paneaux, qui ne sont pas visibles
-en même temps, mais avec la possibilité de passer de l'une à l'autre.
-Ces vues seront affichées, lorsque visibles, dans la fenêtre précédement
-mentionnée. 
-
-L'une des deux vues offrira une représentation et des outils de modification
-de la liste gérée par l'application alors que l'autre se chargera
-du compteur. 
-
+grâce à un cas d'étude simple. \\
+L'application considérée se contente de gérer une liste et un compteur.
+Elle est munie d'une interface graphique constituée d'une fenêtre,
+ainsi que de deux vues, ou panneaux, qui ne sont pas visibles en même
+temps, mais avec la possibilité de passer de l'une à l'autre. Ces
+vues seront affichées, lorsque visibles, dans la fenêtre précédemment
+mentionnée. \\
+L'une des deux vues offre une représentation et des outils de modification
+de la liste gérée par l'application alors que l'autre se charge du
+compteur. \\
 Deux menus sont présents, l'un attaché à la fenêtre et l'autre \og flottant \fg{}
-accessible via une intéraction entre l'utilisateur et l'interface.
+accessible via une interaction entre l'utilisateur et l'interface.\\
+\medskip{}
 
-~
 
-\begin{figure}
+\begin{figure}[H]
 \includegraphics[scale=0.5]{\string"C:/Users/Nico/Dropbox/M2/Prog comparée/base-exemple-projet\string".png}
 
-\caption{Base de l'exemple}
-
-
+\caption{Concept de base}
 \end{figure}
 
 
@@ -80,17 +76,14 @@ définition des utilisateurs et des outils de conception sollicités.
 Avant toute analyse ou réflexion, il est important de définir qui
 sont les utilisateurs du système considéré. Nous distinguerons deux
 catégories d'utilisateurs et nous utiliserons la terminologie suivante
-: 
+: \medskip{}
 
-~
 \begin{itemize}
 \item \textbf{Programmeur :} il est notre cible directe, c'est lui qui utilisera
 les outils que nous allons développer afin de construire des interfaces
 utilisateurs (nous parlerons ici essentiellement d'interfaces graphiques)
-pour ses applications.
-\end{itemize}
-~
-\begin{itemize}
+pour ses applications.\medskip{}
+
 \item \textbf{Utilisateur application : }il est l'utilisateur des produits
 développés par le programmeur, il est n'est pas notre cible directe
 mais il est important de ne pas l'oublier.
@@ -100,13 +93,12 @@ mais il est important de ne pas l'oublier.
 Une approche orientée utilisateur sera adoptée lors de la conception,
 les besoins étant différents pour les deux catégories d'utilisateurs
 considérées, nous ferons bien attention de prendre en compte les deux
-points de vue.
-
-En particulier, celui de l'utilisateur application doit être pris
-en compte même s'il sera la cible du système développé par le programmeur
-et non directement celle du notre. Ses besoins doivent nous permettre
-de mieux déterminer les éléments nécessaires aux programmeurs pour
-satisfaire à ses exigences envers le produit fini.
+points de vue. En particulier, celui de l'utilisateur application
+doit être pris en compte même s'il sera la cible du système développé
+par le programmeur et non directement celle du notre. Ses besoins
+doivent nous permettre de mieux déterminer les éléments nécessaires
+aux programmeurs pour satisfaire à ses exigences envers le produit
+fini.
 
 
 \subsubsection*{Conception - génie logiciel}
@@ -114,74 +106,78 @@ satisfaire à ses exigences envers le produit fini.
 La conception d'une interface utilisateur doit être centrée autour
 des deux catégories d'acteurs définies précédemment, l'utilisation
 du modèle de conception centré utilisateur semble alors tout à fait
-correspondre aux besoins.
-
+correspondre aux besoins. \\
 Ce dernier est itératif, chaque itération étant composée des trois
-phases suivantes :
+phases suivantes :\medskip{}
 
-~
 \begin{itemize}
 \item \textbf{Analyse :} on analyse les besoins des acteurs du système,
 un panel représentatif d'utilisateurs des deux catégories concernées
-doit être constitué afin d'établir les dits besoins.
-\end{itemize}
-~
-\begin{itemize}
+doit être constitué afin d'établir les dits besoins.\medskip{}
+
 \item \textbf{Conception :} un prototype doit être conçu en fonction des
 besoins établis à l'étape précédente. Chaque prototype servira le
-plus souvent de base à celui à l'étape suivante
-\end{itemize}
-~
-\begin{itemize}
+plus souvent de base à celui à l'étape suivante\medskip{}
+
 \item \textbf{Évaluation :} sur la base du prototype réalisé, une évaluation
 est faite. Le procédé étant itératif, cette évaluation servira de
 base à la modification des besoins de la première étape de l'itération
-suivante. 
-\end{itemize}
-~
+suivante. \medskip{}
 
+\end{itemize}
 Afin de mener à bien ces trois phases, il est nécessaire d'établir
 des critères d'évaluation qui serviront aussi de base à l'élaboration
-des besoins. 
+des besoins. \medskip{}
 
-~
 \begin{itemize}
-\item \textbf{Pour l'utilisateur application :}
+\item \textbf{Pour l'utilisateur application :}\medskip{}
+
 
 \begin{itemize}
 \item \textbf{Facilité d'utilisation :} la vitesse d'apprentissage, l'aide
 extérieure nécessaire ainsi que le nombre d'erreurs commises lors
 d'un test sont de bons indicateurs. Il faut de plus prendre en compte
-les différents niveaux de compétences parmi les utilisateurs.
+les différents niveaux de compétences parmi les utilisateurs.\medskip{}
+
 \item \textbf{Correction des erreurs }: la possibilité d'annuler une action
-est indispensable (cf. partie 3.1)
+est indispensable (cf. partie 3.1)\medskip{}
+
 \item \textbf{Rapidité :} le temps de réponse de l'interface doit être faible.
 Il faut définir par des tests quel est le délai admissible avant réponse
-et quel est le meilleur moyen de faire patienter l'utilisateur application.
+et quel est le meilleur moyen de faire patienter l'utilisateur application.\medskip{}
+
 \item \textbf{Aspect visuel }: il doit être agréable et clair. (nous pourrions
 parler d'aspect sensoriel pour être plus général, mais nous allons
-nous concentrer sur les interfaces graphiques)
+nous concentrer sur les interfaces graphiques)\medskip{}
+
 \end{itemize}
 \end{itemize}
 ~
 \begin{itemize}
-\item \textbf{Pour le programmeur :}
+\item \textbf{Pour le programmeur :}\medskip{}
+
 
 \begin{itemize}
 \item \textbf{Expressivité :} une bonne expressivité des langages / outils
 utilisés est nécessaire, un code clair et précis est plus agréable.
 De plus il est important d'essayer de rendre la programmation via
-le système intuitive.
+le système intuitive.\medskip{}
+
 \item \textbf{Adaptabilité :} une bonne capacité d'adaptation aux différents
-support ainsi qu'une portabilité sont nécessaires.
-\item \textbf{Sûreté :} un code qui compile doit être un code qui marche.
+support ainsi qu'une portabilité sont nécessaires.\medskip{}
+
+\item \textbf{Sûreté :} un code qui compile doit être un code qui marche.\medskip{}
+
 \item \textbf{Debugging :} des outils de debugging doivent être fournis,
 une analyse statique de pertinence serait un plus (détecter le maximum
-d'absurdités comme des éléments inutiles par exemple).
+d'absurdités comme des éléments inutiles par exemple).\medskip{}
+
 \item \textbf{IDE :} une intégration aux IDE populaires est nécessaire,
-la création d'un IDE spécifique peut être envisagé.
+la création d'un IDE spécifique peut être envisagé.\medskip{}
+
 \item \textbf{Efficacité :} les critères en terme de consommation des ressources
-de la machine doivent être étudiés.
+de la machine doivent être étudiés.\medskip{}
+
 \end{itemize}
 \end{itemize}
 ~
@@ -195,14 +191,16 @@ logiciel vont nous aider, en voici trois particulièrement adaptés
 \item \textbf{Scénarios / diagrammes de cas d'utilisation :} leur utilisation,
 combinée aux critères mis en place ci-dessus, nous permettra à la
 fois d'établir les besoins et d'effectuer des tests choisis dans le
-cadre de l'évaluation. 
+cadre de l'évaluation. \medskip{}
+
 \item \textbf{Diagrammes relationnels - diagrammes de classes :} même si
 elle ne doit pas nous aveugler, la programmation orientée objet est
 adaptée au sujet. La réflexion à mener quant à l'organisation du système
 considéré se prête remarquablement bien à l'utilisation de ces outils.
 De plus, ils nous permettent, à un autre niveau, de nous mettre à
 la place du programmeur qui devra concevoir une interface en utilisant
-notre système.
+notre système.\medskip{}
+
 \item \textbf{Design pattern :} l'implémentation ``native'' de comportements
 génériques, typiquement pour les interactions entre l'utilisateur
 application et l'interface créée, permet à la fois de faciliter l'utilisation
@@ -293,39 +291,53 @@ déjà écrite.
 \subsection{Exemple suivi}
 
 Dans cette première itération de notre exemple suivi, nous n'allons
-pas forcement être exhaustifs, mais nous allons essayer de donner
-une bonne idée de ce que nous aurons à faire.
+pas forcement être exhaustifs, mais nous allons essayer d'aborder
+les points importants pour mener à bien la réalisation de notre exemple.
+Nous allons commencer par étudier les besoins de l'utilisateur application.\medskip{}
 
-Nous allons commencer par étudier les besoins de l'utilisateur application.
 \begin{itemize}
-\item \textbf{Annulation :} pouvoir annuler une opération effectuée via
-l'interface graphique sur la liste ou le compteur.
+\item \textbf{Annulation :} il est nécessaire de pouvoir annuler une opération
+effectuée via l'interface graphique sur la liste ou le compteur. On
+peut aussi vouloir annuler un changement de vue.\medskip{}
+
 \item \textbf{Adaptativité - facilité d'utilisation :} le passage d'une
 vue à l'autre doit se faire via un outil adapté au support. Par exemple,
 un bouton sur chaque panneau avec un raccourci associé pour une paire
 clavier / souris mais une \og gesture \fg{} sur une tablette ou
-un smartphone. Il en est de même pour toutes les actions proposées
-par l'interface, y compris la gestion du menu flottant (apparition
-au clic droit pour le clavier / souris et utilisation d'une \og touche \fg{}
-à deux doigts pour une tablette ou un smartphone).
+un smartphone. \\
+Il en est de même pour toutes les actions proposées par l'interface,
+y compris la gestion du menu flottant (apparition au clic droit pour
+le clavier / souris et utilisation d'une \og touche \fg{} à deux
+doigts pour une tablette ou un smartphone). \\
+La position du menu attaché à la fenêtre doit dépendre du support,
+sur un smartphone la taille relativement petite de l'écran oblige
+à prévoir un emplacement plus adapté, voir même de ne pas l'afficher.\medskip{}
+
 \item \textbf{Rapidité :} le changement de vue et l'apparition du menu flottant
 doivent être rapides, il ne faut surtout pas donner l'impression à
-l'utilisateur qu'il est en attente passive. Les opérations sur la
-liste et le compteur peuvent être soumises à des contraintes au niveau
-de la partie logique de l'application, l'interface doit être capable
-d'afficher une barre de progression par exemple pour montrer qu'une
-action est en cours.
+l'utilisateur qu'il est en attente passive. \\
+Les opérations sur la liste et le compteur peuvent être soumises à
+des contraintes au niveau de la partie logique de l'application, l'interface
+doit être capable d'afficher une barre de progression par exemple
+pour montrer qu'une action est en cours.\medskip{}
+
 \end{itemize}
-Ceux du programmeur en découlent en partie :
+Nous pouvons alors définir les exigences du programmeur qui en découlent
+:\medskip{}
+
 \begin{itemize}
 \item \textbf{Liste - compteur :} avoir la possibilité de lier directement
 une liste ou un compteur à sa représentation graphique sans que le
 programmeur ait à lui même définir un protocole de mise à jour et
-l'implémenter serait pratique.
+l'implémenter est nécessaire.\medskip{}
+
 \item \textbf{Adaptativité : }le programmeur ne doit pas avoir à programmer
-des interfaces différentes juste pour changer un bouton en \og gesture \fg{}.
-Il doit en être de même pour les autres actions comme l'annulation
-ainsi que l'aspect graphique général.
+plusieurs interfaces juste pour changer le bouton de changement de
+vue en \og gesture \fg{} ou changer l'emplacement du menu. \\
+Afin de faciliter l'adaptation du style graphique au support, il faut
+permettre au programmeur de ne pas avoir à définir \og à la main \fg{}
+les emplacements de la liste, du compteur, des menus ainsi que des
+boutons, si boutons il y a, de changement de vue.
 \end{itemize}
 
 \section{Analyse de l'existant}
@@ -462,15 +474,15 @@ ont aussi leurs outils de debugging.
 
 \subsubsection*{Conclusion ?}
 
-Exemple suivi : (si le programmeur veut satisfaire aux besoins d'aptabilité
-de l'utilisateur application, il va être obligé de définir plusieurs
-interfaces différentes, pour les actions, faire en sorte que les raccourcis
-dans le menu, les boutons ou autres gestures soient associés à des
-actions est possible en swing, mais assez moche et peu pratique, de
-plus elles ne sont pas assez évoluées pour permettre une annulation
-par la suite. La mise à jour de la liste de du compteur ne sont pas
-gérés de façon pratique par SWING, le faire manuellement est finalement
-la solution employée)
+\textbf{Exemple suivi :} (si le programmeur veut satisfaire aux besoins
+d'aptabilité de l'utilisateur application, il va être obligé de définir
+plusieurs interfaces différentes, pour les actions, faire en sorte
+que les raccourcis dans le menu, les boutons ou autres gestures soient
+associés à des actions est possible en swing, mais assez moche et
+peu pratique, de plus elles ne sont pas assez évoluées pour permettre
+une annulation par la suite. La mise à jour de la liste de du compteur
+ne sont pas gérés de façon pratique par SWING, le faire manuellement
+est finalement la solution employée)
 
 
 \section{Outils à développer}
@@ -593,53 +605,118 @@ la relation \og menu \fg{} qui est, à un niveau basique, présente
 dans Swing : pour certains éléments il est possible de définir un
 menu sans avoir à spécifier que ce dernier est contenu dans l'élément
 demandeur. Il y a une relation de \og menu \fg{} entre ces deux
-éléments et non une relation directe de positionnement.
+éléments et non une relation directe de positionnement.\\
+\medskip{}
 
-~
 
 Ce modèle a pour but de permettre à l'interface produite de s'adapter
-à son environnement d'utilisation. De plus, une analyse statique de
-la cohérence d'une interface pourrait certainement se faire à partir
-d'un tel modèle (réflexion en cours).
+à son environnement d'utilisation, mais il permet aussi une analyse
+statique de la cohérence d'une interface. Dans un premier temps il
+s'agira de vérifier la possibilité des relations déclarées, celà nécessite
+déjà des outils adaptés. Définir la nature d'une relation entre plusieurs
+élément revient à donner un type à cette relation. Il apparait donc
+souhaitable de se diriger vers un langage de déclaration de ces relations
+muni d'une sémantique adaptée afin de ramener l'analyse de cohérence
+d'une interface graphique à une analyse statique du typage de la dite
+déclaration. Nous devons pour celà nous munir de langages que nous
+qualifierons d'intermédiaires qui sont étudiés dans la partie suivante.
+Une autre possibilité eut été d'utiliser des structures de graphes
+pour modéliser les relations entre éléments sans passer par un langage
+de description externe, mais nous allons voir, toujours dans la partie
+suivante, les avantages de la solution choisie.
 
 
 \subsubsection{Exemple suivi}
+
+L'utilisation d'un tel modèle pour la création de l'interface graphique
+est transparente pour l'utilisateur application. Par contre pour le
+programmeur, la \og maquette \fg{} de l'interface graphique redevient
+très proche du concept de base (figure 1) contrairement à la partie
+2.\\
+Le menu et le menu flottant ne font plus qu'un, il y a une relation
+de \og menu \fg{} entre ce dernier et trois éléments : les deux
+panneaux et la fenêtre (les deux panneaux peuvent suffire). \\
+Le passage d'une vue à l'autre n'a pas à être explicité, une relation
+de \og switch \fg{} est établie entre les deux panneaux.\\
+Le rendu graphique et les raccourcis ou boutons associés à ces éléments
+n'ont pas à être définis explicitement par le programmeur.\\
+\medskip{}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{\string"C:/Users/Nico/Dropbox/M2/Prog comparée/modèle-relationnel-projet\string".png}\caption{Concept relationnel}
+
+
+\end{figure}
+
 
 
 \subsection{Langages intermédiaires}
 
-Le système a vocation à être porté sur différents langages de programmation;
-l'utilisation de langages intermédiaires, propres au dit système,
-permet entre autre une portabilité intéressante. 
+Comme nous venons de le voir, la réalisation de notre système passe
+par l'introduction de langages intermédiaires liés au dit système
+et non à un support logiciel (langage de programmation / OS) ou matériel.
+Ceci permet en outre une adaptativité très intéressante.\\
+Le portage sur les différentes plateformes devient relativement et
+se résume à la création d'interpréteurs propres aux cibles. Ce processus
+est transparent pour le programmeur qui lui travaillera sur les deux
+langages introduits.
 
-Deux langages intermédiaires sont introduit à cet effet :
+\medskip{}
 
-~
-\begin{itemize}
-\item \textbf{Style de l'interface :} notre solution à base de modèle relationnel
-doit être complétée, afin d'obtenir l'adaptabilité recherchée, d'une
-déclaration de style dont le rôle est de traduire les relations entre
-les composants en une présentation graphique adaptée au support. Ceci
-nécessite d'une part l'élaboration d'un langage intermédiaire servant
-à décrire cette traduction et d'autre part la réalisation d'un interpréteur
-du dit langage. L'utilisation d'une telle architecture permet à la
-fois d'avoir un comportement par défaut propre à chaque support, mais
-peut aussi permettre au programmeur d’établir une charte graphique
-pour toutes ses applications, et ce sans avoir à s'en préoccuper à
-chaque nouveau projet.
-\end{itemize}
-~
-\begin{itemize}
-\item \textbf{Structure de l'interface :} une autre volonté de notre part
-est de permettre la sauvegarde de la structure d'une interface. Avoir
-une description de ladite structure non liée à langage source permet
-une réutilisation intéressante sur différents projets. La difficulté
-d'une telle représentation se situe au niveau des interactions entre
-le moteur de l'application et l'interface utilisateur, cependant le
-modèle d'actions est adapté à cette démarche (cette partie est encore
-floue, nous sommes encore en phase de réflexion quant à la faisabilité
-et la pertinence de la chose).
-\end{itemize}
+
+Le premier est dédié à la description de la structure de l'interface.
+Nous définissons ici les actions et éléments utilisés mais aussi les
+relations qui les connectent. Des éléments de base doivent être fournis
+par le système, et pouvoir les composer ou en créer des personnalisés
+est indispensable. Dans cette même logique de réutilisation de l'existant,
+une autre volonté de notre part est de permettre la sauvegarde de
+la structure d'une interface. Une description non liée à un support
+logiciel / matériel de la dite structure permet la réalisation de
+ces objectifs.\\
+L'une des difficultés d'une telle représentation se situe au niveau
+des interactions entre le moteur de l'application et l'interface utilisateur,
+en particulier au niveau des bindings. L'interpréteur doit être capable
+de faire le lien entre des variables du langage source et leur pendant
+dans la description de la structure de l'interface. Cependant celà
+nous semble faisable, et n'est pas un obstacle insurmontable à la
+mise en place de cette architecture.\\
+Le but est d’obtenir, après interprétation de la déclaration de structure
+de l'interface, un graphe représentant les relations entre les éléments.
+Il est à noter que les arrêtes de ce graphe doivent être orientées
+et typées.
+
+\medskip{}
+
+
+Le second va servir à définir le style de l'interface, il est fortement
+inspiré du CSS utilisé en programmation WEB. Cette feuille de style
+va compléter notre solution à base de modèle relationnel et nous permettre
+d'obtenir l'adaptabilité recherchée. Son rôle est de traduire les
+déclaration de composants et les relations qui les unissent en une
+présentation graphique adaptée au support. Chaque composant va se
+voir attribuer un visuel, le graphe relationnel est lui prépondérant
+dans l'élaboration de l'agencement à l'écran. L'utilisation de cet
+outil permet à la fois d'avoir un comportement par défaut propre à
+chaque support, mais peut aussi permettre au programmeur d’établir
+une charte graphique pour toutes ses applications, et ce sans avoir
+à s'en préoccuper à chaque nouveau projet. Un choix est à faire à
+ce niveau, l'utilisation d'un comportement par défaut lié à un support
+permet à l'application de se \og fondre \fg{} dans l'écosystème
+du support considéré, alors que l'utilisation d'un style commun à
+plusieurs projets mais relativement indépendant des chartes graphiques
+établies pour chaque support, permet de créer une identité visuelle
+pour tout un groupe d'applications.\medskip{}
+
+
 
 \subsubsection{Exemple suivi}
+
+La description de la structure a déjà été évoquée lors de l'application
+à l'exemple du modèle relationnel. Nous avons un menu, deux panneaux,
+un afficheur de liste et un afficheur de compteur.\\
+Le menu est lié par \og menu \fg{} à chacun des panneaux, c'est
+une relation orientée du menu vers le panneau ciblé.\\
+Les deux panneaux sont liés par \og switch \fg{}, qui est une relation
+orientée aussi, mais ici nous l'utilisons dans les deux sens.\\
+Nous omettons volontairement la fenêtre qui n'a pas grand intérêt
+ici, elle sert de conteneur à l'ensemble.
 \end{document}

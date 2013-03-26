@@ -81,25 +81,25 @@ Nous allons introduire un exemple suivi, qui sera utilisé tout au long de
  ce rapport.
  Le but est d'illustrer nos remarques et idées grâce à un cas d'étude simple.
  
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-Nous allons donc considérer une application gérant une liste et un compteur.
+L'application considérée se contente de gérer une liste et un compteur.
  Elle est munie d'une interface graphique constituée d'une fenêtre, ainsi
- que de deux vues, ou paneaux, qui ne sont pas visibles en même temps, mais
- avec la possibilité de passer de l'une à l'autre.
- Ces vues seront affichées, lorsque visibles, dans la fenêtre précédement
+ que de deux vues, ou panneaux, qui ne sont pas visibles en même temps,
+ mais avec la possibilité de passer de l'une à l'autre.
+ Ces vues seront affichées, lorsque visibles, dans la fenêtre précédemment
  mentionnée.
  
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-L'une des deux vues offrira une représentation et des outils de modification
- de la liste gérée par l'application alors que l'autre se chargera du compteur.
+L'une des deux vues offre une représentation et des outils de modification
+ de la liste gérée par l'application alors que l'autre se charge du compteur.
  
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Deux menus sont présents, l'un attaché à la fenêtre et l'autre 
 \begin_inset Quotes fld
 \end_inset
@@ -108,11 +108,12 @@ flottant
 \begin_inset Quotes frd
 \end_inset
 
- accessible via une intéraction entre l'utilisateur et l'interface.
-\end_layout
+ accessible via une interaction entre l'utilisateur et l'interface.
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-\begin_inset space ~
+
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -120,6 +121,7 @@ flottant
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -128,6 +130,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/Nico/Dropbox/M2/Prog comparée/base-exemple-projet.png
 	scale 50
+	rotateOrigin center
 
 \end_inset
 
@@ -138,15 +141,11 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Base de l'exemple
+Concept de base
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -184,10 +183,7 @@ Avant toute analyse ou réflexion, il est important de définir qui sont les
  utilisateurs du système considéré.
  Nous distinguerons deux catégories d'utilisateurs et nous utiliserons la
  terminologie suivante : 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -201,10 +197,7 @@ Programmeur :
  il est notre cible directe, c'est lui qui utilisera les outils que nous
  allons développer afin de construire des interfaces utilisateurs (nous
  parlerons ici essentiellement d'interfaces graphiques) pour ses applications.
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -230,10 +223,7 @@ il est l'utilisateur des produits développés par le programmeur, il est
 Une approche orientée utilisateur sera adoptée lors de la conception, les
  besoins étant différents pour les deux catégories d'utilisateurs considérées,
  nous ferons bien attention de prendre en compte les deux points de vue.
-\end_layout
-
-\begin_layout Standard
-En particulier, celui de l'utilisateur application doit être pris en compte
+ En particulier, celui de l'utilisateur application doit être pris en compte
  même s'il sera la cible du système développé par le programmeur et non
  directement celle du notre.
  Ses besoins doivent nous permettre de mieux déterminer les éléments nécessaires
@@ -249,15 +239,13 @@ La conception d'une interface utilisateur doit être centrée autour des deux
  catégories d'acteurs définies précédemment, l'utilisation du modèle de
  conception centré utilisateur semble alors tout à fait correspondre aux
  besoins.
-\end_layout
+ 
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Ce dernier est itératif, chaque itération étant composée des trois phases
  suivantes :
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -271,10 +259,7 @@ Analyse :
  on analyse les besoins des acteurs du système, un panel représentatif d'utilisa
 teurs des deux catégories concernées doit être constitué afin d'établir
  les dits besoins.
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -288,10 +273,7 @@ Conception :
  un prototype doit être conçu en fonction des besoins établis à l'étape
  précédente.
  Chaque prototype servira le plus souvent de base à celui à l'étape suivante
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -306,10 +288,7 @@ Conception :
  Le procédé étant itératif, cette évaluation servira de base à la modification
  des besoins de la première étape de l'itération suivante.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -319,10 +298,7 @@ Conception :
 Afin de mener à bien ces trois phases, il est nécessaire d'établir des critères
  d'évaluation qui serviront aussi de base à l'élaboration des besoins.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -332,6 +308,12 @@ Afin de mener à bien ces trois phases, il est nécessaire d'établir des critè
 
 \series bold
 Pour l'utilisateur application :
+\series default
+
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -344,6 +326,10 @@ Facilité d'utilisation :
  d'erreurs commises lors d'un test sont de bons indicateurs.
  Il faut de plus prendre en compte les différents niveaux de compétences
  parmi les utilisateurs.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -353,6 +339,10 @@ Correction des erreurs
 \series default
 : la possibilité d'annuler une action est indispensable (cf.
  partie 3.1)
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -363,6 +353,10 @@ Rapidité :
  le temps de réponse de l'interface doit être faible.
  Il faut définir par des tests quel est le délai admissible avant réponse
  et quel est le meilleur moyen de faire patienter l'utilisateur application.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -373,6 +367,10 @@ Aspect visuel
 : il doit être agréable et clair.
  (nous pourrions parler d'aspect sensoriel pour être plus général, mais
  nous allons nous concentrer sur les interfaces graphiques)
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -387,6 +385,12 @@ Aspect visuel
 
 \series bold
 Pour le programmeur :
+\series default
+
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -399,6 +403,10 @@ Expressivité :
  code clair et précis est plus agréable.
  De plus il est important d'essayer de rendre la programmation via le système
  intuitive.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -408,6 +416,10 @@ Adaptabilité :
 \series default
  une bonne capacité d'adaptation aux différents support ainsi qu'une portabilité
  sont nécessaires.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -416,6 +428,10 @@ Adaptabilité :
 Sûreté :
 \series default
  un code qui compile doit être un code qui marche.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -426,6 +442,10 @@ Debugging :
  des outils de debugging doivent être fournis, une analyse statique de pertinenc
 e serait un plus (détecter le maximum d'absurdités comme des éléments inutiles
  par exemple).
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -435,6 +455,10 @@ IDE :
 \series default
  une intégration aux IDE populaires est nécessaire, la création d'un IDE
  spécifique peut être envisagé.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -444,6 +468,10 @@ Efficacité :
 \series default
  les critères en terme de consommation des ressources de la machine doivent
  être étudiés.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -475,6 +503,10 @@ Scénarios / diagrammes de cas d'utilisation :
  à la fois d'établir les besoins et d'effectuer des tests choisis dans le
  cadre de l'évaluation.
  
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -488,6 +520,10 @@ Diagrammes relationnels - diagrammes de classes :
  remarquablement bien à l'utilisation de ces outils.
  De plus, ils nous permettent, à un autre niveau, de nous mettre à la place
  du programmeur qui devra concevoir une interface en utilisant notre système.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -650,12 +686,13 @@ Exemple suivi
 
 \begin_layout Standard
 Dans cette première itération de notre exemple suivi, nous n'allons pas
- forcement être exhaustifs, mais nous allons essayer de donner une bonne
- idée de ce que nous aurons à faire.
-\end_layout
+ forcement être exhaustifs, mais nous allons essayer d'aborder les points
+ importants pour mener à bien la réalisation de notre exemple.
+ Nous allons commencer par étudier les besoins de l'utilisateur application.
+\begin_inset VSpace defskip
+\end_inset
 
-\begin_layout Standard
-Nous allons commencer par étudier les besoins de l'utilisateur application.
+
 \end_layout
 
 \begin_layout Itemize
@@ -663,8 +700,13 @@ Nous allons commencer par étudier les besoins de l'utilisateur application.
 \series bold
 Annulation :
 \series default
- pouvoir annuler une opération effectuée via l'interface graphique sur la
- liste ou le compteur.
+ il est nécessaire de pouvoir annuler une opération effectuée via l'interface
+ graphique sur la liste ou le compteur.
+ On peut aussi vouloir annuler un changement de vue.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -683,9 +725,13 @@ gesture
 \end_inset
 
  sur une tablette ou un smartphone.
- Il en est de même pour toutes les actions proposées par l'interface, y
- compris la gestion du menu flottant (apparition au clic droit pour le clavier
- / souris et utilisation d'une 
+ 
+\begin_inset Newline newline
+\end_inset
+
+Il en est de même pour toutes les actions proposées par l'interface, y compris
+ la gestion du menu flottant (apparition au clic droit pour le clavier /
+ souris et utilisation d'une 
 \begin_inset Quotes fld
 \end_inset
 
@@ -694,6 +740,17 @@ touche
 \end_inset
 
  à deux doigts pour une tablette ou un smartphone).
+ 
+\begin_inset Newline newline
+\end_inset
+
+La position du menu attaché à la fenêtre doit dépendre du support, sur un
+ smartphone la taille relativement petite de l'écran oblige à prévoir un
+ emplacement plus adapté, voir même de ne pas l'afficher.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -704,14 +761,27 @@ Rapidité :
  le changement de vue et l'apparition du menu flottant doivent être rapides,
  il ne faut surtout pas donner l'impression à l'utilisateur qu'il est en
  attente passive.
- Les opérations sur la liste et le compteur peuvent être soumises à des
- contraintes au niveau de la partie logique de l'application, l'interface
- doit être capable d'afficher une barre de progression par exemple pour
- montrer qu'une action est en cours.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Les opérations sur la liste et le compteur peuvent être soumises à des contraint
+es au niveau de la partie logique de l'application, l'interface doit être
+ capable d'afficher une barre de progression par exemple pour montrer qu'une
+ action est en cours.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Ceux du programmeur en découlent en partie :
+Nous pouvons alors définir les exigences du programmeur qui en découlent
+ :
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -721,7 +791,11 @@ Liste - compteur :
 \series default
  avoir la possibilité de lier directement une liste ou un compteur à sa
  représentation graphique sans que le programmeur ait à lui même définir
- un protocole de mise à jour et l'implémenter serait pratique.
+ un protocole de mise à jour et l'implémenter est nécessaire.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -729,8 +803,8 @@ Liste - compteur :
 \series bold
 Adaptativité : 
 \series default
-le programmeur ne doit pas avoir à programmer des interfaces différentes
- juste pour changer un bouton en 
+le programmeur ne doit pas avoir à programmer plusieurs interfaces juste
+ pour changer le bouton de changement de vue en 
 \begin_inset Quotes fld
 \end_inset
 
@@ -738,9 +812,22 @@ gesture
 \begin_inset Quotes frd
 \end_inset
 
-.
- Il doit en être de même pour les autres actions comme l'annulation ainsi
- que l'aspect graphique général.
+ ou changer l'emplacement du menu.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Afin de faciliter l'adaptation du style graphique au support, il faut permettre
+ au programmeur de ne pas avoir à définir 
+\begin_inset Quotes fld
+\end_inset
+
+à la main
+\begin_inset Quotes frd
+\end_inset
+
+ les emplacements de la liste, du compteur, des menus ainsi que des boutons,
+ si boutons il y a, de changement de vue.
 \end_layout
 
 \begin_layout Section
@@ -996,12 +1083,16 @@ Conclusion ?
 \end_layout
 
 \begin_layout Standard
-Exemple suivi : (si le programmeur veut satisfaire aux besoins d'aptabilité
- de l'utilisateur application, il va être obligé de définir plusieurs interfaces
- différentes, pour les actions, faire en sorte que les raccourcis dans le
- menu, les boutons ou autres gestures soient associés à des actions est
- possible en swing, mais assez moche et peu pratique, de plus elles ne sont
- pas assez évoluées pour permettre une annulation par la suite.
+
+\series bold
+Exemple suivi :
+\series default
+ (si le programmeur veut satisfaire aux besoins d'aptabilité de l'utilisateur
+ application, il va être obligé de définir plusieurs interfaces différentes,
+ pour les actions, faire en sorte que les raccourcis dans le menu, les boutons
+ ou autres gestures soient associés à des actions est possible en swing,
+ mais assez moche et peu pratique, de plus elles ne sont pas assez évoluées
+ pour permettre une annulation par la suite.
  La mise à jour de la liste de du compteur ne sont pas gérés de façon pratique
  par SWING, le faire manuellement est finalement la solution employée)
 \end_layout
@@ -1262,10 +1353,11 @@ menu
 \end_inset
 
  entre ces deux éléments et non une relation directe de positionnement.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-\begin_inset space ~
+
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -1273,13 +1365,114 @@ menu
 
 \begin_layout Standard
 Ce modèle a pour but de permettre à l'interface produite de s'adapter à
- son environnement d'utilisation.
- De plus, une analyse statique de la cohérence d'une interface pourrait
- certainement se faire à partir d'un tel modèle (réflexion en cours).
+ son environnement d'utilisation, mais il permet aussi une analyse statique
+ de la cohérence d'une interface.
+ Dans un premier temps il s'agira de vérifier la possibilité des relations
+ déclarées, celà nécessite déjà des outils adaptés.
+ Définir la nature d'une relation entre plusieurs élément revient à donner
+ un type à cette relation.
+ Il apparait donc souhaitable de se diriger vers un langage de déclaration
+ de ces relations muni d'une sémantique adaptée afin de ramener l'analyse
+ de cohérence d'une interface graphique à une analyse statique du typage
+ de la dite déclaration.
+ Nous devons pour celà nous munir de langages que nous qualifierons d'intermédia
+ires qui sont étudiés dans la partie suivante.
+ Une autre possibilité eut été d'utiliser des structures de graphes pour
+ modéliser les relations entre éléments sans passer par un langage de descriptio
+n externe, mais nous allons voir, toujours dans la partie suivante, les
+ avantages de la solution choisie.
 \end_layout
 
 \begin_layout Subsubsection
 Exemple suivi
+\end_layout
+
+\begin_layout Standard
+L'utilisation d'un tel modèle pour la création de l'interface graphique
+ est transparente pour l'utilisateur application.
+ Par contre pour le programmeur, la 
+\begin_inset Quotes fld
+\end_inset
+
+maquette
+\begin_inset Quotes frd
+\end_inset
+
+ de l'interface graphique redevient très proche du concept de base (figure
+ 1) contrairement à la partie 2.
+\begin_inset Newline newline
+\end_inset
+
+Le menu et le menu flottant ne font plus qu'un, il y a une relation de 
+\begin_inset Quotes fld
+\end_inset
+
+menu
+\begin_inset Quotes frd
+\end_inset
+
+ entre ce dernier et trois éléments : les deux panneaux et la fenêtre (les
+ deux panneaux peuvent suffire).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Le passage d'une vue à l'autre n'a pas à être explicité, une relation de
+ 
+\begin_inset Quotes fld
+\end_inset
+
+switch
+\begin_inset Quotes frd
+\end_inset
+
+ est établie entre les deux panneaux.
+\begin_inset Newline newline
+\end_inset
+
+Le rendu graphique et les raccourcis ou boutons associés à ces éléments
+ n'ont pas à être définis explicitement par le programmeur.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Nico/Dropbox/M2/Prog comparée/modèle-relationnel-projet.png
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Concept relationnel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1287,66 +1480,134 @@ Langages intermédiaires
 \end_layout
 
 \begin_layout Standard
-Le système a vocation à être porté sur différents langages de programmation;
- l'utilisation de langages intermédiaires, propres au dit système, permet
- entre autre une portabilité intéressante.
- 
+Comme nous venons de le voir, la réalisation de notre système passe par
+ l'introduction de langages intermédiaires liés au dit système et non à
+ un support logiciel (langage de programmation / OS) ou matériel.
+ Ceci permet en outre une adaptativité très intéressante.
+\begin_inset Newline newline
+\end_inset
+
+Le portage sur les différentes plateformes devient relativement et se résume
+ à la création d'interpréteurs propres aux cibles.
+ Ce processus est transparent pour le programmeur qui lui travaillera sur
+ les deux langages introduits.
 \end_layout
 
 \begin_layout Standard
-Deux langages intermédiaires sont introduit à cet effet :
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
+\begin_inset VSpace defskip
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
+Le premier est dédié à la description de la structure de l'interface.
+ Nous définissons ici les actions et éléments utilisés mais aussi les relations
+ qui les connectent.
+ Des éléments de base doivent être fournis par le système, et pouvoir les
+ composer ou en créer des personnalisés est indispensable.
+ Dans cette même logique de réutilisation de l'existant, une autre volonté
+ de notre part est de permettre la sauvegarde de la structure d'une interface.
+ Une description non liée à un support logiciel / matériel de la dite structure
+ permet la réalisation de ces objectifs.
+\begin_inset Newline newline
+\end_inset
 
-\series bold
-Style de l'interface :
-\series default
- notre solution à base de modèle relationnel doit être complétée, afin d'obtenir
- l'adaptabilité recherchée, d'une déclaration de style dont le rôle est
- de traduire les relations entre les composants en une présentation graphique
- adaptée au support.
- Ceci nécessite d'une part l'élaboration d'un langage intermédiaire servant
- à décrire cette traduction et d'autre part la réalisation d'un interpréteur
- du dit langage.
- L'utilisation d'une telle architecture permet à la fois d'avoir un comportement
- par défaut propre à chaque support, mais peut aussi permettre au programmeur
+L'une des difficultés d'une telle représentation se situe au niveau des
+ interactions entre le moteur de l'application et l'interface utilisateur,
+ en particulier au niveau des bindings.
+ L'interpréteur doit être capable de faire le lien entre des variables du
+ langage source et leur pendant dans la description de la structure de l'interfa
+ce.
+ Cependant celà nous semble faisable, et n'est pas un obstacle insurmontable
+ à la mise en place de cette architecture.
+\begin_inset Newline newline
+\end_inset
+
+Le but est d’obtenir, après interprétation de la déclaration de structure
+ de l'interface, un graphe représentant les relations entre les éléments.
+ Il est à noter que les arrêtes de ce graphe doivent être orientées et typées.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le second va servir à définir le style de l'interface, il est fortement
+ inspiré du CSS utilisé en programmation WEB.
+ Cette feuille de style va compléter notre solution à base de modèle relationnel
+ et nous permettre d'obtenir l'adaptabilité recherchée.
+ Son rôle est de traduire les déclaration de composants et les relations
+ qui les unissent en une présentation graphique adaptée au support.
+ Chaque composant va se voir attribuer un visuel, le graphe relationnel
+ est lui prépondérant dans l'élaboration de l'agencement à l'écran.
+ L'utilisation de cet outil permet à la fois d'avoir un comportement par
+ défaut propre à chaque support, mais peut aussi permettre au programmeur
  d’établir une charte graphique pour toutes ses applications, et ce sans
  avoir à s'en préoccuper à chaque nouveau projet.
-\end_layout
+ Un choix est à faire à ce niveau, l'utilisation d'un comportement par défaut
+ lié à un support permet à l'application de se 
+\begin_inset Quotes fld
+\end_inset
 
-\begin_layout Standard
-\begin_inset space ~
+fondre
+\begin_inset Quotes frd
+\end_inset
+
+ dans l'écosystème du support considéré, alors que l'utilisation d'un style
+ commun à plusieurs projets mais relativement indépendant des chartes graphiques
+ établies pour chaque support, permet de créer une identité visuelle pour
+ tout un groupe d'applications.
+\begin_inset VSpace defskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Structure de l'interface :
-\series default
- une autre volonté de notre part est de permettre la sauvegarde de la structure
- d'une interface.
- Avoir une description de ladite structure non liée à langage source permet
- une réutilisation intéressante sur différents projets.
- La difficulté d'une telle représentation se situe au niveau des interactions
- entre le moteur de l'application et l'interface utilisateur, cependant
- le modèle d'actions est adapté à cette démarche (cette partie est encore
- floue, nous sommes encore en phase de réflexion quant à la faisabilité
- et la pertinence de la chose).
 \end_layout
 
 \begin_layout Subsubsection
 Exemple suivi
+\end_layout
+
+\begin_layout Standard
+La description de la structure a déjà été évoquée lors de l'application
+ à l'exemple du modèle relationnel.
+ Nous avons un menu, deux panneaux, un afficheur de liste et un afficheur
+ de compteur.
+\begin_inset Newline newline
+\end_inset
+
+Le menu est lié par 
+\begin_inset Quotes fld
+\end_inset
+
+menu
+\begin_inset Quotes frd
+\end_inset
+
+ à chacun des panneaux, c'est une relation orientée du menu vers le panneau
+ ciblé.
+\begin_inset Newline newline
+\end_inset
+
+Les deux panneaux sont liés par 
+\begin_inset Quotes fld
+\end_inset
+
+switch
+\begin_inset Quotes frd
+\end_inset
+
+, qui est une relation orientée aussi, mais ici nous l'utilisons dans les
+ deux sens.
+\begin_inset Newline newline
+\end_inset
+
+Nous omettons volontairement la fenêtre qui n'a pas grand intérêt ici, elle
+ sert de conteneur à l'ensemble.
 \end_layout
 
 \end_body
